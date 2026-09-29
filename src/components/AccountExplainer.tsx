@@ -56,7 +56,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 sm:p-8 rounded-3xl border transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
+              className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
               style={{
                 backgroundColor: activeTheme.bgLight,
                 borderColor: activeTheme.border,

@@ -9,12 +9,12 @@ export const ColorProfileSwitcher: React.FC = () => {
 
   return (
     <>
-      {/* Floating Pill on Bottom-Right */}
-      <aside aria-label="Color Palette Selector" className="fixed bottom-6 right-6 z-40">
+      {/* Floating Pill on Bottom-Right - Adjusted for mobile sticky bar */}
+      <aside aria-label="Color Palette Selector" className="fixed bottom-20 md:bottom-6 right-4 sm:right-6 z-40">
         <button
           id="color-palette-floating-button"
           onClick={() => setIsOpen(prev => !prev)}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-full shadow-lg border backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full shadow-lg border backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95"
           style={{
             backgroundColor: 'rgba(255, 255, 255, 0.95)',
             borderColor: activeTheme.border,
@@ -23,10 +23,10 @@ export const ColorProfileSwitcher: React.FC = () => {
           title="Customize light color profile"
         >
           <div
-            className="w-4 h-4 rounded-full border border-black/10 shadow-inner"
+            className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border border-black/10 shadow-inner"
             style={{ backgroundColor: activeTheme.primary }}
           />
-          <span className="text-xs font-semibold tracking-wide" style={{ color: activeTheme.textDark }}>
+          <span className="text-[11px] sm:text-xs font-semibold tracking-wide hidden xs:inline" style={{ color: activeTheme.textDark }}>
             Theme: <span className="font-bold">{activeTheme.name.split(' ')[0]}</span>
           </span>
           <Palette className="w-3.5 h-3.5" style={{ color: activeTheme.primary }} />

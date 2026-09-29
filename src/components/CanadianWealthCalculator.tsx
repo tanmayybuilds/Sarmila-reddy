@@ -112,7 +112,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.7 }}
-          className="rounded-3xl border bg-white p-5 sm:p-8 lg:p-10 shadow-lg"
+          className="rounded-2xl sm:rounded-3xl border bg-white p-4 sm:p-8 lg:p-10 shadow-lg"
           style={{ borderColor: activeTheme.border }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -268,7 +268,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
 
             {/* Right Output Panel (5 cols) */}
             <div
-              className="lg:col-span-5 p-6 sm:p-8 rounded-2xl border shadow-inner space-y-5 sm:space-y-6 text-left"
+              className="lg:col-span-5 p-4 sm:p-8 rounded-xl sm:rounded-2xl border shadow-inner space-y-4 sm:space-y-6 text-left"
               style={{
                 backgroundColor: activeTheme.bgLight,
                 borderColor: activeTheme.border,

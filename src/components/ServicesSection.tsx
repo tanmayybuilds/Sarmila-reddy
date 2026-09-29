@@ -112,7 +112,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
-            className="rounded-3xl border bg-white p-6 sm:p-10 lg:p-12 shadow-sm text-left"
+            className="rounded-2xl sm:rounded-3xl border bg-white p-5 sm:p-10 lg:p-12 shadow-sm text-left"
             style={{ borderColor: activeTheme.border }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">

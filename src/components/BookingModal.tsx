@@ -53,7 +53,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 12 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="relative w-full max-w-xl p-6 sm:p-8 rounded-3xl shadow-2xl border bg-white transition-all max-h-[90vh] overflow-y-auto z-10 my-auto"
+            className="relative w-full max-w-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl border bg-white transition-all max-h-[92vh] overflow-y-auto z-10 my-auto"
             style={{ borderColor: activeTheme.border }}
           >
             {/* Close Button */}

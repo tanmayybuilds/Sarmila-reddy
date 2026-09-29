@@ -48,8 +48,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         </div>
       </div>
 
-      {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Main Footer Links - Add pb-24 for mobile sticky bar clearance */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 pb-24 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Brand & Monogram (4 cols) */}
           <div className="lg:col-span-4 space-y-4 text-left">

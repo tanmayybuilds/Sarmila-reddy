@@ -98,7 +98,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
-            className="rounded-3xl border p-6 sm:p-10 lg:p-12 transition-all duration-300 shadow-sm text-left"
+            className="rounded-2xl sm:rounded-3xl border p-5 sm:p-10 lg:p-12 transition-all duration-300 shadow-sm text-left"
             style={{
               backgroundColor: activeTheme.bgLight,
               borderColor: activeTheme.border,

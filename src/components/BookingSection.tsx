@@ -104,7 +104,7 @@ export const BookingSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 p-6 sm:p-8 rounded-3xl border shadow-md space-y-6 text-left relative overflow-hidden"
+            className="lg:col-span-5 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border shadow-md space-y-5 sm:space-y-6 text-left relative overflow-hidden"
             style={{
               backgroundColor: activeTheme.bgLight,
               borderColor: activeTheme.border,
@@ -189,7 +189,7 @@ export const BookingSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 p-6 sm:p-8 lg:p-10 rounded-3xl border bg-white shadow-sm space-y-6 text-left"
+            className="lg:col-span-7 p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border bg-white shadow-sm space-y-5 sm:space-y-6 text-left"
             style={{ borderColor: activeTheme.border }}
           >
             {formSubmitted ? (

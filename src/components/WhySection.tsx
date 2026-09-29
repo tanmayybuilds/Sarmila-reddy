@@ -131,7 +131,7 @@ export const WhySection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="mt-12 sm:mt-16 p-6 sm:p-10 lg:p-12 rounded-3xl border shadow-sm relative overflow-hidden transition-colors"
+          className="mt-10 sm:mt-16 p-5 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl border shadow-sm relative overflow-hidden transition-colors"
           style={{
             backgroundColor: activeTheme.primaryLight,
             borderColor: activeTheme.border,
