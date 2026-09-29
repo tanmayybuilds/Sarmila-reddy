@@ -60,3 +60,13 @@
   background: #B8AE9E;
 }
 
+/* iOS Safe Area Padding for mobile bottom sticky bars */
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Touch responsiveness */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
