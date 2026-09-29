@@ -1,0 +1,8 @@
+{
+  "name": "Sarmila Reddy | Financial Advisor",
+  "description": "Premium official website for Sarmila Reddy, licensed Canadian financial advisor helping families, young professionals, new immigrants, and entrepreneurs build wealth and protect income.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
