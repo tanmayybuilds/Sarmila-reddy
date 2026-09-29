@@ -87,11 +87,11 @@ export const ADVISOR_PROFILE = {
   location: 'British Columbia & Across Canada',
   consultationFee: '100% Free / No Consultation Fees',
   images: {
-    logo: '/images/logo.png',
-    hero: '/images/sarmila-desk-executive.jpg',
-    about: '/images/sarmila-standing-suit.jpg',
-    whyAvatar: '/images/sarmila-portrait-warm.jpg',
-    workingDesk: '/images/sarmila-desk-laptop.jpg',
+    logo: `${import.meta.env.BASE_URL}images/logo.png`,
+    hero: `${import.meta.env.BASE_URL}images/sarmila-desk-executive.jpg`,
+    about: `${import.meta.env.BASE_URL}images/sarmila-standing-suit.jpg`,
+    whyAvatar: `${import.meta.env.BASE_URL}images/sarmila-portrait-warm.jpg`,
+    workingDesk: `${import.meta.env.BASE_URL}images/sarmila-desk-laptop.jpg`,
   },
 };
 
