@@ -64,8 +64,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
           </p>
         </motion.div>
 
-        {/* Tab Selector - Touch Optimized */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 mb-8 sm:mb-10">
+        {/* Tab Selector - Touch Optimized & Clean Presentation */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
           {SERVICES_LIST.map(service => {
             const isSelected = service.id === selectedService.id;
             return (
@@ -73,8 +73,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 key={service.id}
                 id={`service-tab-${service.id}`}
                 onClick={() => setSelectedService(service)}
-                className={`p-3 sm:p-4 rounded-2xl border text-left transition-all duration-200 flex items-center gap-2.5 sm:gap-3.5 cursor-pointer min-h-[48px] ${
-                  isSelected ? 'shadow-md scale-[1.01] ring-1' : 'hover:bg-white/80 bg-white/50 active:scale-98'
+                className={`p-3.5 sm:p-4 rounded-2xl border text-left transition-all duration-200 flex items-center sm:items-start gap-3 sm:gap-3.5 cursor-pointer min-h-[58px] ${
+                  isSelected ? 'shadow-md scale-[1.01] ring-1' : 'hover:bg-white/80 bg-white/60 active:scale-98'
                 }`}
                 style={{
                   borderColor: isSelected ? activeTheme.primary : activeTheme.border,
@@ -82,7 +82,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 }}
               >
                 <div
-                  className="p-2 sm:p-2.5 rounded-xl shrink-0 transition-colors"
+                  className="p-2.5 rounded-xl shrink-0 transition-colors"
                   style={{
                     backgroundColor: isSelected ? activeTheme.primary : activeTheme.primaryLight,
                     color: isSelected ? '#FFFFFF' : activeTheme.primary,
@@ -90,14 +90,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 >
                   {getServiceIcon(service.iconName)}
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <h3
-                    className="font-semibold text-xs sm:text-sm truncate"
+                    className="font-semibold text-sm sm:text-base leading-tight"
                     style={{ color: activeTheme.textDark }}
                   >
                     {service.title}
                   </h3>
-                  <p className="text-xs text-stone-500 truncate">{service.subtitle}</p>
+                  <p className="text-xs text-stone-500 mt-1 leading-snug">{service.subtitle}</p>
                 </div>
               </button>
             );

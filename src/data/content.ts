@@ -129,7 +129,7 @@ export const WHY_PILLARS: WhyPillar[] = [
 export const SERVICES_LIST: ServiceItem[] = [
   {
     id: 'investments-wealth',
-    title: 'Investments & Wealth Accumulation',
+    title: 'Investments',
     subtitle: 'TFSA, RRSP, RESP & FHSA',
     description: 'Maximize Canadian tax incentives through strategic account allocation. We structure your savings into high-efficiency vehicles that compound tax-advantaged wealth.',
     iconName: 'TrendingUp',
@@ -148,7 +148,7 @@ export const SERVICES_LIST: ServiceItem[] = [
   },
   {
     id: 'life-insurance',
-    title: 'Life Insurance & Family Protection',
+    title: 'Life Insurance',
     subtitle: 'Term, Whole Life & Universal Life',
     description: 'Protect your loved ones against life’s unforeseen events. We evaluate Term coverage for temporary liabilities (mortgages, income replacement) and Permanent solutions for lifelong legacy transfer.',
     iconName: 'Shield',
@@ -167,8 +167,8 @@ export const SERVICES_LIST: ServiceItem[] = [
   },
   {
     id: 'living-benefits',
-    title: 'Critical Illness & Disability Insurance',
-    subtitle: 'Living Benefits for Income Security',
+    title: 'Critical Illness & Disability',
+    subtitle: 'Living Benefits & Income Security',
     description: 'A comprehensive financial plan protects your health as vigilantly as your wealth. If illness or accident strikes, living benefits provide immediate tax-free lump-sum capital to protect your household.',
     iconName: 'HeartPulse',
     features: [
@@ -186,7 +186,7 @@ export const SERVICES_LIST: ServiceItem[] = [
   },
   {
     id: 'business-solutions',
-    title: 'Business & Entrepreneur Solutions',
+    title: 'Business & Corporate',
     subtitle: 'Corporate Wealth & Group Protection',
     description: 'Helping Canadian small business owners, professionals, and incorporated entrepreneurs extract passive wealth tax-efficiently and protect essential key employees.',
     iconName: 'Briefcase',

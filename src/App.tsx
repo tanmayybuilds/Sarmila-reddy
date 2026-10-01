@@ -38,11 +38,11 @@ export function AppContent() {
         {/* 1. Hero with Verified Credentials & Direct Calendly CTA */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* 2. Core Purpose & Why - Directly Translating Her Viral Principles */}
-        <WhySection />
-
-        {/* 3. Comprehensive Services (Investments, Life, Living Benefits, Business) */}
+        {/* 2. Comprehensive Services & Category Selector (Investments, Life Insurance, Living Benefits, Business) */}
         <ServicesSection onOpenBooking={handleOpenBooking} />
+
+        {/* 3. Core Purpose & Why - Directly Translating Her Viral Principles */}
+        <WhySection />
 
         {/* 4. Target Canadian Audiences (Immigrants, Professionals, Families, Business) */}
         <AudienceSolutions onOpenBooking={handleOpenBooking} />
