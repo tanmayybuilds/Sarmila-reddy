@@ -172,30 +172,42 @@ export const TestimonialsSection: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Carousel Navigation Arrows */}
+          {/* Desktop-only Flanking Navigation Arrows (hidden on mobile to prevent overlapping card text) */}
           <button
-            id="testimonial-prev-btn"
+            id="testimonial-prev-btn-desktop"
             onClick={prevReview}
             aria-label="Previous testimonial"
-            className="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border shadow-md flex items-center justify-center text-stone-700 hover:scale-110 active:scale-95 transition-all z-10 cursor-pointer"
+            className="hidden md:flex absolute -left-5 lg:-left-7 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border shadow-md items-center justify-center text-stone-700 hover:scale-110 active:scale-95 transition-all z-10 cursor-pointer"
             style={{ borderColor: activeTheme.border }}
           >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
-            id="testimonial-next-btn"
+            id="testimonial-next-btn-desktop"
             onClick={nextReview}
             aria-label="Next testimonial"
-            className="absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border shadow-md flex items-center justify-center text-stone-700 hover:scale-110 active:scale-95 transition-all z-10 cursor-pointer"
+            className="hidden md:flex absolute -right-5 lg:-right-7 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border shadow-md items-center justify-center text-stone-700 hover:scale-110 active:scale-95 transition-all z-10 cursor-pointer"
             style={{ borderColor: activeTheme.border }}
           >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            <ChevronRight className="w-6 h-6" />
           </button>
         </div>
 
-        {/* Carousel Pagination Dots & Play/Pause Controls */}
-        <div className="flex items-center justify-center gap-3 mt-8">
+        {/* Carousel Pagination, Mobile Nav Arrows & Play/Pause Controls */}
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+          {/* Mobile Prev Arrow */}
+          <button
+            id="testimonial-prev-btn-mobile"
+            onClick={prevReview}
+            aria-label="Previous testimonial"
+            className="md:hidden w-10 h-10 rounded-full bg-white border shadow-xs flex items-center justify-center text-stone-700 active:scale-95 transition-transform cursor-pointer"
+            style={{ borderColor: activeTheme.border }}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Dots Indicator */}
           <div className="flex items-center gap-2">
             {TESTIMONIALS.map((_, idx) => (
               <button
@@ -213,13 +225,25 @@ export const TestimonialsSection: React.FC = () => {
             ))}
           </div>
 
+          {/* Mobile Next Arrow */}
+          <button
+            id="testimonial-next-btn-mobile"
+            onClick={nextReview}
+            aria-label="Next testimonial"
+            className="md:hidden w-10 h-10 rounded-full bg-white border shadow-xs flex items-center justify-center text-stone-700 active:scale-95 transition-transform cursor-pointer"
+            style={{ borderColor: activeTheme.border }}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Play / Pause Toggle */}
           <button
             onClick={() => setIsPaused(!isPaused)}
             aria-label={isPaused ? 'Resume autoplay' : 'Pause autoplay'}
-            className="p-1.5 rounded-full text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors ml-2"
+            className="p-2 rounded-full text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors ml-1 sm:ml-2"
             title={isPaused ? 'Resume auto-advance' : 'Pause auto-advance'}
           >
-            {isPaused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}
+            {isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
           </button>
         </div>
 
