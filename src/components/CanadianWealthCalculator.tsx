@@ -201,15 +201,15 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                   </div>
 
                   {/* Quick-tap presets for fast mobile interaction */}
-                  <div className="flex items-center gap-2 mt-2.5 pt-1">
-                    <span className="text-xs text-stone-500 uppercase tracking-wider font-semibold">Quick:</span>
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-2.5 pt-1">
+                    <span className="text-xs text-stone-500 uppercase tracking-wider font-semibold mr-1">Quick:</span>
                     {[200, 500, 1000, 1500].map(amount => (
                       <button
                         key={amount}
                         type="button"
                         onClick={() => setMonthlyContribution(amount)}
-                        className={`text-xs px-3 py-1.5 rounded-full border transition-colors cursor-pointer ${
-                          monthlyContribution === amount ? 'font-bold bg-stone-900 text-white border-stone-900' : 'bg-stone-50 text-stone-600 hover:bg-stone-100 border-stone-200'
+                        className={`text-xs px-3 py-1.5 rounded-full border transition-colors cursor-pointer min-h-[36px] flex items-center justify-center ${
+                          monthlyContribution === amount ? 'font-bold bg-stone-900 text-white border-stone-900' : 'bg-stone-50 text-stone-600 hover:bg-stone-100 border-stone-200 active:bg-stone-200'
                         }`}
                       >
                         ${amount}
