@@ -97,7 +97,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                   >
                     {service.title}
                   </h3>
-                  <p className="text-[10px] sm:text-[11px] text-stone-500 truncate">{service.subtitle}</p>
+                  <p className="text-xs text-stone-500 truncate">{service.subtitle}</p>
                 </div>
               </button>
             );

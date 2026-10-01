@@ -41,17 +41,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-semibold tracking-[0.14em] uppercase border shadow-xs backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-[0.14em] uppercase border shadow-xs backdrop-blur-sm"
               style={{
                 backgroundColor: activeTheme.surface,
                 borderColor: activeTheme.border,
                 color: activeTheme.textDark,
               }}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>Licensed Financial Advisor</span>
               <span className="text-stone-300">•</span>
-              <span className="text-stone-500 font-normal">Canada Coast-to-Coast</span>
+              <span className="text-stone-600 font-normal">Canada Coast-to-Coast</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-sm sm:text-base lg:text-lg text-stone-600 leading-relaxed max-w-2xl font-light"
+              className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl font-light"
             >
               Trusted, independent financial and protection guidance for every chapter of your journey in Canada. From maximizing your first tax-advantaged accounts (TFSA, RRSP, FHSA) to safeguarding family income with living benefits—we replace financial overwhelm with enduring clarity.
             </motion.p>
@@ -86,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1 text-xs sm:text-sm font-medium text-stone-700"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1 text-sm font-medium text-stone-700"
             >
               <div className="flex items-center gap-2.5">
                 <div
@@ -159,8 +159,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </a>
             </motion.div>
 
-            <p className="text-[11px] text-stone-500 flex items-center gap-2 pt-0.5">
-              <Shield className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+            <p className="text-xs sm:text-sm text-stone-600 flex items-center gap-2 pt-0.5">
+              <Shield className="w-4 h-4 text-stone-400 shrink-0" />
               <span>Independent Fiduciary Care • Strictly Confidential • Zero Obligation</span>
             </p>
 
@@ -176,7 +176,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 >
                   <AnimatedCounter value={250} suffix="+" duration={1.5} />
                 </p>
-                <p className="text-[10px] sm:text-xs text-stone-500 font-medium tracking-wide uppercase mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-600 font-medium tracking-wide uppercase mt-0.5">
                   Families Protected
                 </p>
               </div>
@@ -187,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 >
                   <AnimatedCounter value={0} prefix="$" duration={0.8} />
                 </p>
-                <p className="text-[10px] sm:text-xs text-stone-500 font-medium tracking-wide uppercase mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-600 font-medium tracking-wide uppercase mt-0.5">
                   Consultation Fee
                 </p>
               </div>
@@ -198,7 +198,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 >
                   <AnimatedCounter value={10} suffix="+" duration={1.2} />
                 </p>
-                <p className="text-[10px] sm:text-xs text-stone-500 font-medium tracking-wide uppercase mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-600 font-medium tracking-wide uppercase mt-0.5">
                   Top Insurers in Canada
                 </p>
               </div>
@@ -241,12 +241,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
                   {/* Top Subtle Pill */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <div className="px-3 sm:px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-[10px] sm:text-[11px] font-semibold text-stone-900 shadow-xs flex items-center gap-1.5 border border-stone-200/70">
+                    <div className="px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-xs font-semibold text-stone-900 shadow-xs flex items-center gap-1.5 border border-stone-200/70">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                       <span>LLQP Licensed • Canada</span>
                     </div>
 
-                    <div className="px-3 py-1.5 rounded-full bg-stone-900/80 backdrop-blur-md text-[10px] font-medium tracking-wider uppercase text-stone-200">
+                    <div className="px-3.5 py-1.5 rounded-full bg-stone-900/80 backdrop-blur-md text-xs font-medium tracking-wider uppercase text-stone-200">
                       Independent
                     </div>
                   </div>
@@ -256,7 +256,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                     <h3 className="font-serif text-2xl font-bold tracking-tight">
                       Sarmila Reddy
                     </h3>
-                    <p className="text-xs text-stone-200 font-light">
+                    <p className="text-sm text-stone-200 font-light">
                       Financial Advisor & Wealth Strategist
                     </p>
                   </div>
@@ -264,24 +264,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
                 {/* Strategy Call Scheduling Card */}
                 <div className="p-4 sm:p-6 space-y-3.5 sm:space-y-4 text-left">
-                  <div className="flex items-center justify-between text-xs">
+                  <div className="flex items-center justify-between text-xs sm:text-sm">
                     <span className="font-semibold text-stone-800">Discovery Strategy Session:</span>
-                    <span className="font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 text-[11px]">
+                    <span className="font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 text-xs">
                       Complimentary • 30 Min
                     </span>
                   </div>
 
-                  <div className="p-3 sm:p-3.5 rounded-2xl bg-stone-50/80 border border-stone-200/70 text-xs space-y-1">
+                  <div className="p-3.5 sm:p-4 rounded-2xl bg-stone-50/80 border border-stone-200/70 text-xs sm:text-sm space-y-1.5">
                     <div
                       className="flex items-center justify-between font-semibold"
                       style={{ color: activeTheme.textDark }}
                     >
                       <span>Virtual Zoom or Phone</span>
-                      <span className="text-stone-400 font-normal flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> Flexible Times
+                      <span className="text-stone-500 font-normal flex items-center gap-1 text-xs">
+                        <Clock className="w-3.5 h-3.5" /> Flexible Times
                       </span>
                     </div>
-                    <p className="text-stone-500 leading-relaxed text-[11px]">
+                    <p className="text-stone-600 leading-relaxed text-xs sm:text-sm">
                       A pressure-free review of your savings, Canadian registered tax accounts, or family protection gaps.
                     </p>
                   </div>

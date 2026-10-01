@@ -188,7 +188,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
                     </ul>
                   </div>
 
-                  <div className="text-[10px] sm:text-[11px] text-stone-500 italic">
+                  <div className="text-xs sm:text-sm text-stone-500 italic">
                     * All discussions adhere to strict Canadian PIPEDA privacy regulations and professional compliance standards.
                   </div>
                 </div>

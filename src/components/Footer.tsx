@@ -68,13 +68,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 <h4 className="font-serif text-xl font-bold leading-none" style={{ color: activeTheme.textDark }}>
                   Sarmila Reddy
                 </h4>
-                <p className="text-[10px] font-semibold text-stone-500 uppercase tracking-[0.2em] mt-1">
+                <p className="text-xs font-semibold text-stone-500 uppercase tracking-[0.16em] mt-1">
                   Financial Advisory • Canada
                 </p>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-stone-500 leading-relaxed font-light">
+            <p className="text-sm text-stone-600 leading-relaxed font-light">
               Guiding Canadian families, young professionals, new immigrants, and entrepreneurs today for a stronger, confident tomorrow.
             </p>
 
@@ -117,7 +117,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <h5 className="font-serif text-sm font-bold uppercase tracking-wider text-stone-900">
               Navigation
             </h5>
-            <ul className="space-y-2 text-xs text-stone-600">
+            <ul className="space-y-2 text-xs sm:text-sm text-stone-600">
               <li><a href="#services" className="hover:underline">Comprehensive Services</a></li>
               <li><a href="#my-why" className="hover:underline">Beyond Numbers (My Why)</a></li>
               <li><a href="#who-i-help" className="hover:underline">Who I Help Across Canada</a></li>
@@ -133,7 +133,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <h5 className="font-serif text-sm font-bold uppercase tracking-wider text-stone-900">
               Solutions
             </h5>
-            <ul className="space-y-2 text-xs text-stone-600">
+            <ul className="space-y-2 text-xs sm:text-sm text-stone-600">
               <li><span>TFSA & RRSP</span></li>
               <li><span>FHSA (Home Buyers)</span></li>
               <li><span>RESP (Child Education)</span></li>
@@ -149,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <h5 className="font-serif text-sm font-bold uppercase tracking-wider text-stone-900">
               Get in Touch
             </h5>
-            <div className="space-y-2.5 text-xs text-stone-600">
+            <div className="space-y-2.5 text-xs sm:text-sm text-stone-600">
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-stone-400 shrink-0" />
                 <span>British Columbia & Canada-Wide (Virtual)</span>
@@ -168,17 +168,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </div>
             </div>
 
-            <div className="pt-2 text-[11px] text-stone-500">
+            <div className="pt-2 text-xs sm:text-sm text-stone-600">
               <span className="font-semibold text-emerald-700">● Complimentary Consultations</span>
-              <p className="mt-0.5">Zero consultation or hidden discovery fees.</p>
+              <p className="mt-0.5 text-stone-500">Zero consultation or hidden discovery fees.</p>
             </div>
           </div>
         </div>
 
         {/* Regulatory & Compliance Disclaimers */}
         <div className="mt-12 pt-8 border-t space-y-4 text-left" style={{ borderColor: activeTheme.border }}>
-          <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80 text-[11px] text-stone-500 leading-relaxed space-y-2">
-            <p className="font-semibold text-stone-700">
+          <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm text-stone-600 leading-relaxed space-y-2">
+            <p className="font-semibold text-stone-800">
               Canadian Regulatory & Professional Compliance Notice:
             </p>
             <p>
@@ -189,7 +189,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-stone-500">
             <p>© {new Date().getFullYear()} Sarmila Reddy (sarmilareddy.ca). All rights reserved.</p>
 
             <div className="flex items-center gap-4">

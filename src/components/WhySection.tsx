@@ -94,7 +94,7 @@ export const WhySection: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="text-[11px] uppercase tracking-wider font-semibold text-stone-500 mb-1">
+                <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">
                   {pillar.subtitle}
                 </p>
 
@@ -105,13 +105,13 @@ export const WhySection: React.FC = () => {
                   {pillar.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+                <p className="text-sm text-stone-600 leading-relaxed font-light">
                   {pillar.description}
                 </p>
               </div>
 
               <div
-                className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t text-[11px] font-medium flex items-center gap-1.5"
+                className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t text-xs font-medium flex items-center gap-1.5"
                 style={{
                   borderColor: activeTheme.border,
                   color: activeTheme.primary,
@@ -142,7 +142,7 @@ export const WhySection: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Quote className="w-6 h-6 sm:w-8 sm:h-8 opacity-40" style={{ color: activeTheme.primary }} />
                 <span
-                  className="text-xs font-bold uppercase tracking-widest"
+                  className="text-xs sm:text-sm font-bold uppercase tracking-widest"
                   style={{ color: activeTheme.primary }}
                 >
                   The Words That Defined My Career
@@ -169,10 +169,10 @@ export const WhySection: React.FC = () => {
                   style={{ borderColor: activeTheme.accent }}
                 />
                 <div>
-                  <h4 className="font-serif text-sm font-bold" style={{ color: activeTheme.textDark }}>
+                  <h4 className="font-serif text-base font-bold" style={{ color: activeTheme.textDark }}>
                     Sarmila Reddy
                   </h4>
-                  <p className="text-[11px] text-stone-500 font-medium">
+                  <p className="text-xs sm:text-sm text-stone-500 font-medium">
                     Licensed Financial Advisor • Serving Canada
                   </p>
                 </div>

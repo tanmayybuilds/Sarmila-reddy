@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     <header className="sticky top-0 z-40 w-full transition-colors duration-300">
       {/* Top Advisory Verification Ribbon */}
       <div
-        className="w-full text-[11px] sm:text-xs py-2 px-4 border-b transition-colors duration-300"
+        className="w-full text-xs sm:text-sm py-2 px-4 border-b transition-colors duration-300"
         style={{
           backgroundColor: activeTheme.primaryLight,
           color: activeTheme.textDark,
@@ -35,16 +35,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       >
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3">
-            <span className="inline-flex items-center gap-1.5 font-semibold tracking-wider uppercase text-[10px] sm:text-[11px]">
+            <span className="inline-flex items-center gap-1.5 font-semibold tracking-wider uppercase text-xs sm:text-sm">
               <span className="text-red-600 font-normal">🍁</span> Licensed Canadian Financial Advisor
             </span>
             <span className="hidden md:inline text-stone-300">•</span>
-            <span className="hidden md:inline text-stone-500 font-normal text-[11px]">
+            <span className="hidden md:inline text-stone-500 font-normal text-xs sm:text-sm">
               LLQP Certified • Life Insurance & Living Benefits Specialist
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-4 text-xs sm:text-sm">
             <a
               href={`mailto:${ADVISOR_PROFILE.email}`}
               className="hidden lg:flex items-center gap-1.5 hover:underline font-medium"
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </a>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[11px] font-medium text-emerald-800 whitespace-nowrap">
+              <span className="text-xs sm:text-sm font-medium text-emerald-800 whitespace-nowrap">
                 Accepting Canadian Clients
               </span>
             </div>
@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               >
                 Sarmila Reddy
               </span>
-              <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.2em] uppercase text-stone-500 mt-1">
+              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-stone-500 mt-1">
                 Financial Advisory • Canada
               </span>
             </div>

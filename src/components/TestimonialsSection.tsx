@@ -94,7 +94,7 @@ export const TestimonialsSection: React.FC = () => {
                 </div>
 
                 <span
-                  className="text-[10px] sm:text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white border text-stone-600"
+                  className="text-xs font-semibold px-3 py-1 rounded-full bg-white border text-stone-600"
                   style={{ borderColor: activeTheme.border }}
                 >
                   {item.category}

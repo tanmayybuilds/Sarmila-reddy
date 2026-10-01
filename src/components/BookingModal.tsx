@@ -79,7 +79,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
           </div>
           <div className="space-y-1">
             <span
-              className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full inline-block"
+              className="text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full inline-block"
               style={{
                 backgroundColor: activeTheme.badgeBg,
                 color: activeTheme.badgeText,

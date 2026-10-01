@@ -68,7 +68,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
                     {item.step}
                   </span>
                   <span
-                    className="text-[11px] font-bold px-2.5 py-1 rounded-full"
+                    className="text-xs font-bold px-2.5 py-1 rounded-full"
                     style={{
                       backgroundColor: activeTheme.primaryLight,
                       color: activeTheme.primary,
@@ -88,7 +88,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
               </div>
 
               <div
-                className="mt-6 pt-4 border-t text-[11px] font-semibold flex items-center justify-between text-stone-500"
+                className="mt-6 pt-4 border-t text-xs font-semibold flex items-center justify-between text-stone-500"
                 style={{ borderColor: activeTheme.border }}
               >
                 <span>Step {item.step} of 04</span>

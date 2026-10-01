@@ -146,7 +146,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                         }}
                       >
                         <div className="text-sm font-bold">{acc.label}</div>
-                        <div className="text-[10px] text-stone-500">{acc.desc}</div>
+                        <div className="text-xs text-stone-500">{acc.desc}</div>
                       </button>
                     );
                   })}
@@ -157,9 +157,9 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
               <div className="space-y-4 sm:space-y-5">
                 {/* Initial Balance */}
                 <div>
-                  <div className="flex justify-between items-center text-xs mb-1.5">
+                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
                     <span className="font-semibold text-stone-700">Initial Savings / Balance</span>
-                    <span className="font-bold text-stone-900 text-sm">{formatCurrency(initialDeposit)}</span>
+                    <span className="font-bold text-stone-900 text-sm sm:text-base">{formatCurrency(initialDeposit)}</span>
                   </div>
                   <input
                     type="range"
@@ -171,7 +171,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                     className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
                     style={{ accentColor: activeTheme.primary }}
                   />
-                  <div className="flex justify-between text-[10px] text-stone-400 mt-1">
+                  <div className="flex justify-between text-xs text-stone-500 mt-1">
                     <span>$0</span>
                     <span>$25,000</span>
                     <span>$50,000+</span>
@@ -180,9 +180,9 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
 
                 {/* Monthly Contribution with Mobile Quick Presets */}
                 <div>
-                  <div className="flex justify-between items-center text-xs mb-1.5">
+                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
                     <span className="font-semibold text-stone-700">Monthly Contribution</span>
-                    <span className="font-bold text-stone-900 text-sm">{formatCurrency(monthlyContribution)} / mo</span>
+                    <span className="font-bold text-stone-900 text-sm sm:text-base">{formatCurrency(monthlyContribution)} / mo</span>
                   </div>
                   <input
                     type="range"
@@ -194,21 +194,21 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                     className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
                     style={{ accentColor: activeTheme.primary }}
                   />
-                  <div className="flex justify-between text-[10px] text-stone-400 mt-1">
+                  <div className="flex justify-between text-xs text-stone-500 mt-1">
                     <span>$50/mo</span>
                     <span>$1,500/mo</span>
                     <span>$3,000/mo</span>
                   </div>
 
                   {/* Quick-tap presets for fast mobile interaction */}
-                  <div className="flex items-center gap-2 mt-2 pt-1">
-                    <span className="text-[10px] text-stone-400 uppercase tracking-wider font-semibold">Quick:</span>
+                  <div className="flex items-center gap-2 mt-2.5 pt-1">
+                    <span className="text-xs text-stone-500 uppercase tracking-wider font-semibold">Quick:</span>
                     {[200, 500, 1000, 1500].map(amount => (
                       <button
                         key={amount}
                         type="button"
                         onClick={() => setMonthlyContribution(amount)}
-                        className={`text-[11px] px-2.5 py-1 rounded-full border transition-colors cursor-pointer ${
+                        className={`text-xs px-3 py-1.5 rounded-full border transition-colors cursor-pointer ${
                           monthlyContribution === amount ? 'font-bold bg-stone-900 text-white border-stone-900' : 'bg-stone-50 text-stone-600 hover:bg-stone-100 border-stone-200'
                         }`}
                       >
@@ -220,9 +220,9 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
 
                 {/* Years */}
                 <div>
-                  <div className="flex justify-between items-center text-xs mb-1.5">
+                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
                     <span className="font-semibold text-stone-700">Investment Horizon</span>
-                    <span className="font-bold text-stone-900 text-sm">{years} Years</span>
+                    <span className="font-bold text-stone-900 text-sm sm:text-base">{years} Years</span>
                   </div>
                   <input
                     type="range"
@@ -234,7 +234,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                     className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
                     style={{ accentColor: activeTheme.primary }}
                   />
-                  <div className="flex justify-between text-[10px] text-stone-400 mt-1">
+                  <div className="flex justify-between text-xs text-stone-500 mt-1">
                     <span>3 yrs</span>
                     <span>20 yrs</span>
                     <span>35 yrs</span>
@@ -243,9 +243,9 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
 
                 {/* Expected Return */}
                 <div>
-                  <div className="flex justify-between items-center text-xs mb-1.5">
+                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
                     <span className="font-semibold text-stone-700">Estimated Annual Return</span>
-                    <span className="font-bold text-stone-900 text-sm">{rateOfReturn}%</span>
+                    <span className="font-bold text-stone-900 text-sm sm:text-base">{rateOfReturn}%</span>
                   </div>
                   <input
                     type="range"
@@ -257,7 +257,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                     className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
                     style={{ accentColor: activeTheme.primary }}
                   />
-                  <div className="flex justify-between text-[10px] text-stone-400 mt-1">
+                  <div className="flex justify-between text-xs text-stone-500 mt-1">
                     <span>3% (Conservative)</span>
                     <span>7% (Balanced)</span>
                     <span>11% (Aggressive)</span>
@@ -309,12 +309,12 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                     title="Compound Growth"
                   />
                 </div>
-                <div className="flex justify-between text-[11px] text-stone-500 flex-wrap gap-1">
-                  <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-stone-400" /> Contributed: {formatCurrency(calculations.totalContributed)}
+                <div className="flex justify-between text-xs sm:text-sm text-stone-600 flex-wrap gap-1">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-stone-400" /> Contributed: {formatCurrency(calculations.totalContributed)}
                   </span>
-                  <span className="flex items-center gap-1 font-semibold" style={{ color: activeTheme.primary }}>
-                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: activeTheme.primary }} />
+                  <span className="flex items-center gap-1.5 font-semibold" style={{ color: activeTheme.primary }}>
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: activeTheme.primary }} />
                     Growth: {formatCurrency(calculations.compoundGrowth)}
                   </span>
                 </div>
@@ -322,11 +322,11 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
 
               {/* Estimated Canadian Tax Shelter Savings */}
               <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-stone-200/80 space-y-1">
-                <div className="flex items-center justify-between text-xs">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <span className="font-semibold text-stone-700">Estimated Canadian Tax Advantage:</span>
                   <span className="font-bold text-emerald-700">+{formatCurrency(calculations.taxSaved)}</span>
                 </div>
-                <p className="text-[11px] text-stone-500 leading-tight">
+                <p className="text-xs text-stone-500 leading-tight">
                   Taxes sheltered through registered Canadian accounts vs. paying regular capital gains or income tax.
                 </p>
               </div>
@@ -345,7 +345,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                   <Sparkles className="w-4 h-4 shrink-0" />
                   <span>Turn This Projection Into Reality</span>
                 </button>
-                <p className="text-center text-[10px] text-stone-400">
+                <p className="text-center text-xs text-stone-500">
                   * For educational modeling purposes. Returns are not guaranteed.
                 </p>
               </div>

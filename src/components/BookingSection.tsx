@@ -120,38 +120,38 @@ export const BookingSection: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 right-3 text-white flex items-center justify-between">
-                <span className="text-[11px] font-medium bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                <span className="text-xs font-medium bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
                   Virtual & In-Person Sessions
                 </span>
-                <span className="text-[11px] font-semibold text-emerald-300">
+                <span className="text-xs font-semibold text-emerald-300">
                   100% Free
                 </span>
               </div>
             </div>
 
             <div className="space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block">
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block">
                 Instant Online Booking
               </span>
               <h3 className="font-serif text-2xl font-bold" style={{ color: activeTheme.textDark }}>
                 Book on Sarmila’s Calendar
               </h3>
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+              <p className="text-sm text-stone-600 leading-relaxed font-light">
                 Direct integration with Calendly. Pick an open slot that fits your schedule, and receive an instant Zoom meeting link.
               </p>
             </div>
 
             {/* Calendly Details Box */}
             <div className="space-y-3 p-4 rounded-2xl bg-white border border-stone-200/80 shadow-xs">
-              <div className="flex items-center gap-3 text-xs text-stone-700">
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
                 <Clock className="w-4 h-4 text-stone-400 shrink-0" />
                 <span>30 Minutes • Confidential Strategy Call</span>
               </div>
-              <div className="flex items-center gap-3 text-xs text-stone-700">
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
                 <Video className="w-4 h-4 text-stone-400 shrink-0" />
                 <span>Web conferencing details provided upon confirmation</span>
               </div>
-              <div className="flex items-center gap-3 text-xs text-stone-700">
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
                 <Shield className="w-4 h-4 text-stone-400 shrink-0" />
                 <span>100% Free • No out-of-pocket fees or obligation</span>
               </div>
@@ -171,13 +171,13 @@ export const BookingSection: React.FC = () => {
                 <ExternalLink className="w-4 h-4" />
               </a>
 
-              <p className="text-center text-[11px] text-stone-500">
+              <p className="text-center text-xs text-stone-500">
                 Direct calendar link for verified booking.
               </p>
             </div>
 
-            <div className="pt-4 border-t text-xs text-stone-500 space-y-1" style={{ borderColor: activeTheme.border }}>
-              <p className="font-semibold text-stone-700">Questions before booking?</p>
+            <div className="pt-4 border-t text-xs sm:text-sm text-stone-600 space-y-1" style={{ borderColor: activeTheme.border }}>
+              <p className="font-semibold text-stone-800">Questions before booking?</p>
               <p>Email: <a href={`mailto:${ADVISOR_PROFILE.email}`} className="font-medium underline text-stone-800">{ADVISOR_PROFILE.email}</a></p>
               <p>Instagram: <a href={`https://instagram.com/${ADVISOR_PROFILE.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="font-medium underline text-stone-800">{ADVISOR_PROFILE.instagram}</a></p>
             </div>
@@ -223,14 +223,14 @@ export const BookingSection: React.FC = () => {
                   <h3 className="font-serif text-xl sm:text-2xl font-bold" style={{ color: activeTheme.textDark }}>
                     Send an Inquiry or Quote Request
                   </h3>
-                  <p className="text-xs text-stone-500 mt-1">
+                  <p className="text-sm text-stone-500 mt-1">
                     Prefer email or phone? Fill out this quick form and Sarmila will connect with you.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
                       Full Name *
                     </label>
                     <input
@@ -245,7 +245,7 @@ export const BookingSection: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
                       Email Address *
                     </label>
                     <input
@@ -262,7 +262,7 @@ export const BookingSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
                       Phone Number *
                     </label>
                     <input
@@ -277,7 +277,7 @@ export const BookingSection: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
                       Province / Territory *
                     </label>
                     <select
@@ -297,7 +297,7 @@ export const BookingSection: React.FC = () => {
 
                 {/* Topics of Interest */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">
+                  <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-2">
                     What would you like to focus on? (Select all that apply)
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -308,7 +308,7 @@ export const BookingSection: React.FC = () => {
                           key={topic}
                           type="button"
                           onClick={() => handleTopicToggle(topic)}
-                          className={`p-2 rounded-xl border text-left text-xs transition-all flex items-center gap-2 ${
+                          className={`p-2.5 rounded-xl border text-left text-xs sm:text-sm transition-all flex items-center gap-2.5 ${
                             isSelected ? 'font-semibold' : 'text-stone-600 hover:bg-stone-50'
                           }`}
                           style={{
@@ -333,7 +333,7 @@ export const BookingSection: React.FC = () => {
 
                 {/* Notes */}
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">
+                  <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
                     Optional Notes or Specific Questions
                   </label>
                   <textarea
@@ -356,7 +356,7 @@ export const BookingSection: React.FC = () => {
                   <span>Submit Consultation Request</span>
                 </button>
 
-                <p className="text-[11px] text-stone-400 text-center">
+                <p className="text-xs text-stone-500 text-center">
                   🔒 We respect your privacy. Your information is never sold or shared.
                 </p>
               </form>

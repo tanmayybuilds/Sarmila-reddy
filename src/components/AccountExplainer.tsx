@@ -80,14 +80,14 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
 
                 <div className="space-y-2 pt-2 text-xs sm:text-sm text-stone-600">
                   <div>
-                    <span className="font-semibold text-stone-800 text-[11px] sm:text-xs uppercase tracking-wider block mb-0.5">
+                    <span className="font-semibold text-stone-800 text-xs uppercase tracking-wider block mb-0.5">
                       Tax Advantage:
                     </span>
                     <p className="leading-snug">{acc.taxTreatment}</p>
                   </div>
 
                   <div>
-                    <span className="font-semibold text-stone-800 text-[11px] sm:text-xs uppercase tracking-wider block mb-0.5">
+                    <span className="font-semibold text-stone-800 text-xs uppercase tracking-wider block mb-0.5">
                       Best Suited For:
                     </span>
                     <p className="leading-snug">{acc.bestFor}</p>
