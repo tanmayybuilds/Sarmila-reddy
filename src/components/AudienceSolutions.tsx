@@ -41,7 +41,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
           className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-14"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -60,7 +60,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Financial guidance isn’t one-size-fits-all. Each chapter of life in Canada carries distinct CRA tax rules, residency considerations, and family responsibilities.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
                 id={`audience-pill-${audience.id}`}
                 onClick={() => setActiveTab(audience.id)}
                 className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 border cursor-pointer min-h-[44px] ${
-                  isSelected ? 'shadow-md scale-102 ring-1' : 'hover:bg-stone-50 text-stone-600 active:scale-98'
+                  isSelected ? 'scale-102 border-2' : 'hover:bg-stone-50 text-stone-600 active:scale-98'
                 }`}
                 style={{
                   backgroundColor: isSelected ? activeTheme.primary : '#FFFFFF',
@@ -98,7 +98,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
-            className="rounded-2xl sm:rounded-3xl border p-5 sm:p-10 lg:p-12 transition-all duration-300 shadow-sm text-left"
+            className="rounded-2xl sm:rounded-3xl border p-5 sm:p-10 lg:p-12 transition-all duration-300 text-left"
             style={{
               backgroundColor: activeTheme.bgLight,
               borderColor: activeTheme.border,
@@ -107,19 +107,13 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                 <div className="space-y-2">
-                  <span
-                    className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                    style={{
-                      backgroundColor: activeTheme.badgeBg,
-                      color: activeTheme.badgeText,
-                    }}
-                  >
-                    {currentAudience.subtitle}
-                  </span>
-
                   <h3 className="font-serif text-2xl sm:text-3xl font-bold" style={{ color: activeTheme.textDark }}>
                     Financial Strategy for {currentAudience.title}
                   </h3>
+
+                  <p className="text-xs font-semibold text-stone-700 tracking-wide">
+                    Focus: {currentAudience.subtitle}
+                  </p>
 
                   <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
                     {currentAudience.description}
@@ -145,7 +139,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
                   <button
                     id={`book-audience-${currentAudience.id}-btn`}
                     onClick={onOpenBooking}
-                    className="inline-flex items-center justify-center gap-2 min-h-[48px] w-full sm:w-auto px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase text-white shadow-md transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 min-h-[48px] w-full sm:w-auto px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
                     style={{ backgroundColor: activeTheme.primary }}
                   >
                     <span>Book Strategy Call for {currentAudience.title}</span>
@@ -154,43 +148,38 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
                 </div>
               </div>
 
-              {/* Right: Informational Box */}
-              <div className="lg:col-span-5">
-                <div
-                  className="p-6 sm:p-8 rounded-2xl bg-white border shadow-sm space-y-4 sm:space-y-5 text-left"
-                  style={{ borderColor: activeTheme.border }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="p-2.5 sm:p-3 rounded-xl shrink-0"
-                      style={{
-                        backgroundColor: activeTheme.primaryLight,
-                        color: activeTheme.primary,
-                      }}
-                    >
-                      {getIcon(currentAudience.icon)}
-                    </div>
-                    <div>
-                      <h4 className="font-serif text-base sm:text-lg font-bold" style={{ color: activeTheme.textDark }}>
-                        The {currentAudience.title} Roadmap
-                      </h4>
-                      <p className="text-xs text-stone-500">Customized step-by-step strategy</p>
-                    </div>
+              {/* Right: Informational Pane with Clean Vertical Divider */}
+              <div className="lg:col-span-5 pt-6 lg:pt-0 lg:pl-10 lg:border-l border-stone-200/80 space-y-5 text-left">
+                <div className="flex items-center gap-3">
+                  <div
+                    className="p-2.5 sm:p-3 rounded-xl shrink-0"
+                    style={{
+                      backgroundColor: activeTheme.primaryLight,
+                      color: activeTheme.primary,
+                    }}
+                  >
+                    {getIcon(currentAudience.icon)}
                   </div>
+                  <div>
+                    <h4 className="font-serif text-base sm:text-lg font-bold" style={{ color: activeTheme.textDark }}>
+                      The {currentAudience.title} Roadmap
+                    </h4>
+                    <p className="text-xs text-stone-500">Customized step-by-step strategy</p>
+                  </div>
+                </div>
 
-                  <div className="p-3.5 sm:p-4 rounded-xl bg-stone-50 border border-stone-100 text-xs text-stone-600 space-y-2">
-                    <p className="font-semibold text-stone-800">What to expect in your session:</p>
-                    <ul className="list-disc pl-4 space-y-1 text-stone-600 leading-relaxed">
-                      <li>30-minute confidential 1-on-1 virtual or phone session</li>
-                      <li>Audit of your current accounts, insurance & cashflow</li>
-                      <li>Zero sales jargon, zero hidden fees, zero pressure</li>
-                      <li>Clear customized PDF blueprint tailored to Canada</li>
-                    </ul>
-                  </div>
+                <div className="py-3.5 border-y border-stone-100 text-xs text-stone-600 space-y-2">
+                  <p className="font-semibold text-stone-800">What to expect in your session:</p>
+                  <ul className="list-disc pl-4 space-y-1 text-stone-600 leading-relaxed">
+                    <li>30-minute confidential 1-on-1 virtual or phone session</li>
+                    <li>Audit of your current accounts, insurance & cashflow</li>
+                    <li>Zero sales jargon, zero hidden fees, zero pressure</li>
+                    <li>Clear customized PDF blueprint tailored to Canada</li>
+                  </ul>
+                </div>
 
-                  <div className="text-xs sm:text-sm text-stone-500 italic">
-                    * All discussions adhere to strict Canadian PIPEDA privacy regulations and professional compliance standards.
-                  </div>
+                <div className="text-xs sm:text-sm text-stone-500 italic">
+                  * All discussions adhere to strict Canadian PIPEDA privacy regulations and professional compliance standards.
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
   return (
     <section
-      className="relative overflow-hidden pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-24 transition-colors duration-500"
+      className="relative overflow-x-clip pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-24 transition-colors duration-500"
       style={{ backgroundColor: activeTheme.bgLight }}
     >
       {/* Subtle Background Lighting */}
@@ -41,17 +41,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-[0.14em] uppercase border shadow-xs backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium border"
               style={{
-                backgroundColor: activeTheme.surface,
+                backgroundColor: '#FFFFFF',
                 borderColor: activeTheme.border,
                 color: activeTheme.textDark,
               }}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Licensed Financial Advisor</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
+              <span className="font-semibold">Licensed Financial Advisor</span>
               <span className="text-stone-300">•</span>
-              <span className="text-stone-600 font-normal">Canada Coast-to-Coast</span>
+              <span className="text-stone-600">Serving Canada Coast-to-Coast</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -64,7 +64,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             >
               Guiding you today for a{' '}
               <span
-                className="relative inline-block italic font-serif font-normal"
+                className="relative inline-block font-serif font-bold"
                 style={{ color: activeTheme.primary }}
               >
                 stronger tomorrow.
@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl font-light"
+              className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-xl font-light"
             >
               Trusted, independent financial and protection guidance for every chapter of your journey in Canada. From maximizing your first tax-advantaged accounts (TFSA, RRSP, FHSA) to safeguarding family income with living benefits—we replace financial overwhelm with enduring clarity.
             </motion.p>
@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <button
                 id="hero-book-consultation-btn"
                 onClick={onOpenBooking}
-                className="whitespace-nowrap inline-flex items-center justify-center gap-2.5 min-h-[48px] px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase text-white shadow-md transition-all duration-300 hover:shadow-lg hover:brightness-110 active:scale-95 cursor-pointer"
+                className="whitespace-nowrap inline-flex items-center justify-center gap-2.5 min-h-[48px] px-8 py-3.5 sm:py-4 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:brightness-110 active:scale-95 cursor-pointer"
                 style={{
                   backgroundColor: activeTheme.primary,
                 }}
@@ -147,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
               <a
                 href="#calculator"
-                className="whitespace-nowrap inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase border transition-all duration-200 hover:bg-white shadow-xs cursor-pointer"
+                className="whitespace-nowrap inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 sm:py-4 rounded-full text-sm font-semibold border transition-all duration-200 hover:bg-white cursor-pointer"
                 style={{
                   borderColor: activeTheme.border,
                   color: activeTheme.textDark,
@@ -176,7 +176,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 >
                   <AnimatedCounter value={250} suffix="+" duration={1.5} />
                 </p>
-                <p className="text-xs sm:text-sm text-stone-600 font-medium tracking-wide uppercase mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-600 font-medium mt-0.5">
                   Families Protected
                 </p>
               </div>
@@ -187,7 +187,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 >
                   <AnimatedCounter value={0} prefix="$" duration={0.8} />
                 </p>
-                <p className="text-xs sm:text-sm text-stone-600 font-medium tracking-wide uppercase mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-600 font-medium mt-0.5">
                   Consultation Fee
                 </p>
               </div>
@@ -198,7 +198,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 >
                   <AnimatedCounter value={10} suffix="+" duration={1.2} />
                 </p>
-                <p className="text-xs sm:text-sm text-stone-600 font-medium tracking-wide uppercase mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-600 font-medium mt-0.5">
                   Top Insurers in Canada
                 </p>
               </div>
@@ -221,14 +221,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
               {/* Main Card Container */}
               <div
-                className="relative rounded-3xl overflow-hidden border shadow-lg transition-all duration-300"
+                className="relative rounded-3xl overflow-hidden border transition-all duration-300"
                 style={{
                   backgroundColor: '#FFFFFF',
                   borderColor: activeTheme.border,
                 }}
               >
                 {/* Visual Editorial Portrait Area with real photo */}
-                <div className="relative aspect-[4/4.8] overflow-hidden bg-stone-100">
+                <div className="relative aspect-[4/4.8] overflow-hidden bg-stone-950">
                   <img
                     src={ADVISOR_PROFILE.images.hero}
                     alt="Sarmila Reddy - Licensed Financial Advisor Canada"
@@ -236,42 +236,42 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                     loading="eager"
                   />
 
-                  {/* Gentle Natural Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15 pointer-events-none" />
+                  {/* High-Contrast Gradient Vignette for Guaranteed Legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 pointer-events-none" />
 
                   {/* Top Subtle Pill */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <div className="px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-xs font-semibold text-stone-900 shadow-xs flex items-center gap-1.5 border border-stone-200/70">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                    <div className="px-3 py-1 rounded-full bg-white text-xs font-medium text-stone-900 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
                       <span>LLQP Licensed • Canada</span>
                     </div>
 
-                    <div className="px-3.5 py-1.5 rounded-full bg-stone-900/80 backdrop-blur-md text-xs font-medium tracking-wider uppercase text-stone-200">
-                      Independent
+                    <div className="px-3 py-1 rounded-full bg-stone-900 text-xs font-medium text-white">
+                      Independent Practice
                     </div>
                   </div>
+                </div>
 
-                  {/* Bottom Text inside Photo Frame */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white space-y-0.5">
-                    <h3 className="font-serif text-2xl font-bold tracking-tight">
-                      Sarmila Reddy
-                    </h3>
-                    <p className="text-sm text-stone-200 font-light">
-                      Financial Advisor & Wealth Strategist
-                    </p>
-                  </div>
+                {/* Authoritative Solid Identity Bar (100% WCAG AAA Compliant Contrast) */}
+                <div className="px-5 py-4 bg-stone-950 text-white space-y-0.5 text-left">
+                  <h2 className="font-serif text-2xl font-bold tracking-tight text-white">
+                    Sarmila Reddy
+                  </h2>
+                  <p className="text-xs sm:text-sm text-stone-300 font-medium">
+                    Licensed Financial Advisor & Wealth Strategist
+                  </p>
                 </div>
 
                 {/* Strategy Call Scheduling Card */}
                 <div className="p-4 sm:p-6 space-y-3.5 sm:space-y-4 text-left">
                   <div className="flex items-center justify-between text-xs sm:text-sm">
                     <span className="font-semibold text-stone-800">Discovery Strategy Session:</span>
-                    <span className="font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 text-xs">
+                    <span className="font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full text-xs">
                       Complimentary • 30 Min
                     </span>
                   </div>
 
-                  <div className="p-3.5 sm:p-4 rounded-2xl bg-stone-50/80 border border-stone-200/70 text-xs sm:text-sm space-y-1.5">
+                  <div className="py-2.5 border-t border-b border-stone-100 text-xs sm:text-sm space-y-1">
                     <div
                       className="flex items-center justify-between font-semibold"
                       style={{ color: activeTheme.textDark }}
@@ -289,7 +289,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   <button
                     id="hero-card-book-now-btn"
                     onClick={onOpenBooking}
-                    className="w-full min-h-[48px] py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white shadow-sm transition-all duration-200 hover:brightness-110 flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                    className="w-full min-h-[48px] py-3.5 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:brightness-110 flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                     style={{ backgroundColor: activeTheme.primary }}
                   >
                     <Calendar className="w-4 h-4" />

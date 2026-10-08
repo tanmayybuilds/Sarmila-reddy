@@ -65,14 +65,14 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
               transition={{ delay: 0.2, duration: 0.4 }}
               className="space-y-1.5"
             >
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/70 text-[11px] font-semibold uppercase tracking-widest text-amber-900">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/70 text-xs font-semibold text-amber-900">
                 <span>🍁</span>
                 <span>Licensed Canadian Advisor</span>
               </div>
               <h1 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
                 Sarmila Reddy
               </h1>
-              <p className="text-xs sm:text-sm text-stone-500 font-light tracking-wide">
+              <p className="text-xs sm:text-sm text-stone-500 font-light">
                 Plan Smart • Live Confident • Build Your Legacy
               </p>
             </motion.div>
@@ -92,7 +92,7 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
                   transition={{ ease: 'easeInOut', duration: 0.4 }}
                 />
               </div>
-              <div className="flex justify-between items-center text-[11px] font-medium text-stone-400 uppercase tracking-widest">
+              <div className="flex justify-between items-center text-xs font-medium text-stone-500">
                 <span>Curating Strategy</span>
                 <span>{progress}%</span>
               </div>

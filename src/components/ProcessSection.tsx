@@ -23,7 +23,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
           className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -42,7 +42,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Here is what working with an independent licensed financial advisor looks like—from our first conversation to long-term generational wealth.
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 sm:p-7 rounded-3xl bg-white border shadow-xs transition-all duration-300 hover:shadow-md hover:-translate-y-1 relative flex flex-col justify-between"
+              className="p-6 sm:p-7 rounded-3xl bg-white border transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between"
               style={{ borderColor: activeTheme.border }}
             >
               <div className="space-y-3 sm:space-y-4">
@@ -109,7 +109,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
           <button
             id="process-start-journey-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center justify-center gap-2.5 min-h-[48px] w-full sm:w-auto px-8 py-4 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase text-white shadow-lg transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2.5 min-h-[48px] w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
             style={{ backgroundColor: activeTheme.primary }}
           >
             <Calendar className="w-4 h-4" />

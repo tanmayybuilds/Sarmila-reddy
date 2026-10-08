@@ -24,7 +24,7 @@ export const FAQSection: React.FC = () => {
           className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-14"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -44,7 +44,7 @@ export const FAQSection: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
+          <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Everything you need to know about working with a licensed Canadian financial advisor, registered tax accounts, and protecting your family.
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ export const FAQSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="rounded-2xl border bg-white overflow-hidden transition-all shadow-xs"
+                className="rounded-2xl border bg-white overflow-hidden transition-all"
                 style={{
                   borderColor: isOpen ? activeTheme.primary : activeTheme.border,
                 }}
@@ -68,6 +68,8 @@ export const FAQSection: React.FC = () => {
                 <button
                   type="button"
                   id={`faq-toggle-${index}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                   onClick={() => toggleAccordion(index)}
                   className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 transition-colors cursor-pointer min-h-[48px]"
                   style={{
@@ -94,6 +96,9 @@ export const FAQSection: React.FC = () => {
                   {isOpen && (
                     <motion.div
                       key="content"
+                      id={`faq-answer-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-toggle-${index}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

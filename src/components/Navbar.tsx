@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       >
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3">
-            <span className="inline-flex items-center gap-1.5 font-semibold tracking-wider uppercase text-xs sm:text-sm">
+            <span className="inline-flex items-center gap-1.5 font-semibold text-xs sm:text-sm">
               <span className="text-red-600 font-normal">🍁</span> Licensed Canadian Financial Advisor
             </span>
             <span className="hidden md:inline text-stone-300">•</span>
@@ -54,8 +54,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <span>{ADVISOR_PROFILE.email}</span>
             </a>
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs sm:text-sm font-medium text-emerald-800 whitespace-nowrap">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
+              <span className="text-xs sm:text-sm font-semibold text-emerald-900 whitespace-nowrap">
                 Accepting Canadian Clients
               </span>
             </div>
@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
       {/* Main Luxury Navigation Bar */}
       <nav
-        className="w-full backdrop-blur-md border-b transition-colors duration-300 shadow-xs"
+        className="w-full backdrop-blur-md border-b transition-colors duration-300"
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.96)',
           borderColor: activeTheme.border,
@@ -74,9 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
           {/* Refined Brand Signature Mark */}
           <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border p-0.5 bg-white shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0 flex items-center justify-center"
-              style={{ borderColor: activeTheme.accent }}
-            >
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden p-0.5 bg-white transition-transform duration-300 group-hover:scale-105 shrink-0 flex items-center justify-center">
               <img
                 src={ADVISOR_PROFILE.images.logo}
                 alt="Sarmila Reddy - Financial Advisor"
@@ -90,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               >
                 Sarmila Reddy
               </span>
-              <span className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-stone-500 mt-1">
+              <span className="text-[11px] sm:text-xs font-medium text-stone-500 mt-0.5">
                 Financial Advisory • Canada
               </span>
             </div>
@@ -119,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <button
               id="nav-book-consultation-btn"
               onClick={onOpenBooking}
-              className="whitespace-nowrap inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all duration-300 shadow-sm hover:shadow-md hover:brightness-110 active:scale-95"
+              className="whitespace-nowrap inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white transition-all duration-300 hover:brightness-110 active:scale-95"
               style={{
                 backgroundColor: activeTheme.primary,
               }}
@@ -134,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <button
               id="mobile-book-header-btn"
               onClick={onOpenBooking}
-              className="px-3 py-2 rounded-full text-white text-xs font-semibold tracking-wider uppercase sm:hidden flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded-full text-white text-xs font-semibold sm:hidden flex items-center gap-1.5"
               style={{ backgroundColor: activeTheme.primary }}
               title="Book Call"
             >
@@ -189,7 +187,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                     setMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full min-h-[46px] py-3.5 rounded-full text-center text-xs font-semibold tracking-wider uppercase text-white shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98 transition-transform"
+                  className="w-full min-h-[46px] py-3.5 rounded-full text-center text-sm font-semibold text-white flex items-center justify-center gap-2 cursor-pointer active:scale-98 transition-transform"
                   style={{ backgroundColor: activeTheme.primary }}
                 >
                   <Calendar className="w-4 h-4" />

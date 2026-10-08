@@ -14,16 +14,14 @@ export const ColorProfileSwitcher: React.FC = () => {
         <button
           id="color-palette-floating-button"
           onClick={() => setIsOpen(prev => !prev)}
-          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full shadow-lg border backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border bg-white/95 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
             borderColor: activeTheme.border,
-            boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)',
           }}
           title="Customize light color profile"
         >
           <div
-            className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border border-black/10 shadow-inner"
+            className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full shrink-0"
             style={{ backgroundColor: activeTheme.primary }}
           />
           <span className="text-[11px] sm:text-xs font-semibold tracking-wide hidden xs:inline" style={{ color: activeTheme.textDark }}>
@@ -38,7 +36,7 @@ export const ColorProfileSwitcher: React.FC = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm animate-fade-in">
           <div
             id="color-palette-modal"
-            className="relative w-full max-w-lg p-6 rounded-2xl shadow-2xl border transition-all"
+            className="relative w-full max-w-lg p-6 rounded-2xl border transition-all"
             style={{
               backgroundColor: '#FFFFFF',
               borderColor: activeTheme.border,
@@ -98,7 +96,7 @@ export const ColorProfileSwitcher: React.FC = () => {
                       setThemeId(theme.id as ColorThemeId);
                     }}
                     className={`w-full text-left p-3.5 rounded-xl border transition-all flex items-center justify-between ${
-                      isSelected ? 'ring-2 ring-offset-2' : 'hover:bg-stone-50'
+                      isSelected ? 'border-2 font-bold' : 'hover:bg-stone-50'
                     }`}
                     style={{
                       borderColor: isSelected ? theme.primary : '#E5E7EB',
@@ -109,15 +107,15 @@ export const ColorProfileSwitcher: React.FC = () => {
                       {/* Color dots preview */}
                       <div className="flex -space-x-1">
                         <span
-                          className="w-6 h-6 rounded-full border-2 border-white shadow-sm"
+                          className="w-6 h-6 rounded-full border-2 border-white"
                           style={{ backgroundColor: theme.primary }}
                         />
                         <span
-                          className="w-6 h-6 rounded-full border-2 border-white shadow-sm"
+                          className="w-6 h-6 rounded-full border-2 border-white"
                           style={{ backgroundColor: theme.accent }}
                         />
                         <span
-                          className="w-6 h-6 rounded-full border-2 border-white shadow-sm"
+                          className="w-6 h-6 rounded-full border-2 border-white"
                           style={{ backgroundColor: theme.bgLight }}
                         />
                       </div>
@@ -128,7 +126,7 @@ export const ColorProfileSwitcher: React.FC = () => {
                           </span>
                           {isSelected && (
                             <span
-                              className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full"
+                              className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                               style={{
                                 backgroundColor: theme.primary,
                                 color: '#FFFFFF',
@@ -164,7 +162,7 @@ export const ColorProfileSwitcher: React.FC = () => {
               <button
                 id="confirm-color-selection-btn"
                 onClick={() => setIsOpen(false)}
-                className="px-5 py-2 rounded-xl text-xs font-semibold text-white transition-opacity hover:opacity-90 shadow-sm"
+                className="px-5 py-2 rounded-xl text-xs font-semibold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: activeTheme.primary }}
               >
                 Apply & Continue Browsing

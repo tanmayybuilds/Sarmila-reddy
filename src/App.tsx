@@ -17,7 +17,6 @@ import { ColorProfileSwitcher } from './components/ColorProfileSwitcher';
 import { BookingModal } from './components/BookingModal';
 import { MobileStickyCTA } from './components/MobileStickyCTA';
 
-import { PageLoader } from './components/PageLoader';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 
 export function AppContent() {
@@ -33,9 +32,6 @@ export function AppContent() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans transition-colors duration-500 overflow-x-hidden selection:bg-amber-100 selection:text-amber-900">
-      {/* Editorial Luxury Page Loader */}
-      <PageLoader />
-
       {/* Top Scroll Indicator */}
       <ScrollProgressBar />
 

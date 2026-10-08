@@ -34,7 +34,7 @@ export const MobileStickyCTA: React.FC<MobileStickyCTAProps> = ({ onOpenBooking 
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/95 backdrop-blur-md border-t shadow-2xl md:hidden pb-safe"
+          className="fixed bottom-0 left-0 right-0 z-40 p-3 bg-white/95 backdrop-blur-md border-t md:hidden pb-safe"
           style={{ borderColor: activeTheme.border }}
         >
           <div className="flex items-center gap-2 max-w-md mx-auto">
@@ -52,7 +52,7 @@ export const MobileStickyCTA: React.FC<MobileStickyCTAProps> = ({ onOpenBooking 
             <button
               id="mobile-sticky-book-btn"
               onClick={onOpenBooking}
-              className="flex-1 flex items-center justify-center gap-2 h-11 px-4 rounded-full text-xs font-semibold tracking-wider uppercase text-white shadow-md active:scale-98 transition-transform"
+              className="flex-1 flex items-center justify-center gap-2 h-11 px-4 rounded-full text-xs sm:text-sm font-semibold text-white active:scale-98 transition-transform"
               style={{ backgroundColor: activeTheme.primary }}
             >
               <Calendar className="w-4 h-4 shrink-0" />

@@ -23,7 +23,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
           className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -42,7 +42,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             The Canadian government offers some of the world's most powerful tax shelters. Here is how we strategically stack them to protect your money from unnecessary taxation.
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
+              className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
               style={{
                 backgroundColor: activeTheme.bgLight,
                 borderColor: activeTheme.border,
@@ -73,30 +73,30 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
                     </span>
                     <p className="text-xs font-semibold text-stone-700">{acc.fullName}</p>
                   </div>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-white border text-stone-700 shadow-2xs">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-stone-100 text-stone-700">
                     {acc.annualLimit}
                   </span>
                 </div>
 
                 <div className="space-y-2 pt-2 text-xs sm:text-sm text-stone-600">
                   <div>
-                    <span className="font-semibold text-stone-800 text-xs uppercase tracking-wider block mb-0.5">
+                    <span className="font-semibold text-stone-800 text-xs block mb-0.5">
                       Tax Advantage:
                     </span>
                     <p className="leading-snug">{acc.taxTreatment}</p>
                   </div>
 
                   <div>
-                    <span className="font-semibold text-stone-800 text-xs uppercase tracking-wider block mb-0.5">
+                    <span className="font-semibold text-stone-800 text-xs block mb-0.5">
                       Best Suited For:
                     </span>
                     <p className="leading-snug">{acc.bestFor}</p>
                   </div>
                 </div>
 
-                {/* Pro-Tip Box */}
+                {/* Pro-Tip with Clean Divider */}
                 <div
-                  className="p-3.5 rounded-xl bg-white border border-stone-200/80 text-xs flex items-start gap-2.5 shadow-2xs"
+                  className="pt-3 border-t border-stone-200/70 text-xs flex items-start gap-2.5"
                 >
                   <Lightbulb className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
                   <p className="text-stone-600 leading-relaxed">

@@ -18,7 +18,7 @@ export const ScrollProgressBar: React.FC = () => {
         backgroundColor: activeTheme.primary,
         transformOrigin: '0%',
       }}
-      className="fixed top-0 left-0 right-0 h-[3px] z-50 pointer-events-none shadow-sm"
+      className="fixed top-0 left-0 right-0 h-[3px] z-50 pointer-events-none"
     />
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { ADVISOR_PROFILE } from '../data/content';
-import { Calendar, Clock, Video, CheckCircle2, Shield, ExternalLink, Send, Sparkles } from 'lucide-react';
+import { Calendar, Clock, Video, CheckCircle2, Shield, ExternalLink, Send, Sparkles, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { motion } from 'motion/react';
 
@@ -32,20 +32,20 @@ export const BookingSection: React.FC = () => {
   ];
 
   const financialTopics = [
-    'TFSA / RRSP / FHSA Accounts',
-    'Life Insurance (Term or Whole)',
-    'Critical Illness & Disability',
-    'RESP (Children’s Education)',
-    'New Immigrant Financial Setup',
-    'Business / Corporate Solutions',
+    { id: 'TFSA / RRSP / FHSA Accounts', label: 'TFSA & RRSP Wealth' },
+    { id: 'Life Insurance (Term or Whole)', label: 'Life Insurance' },
+    { id: 'Critical Illness & Disability', label: 'Living Benefits' },
+    { id: 'RESP (Children’s Education)', label: 'RESP Education' },
+    { id: 'New Immigrant Financial Setup', label: 'Newcomer Setup' },
+    { id: 'Business / Corporate Solutions', label: 'Corporate & Business' },
   ];
 
-  const handleTopicToggle = (topic: string) => {
+  const handleTopicToggle = (topicId: string) => {
     setFormData(prev => ({
       ...prev,
-      topics: prev.topics.includes(topic)
-        ? prev.topics.filter(t => t !== topic)
-        : [...prev.topics, topic],
+      topics: prev.topics.includes(topicId)
+        ? prev.topics.filter(t => t !== topicId)
+        : [...prev.topics, topicId],
     }));
   };
 
@@ -72,7 +72,7 @@ export const BookingSection: React.FC = () => {
           className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -92,7 +92,7 @@ export const BookingSection: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Select a convenient time directly on Calendly or send an inquiry below. We will discuss your goals, answer your questions in plain English, and map out your next steps.
           </p>
         </motion.div>
@@ -104,14 +104,14 @@ export const BookingSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border shadow-md space-y-5 sm:space-y-6 text-left relative overflow-hidden"
+            className="lg:col-span-5 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border space-y-5 sm:space-y-6 text-left relative overflow-hidden"
             style={{
               backgroundColor: activeTheme.bgLight,
               borderColor: activeTheme.border,
             }}
           >
             {/* Visual Working Session Photo */}
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border shadow-xs" style={{ borderColor: activeTheme.border }}>
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden">
               <img
                 src={ADVISOR_PROFILE.images.workingDesk}
                 alt="1-on-1 Strategy Session with Sarmila Reddy"
@@ -120,7 +120,7 @@ export const BookingSection: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-3 right-3 text-white flex items-center justify-between">
-                <span className="text-xs font-medium bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                <span className="text-xs font-medium bg-black/60 px-3 py-1 rounded-full text-white">
                   Virtual & In-Person Sessions
                 </span>
                 <span className="text-xs font-semibold text-emerald-300">
@@ -130,7 +130,7 @@ export const BookingSection: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block">
+              <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block">
                 Instant Online Booking
               </span>
               <h3 className="font-serif text-2xl font-bold" style={{ color: activeTheme.textDark }}>
@@ -141,8 +141,8 @@ export const BookingSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Calendly Details Box */}
-            <div className="space-y-3 p-4 rounded-2xl bg-white border border-stone-200/80 shadow-xs">
+            {/* Calendly Details with Clean Divider */}
+            <div className="space-y-3 py-3 border-y border-stone-200/80">
               <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
                 <Clock className="w-4 h-4 text-stone-400 shrink-0" />
                 <span>30 Minutes • Confidential Strategy Call</span>
@@ -164,7 +164,7 @@ export const BookingSection: React.FC = () => {
                 href={ADVISOR_PROFILE.calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full min-h-[48px] py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase text-white shadow-md transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full min-h-[48px] py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                 style={{ backgroundColor: activeTheme.primary }}
               >
                 <span>Open calendly.com/{ADVISOR_PROFILE.calendlyHandle}</span>
@@ -189,13 +189,13 @@ export const BookingSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border bg-white shadow-sm space-y-5 sm:space-y-6 text-left"
+            className="lg:col-span-7 p-5 sm:p-7 rounded-2xl sm:rounded-3xl border bg-white space-y-4 text-left shadow-xs"
             style={{ borderColor: activeTheme.border }}
           >
             {formSubmitted ? (
               <div className="py-12 text-center space-y-4">
                 <div
-                  className="w-16 h-16 rounded-full mx-auto flex items-center justify-center shadow-inner"
+                  className="w-16 h-16 rounded-full mx-auto flex items-center justify-center"
                   style={{ backgroundColor: activeTheme.primaryLight, color: activeTheme.primary }}
                 >
                   <CheckCircle2 className="w-8 h-8" />
@@ -204,86 +204,123 @@ export const BookingSection: React.FC = () => {
                   Thank You, {formData.fullName || 'Valued Client'}!
                 </h3>
                 <p className="text-stone-600 max-w-md mx-auto text-sm leading-relaxed">
-                  Your strategy request has been sent directly to Sarmila Reddy. She will review your details and reach out within 24 hours to confirm your consultation time.
+                  Your strategy inquiry details have been prepared for Sarmila Reddy. To guarantee immediate delivery or instantly secure your time slot, you can choose below:
                 </p>
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href={`mailto:${ADVISOR_PROFILE.email}?subject=${encodeURIComponent(`Strategy Session Inquiry - ${formData.fullName}`)}&body=${encodeURIComponent(`Name: ${formData.fullName}\nMobile: ${formData.phone}\nEmail: ${formData.email.trim() || 'Callback Requested via Phone/SMS'}\nProvince: ${formData.province}\nTopics: ${formData.topics.join(', ') || 'General'}\nNotes: ${formData.notes || 'N/A'}`)}`}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-white transition-all hover:brightness-110"
+                    style={{ backgroundColor: activeTheme.primary }}
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>Send via Email Client</span>
+                  </a>
+                  <a
+                    href={ADVISOR_PROFILE.calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-semibold border text-stone-700 bg-stone-50 hover:bg-stone-100 transition-colors"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span>Pick Time on Calendly</span>
+                  </a>
+                </div>
                 <div className="pt-4">
                   <button
                     type="button"
                     onClick={() => setFormSubmitted(false)}
-                    className="text-xs font-bold underline"
+                    className="text-xs font-bold underline cursor-pointer"
                     style={{ color: activeTheme.primary }}
                   >
-                    Submit another question or request
+                    Edit details or submit another question
                   </button>
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold" style={{ color: activeTheme.textDark }}>
-                    Send an Inquiry or Quote Request
-                  </h3>
-                  <p className="text-sm text-stone-500 mt-1">
-                    Prefer email or phone? Fill out this quick form and Sarmila will connect with you.
-                  </p>
+              <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+                <div className="flex items-center justify-between gap-2 flex-wrap">
+                  <div>
+                    <h3 className="font-serif text-lg sm:text-xl font-bold tracking-tight" style={{ color: activeTheme.textDark }}>
+                      Send an Inquiry or Quote Request
+                    </h3>
+                    <p className="text-xs sm:text-sm text-stone-500 mt-0.5">
+                      Fast 20-second form • Sarmila connects within 24 hours.
+                    </p>
+                  </div>
+                  <span
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold shrink-0"
+                    style={{ backgroundColor: activeTheme.primaryLight, color: activeTheme.primary }}
+                  >
+                    <Clock className="w-3 h-3" />
+                    <span>Quick 20s Form</span>
+                  </span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
+                    <label htmlFor="booking-full-name" className="block text-xs font-semibold text-stone-700 mb-1">
                       Full Name *
                     </label>
                     <input
+                      id="booking-full-name"
+                      name="name"
+                      autoComplete="name"
                       type="text"
                       required
                       placeholder="e.g. Jessica Chen"
                       value={formData.fullName}
                       onChange={e => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border text-sm text-stone-800 focus:outline-none focus:ring-2"
+                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
                       style={{ borderColor: activeTheme.border }}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
-                      Email Address *
+                    <label htmlFor="booking-phone-number" className="block text-xs font-semibold text-stone-700 mb-1">
+                      Mobile Number *
                     </label>
                     <input
-                      type="email"
-                      required
-                      placeholder="jessica@example.ca"
-                      value={formData.email}
-                      onChange={e => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border text-sm text-stone-800 focus:outline-none focus:ring-2"
-                      style={{ borderColor: activeTheme.border }}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
-                      Phone Number *
-                    </label>
-                    <input
+                      id="booking-phone-number"
+                      name="tel"
+                      autoComplete="tel"
                       type="tel"
                       required
                       placeholder="(604) 555-0199"
                       value={formData.phone}
                       onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border text-sm text-stone-800 focus:outline-none focus:ring-2"
+                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
+                      style={{ borderColor: activeTheme.border }}
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label htmlFor="booking-email-address" className="block text-xs font-semibold text-stone-700 mb-1">
+                      Email Address <span className="font-normal text-stone-400">(Optional)</span>
+                    </label>
+                    <input
+                      id="booking-email-address"
+                      name="email"
+                      autoComplete="email"
+                      type="email"
+                      placeholder="jessica@example.ca"
+                      value={formData.email}
+                      onChange={e => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
                       style={{ borderColor: activeTheme.border }}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
-                      Province / Territory *
+                    <label htmlFor="booking-province" className="block text-xs font-semibold text-stone-700 mb-1">
+                      Province / Territory
                     </label>
                     <select
+                      id="booking-province"
                       value={formData.province}
                       onChange={e => setFormData({ ...formData, province: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border text-sm text-stone-800 focus:outline-none focus:ring-2 bg-white"
+                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2 bg-white"
                       style={{ borderColor: activeTheme.border }}
                     >
                       {availableProvinces.map(prov => (
@@ -295,53 +332,51 @@ export const BookingSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Topics of Interest */}
+                {/* Topics of Interest (Compact Horizontal Pills) */}
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-2">
-                    What would you like to focus on? (Select all that apply)
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <span id="booking-topics-group-label" className="block text-xs font-semibold text-stone-700 mb-1.5">
+                    Focus Areas (tap to select):
+                  </span>
+                  <div className="flex flex-wrap gap-1.5" role="group" aria-labelledby="booking-topics-group-label">
                     {financialTopics.map(topic => {
-                      const isSelected = formData.topics.includes(topic);
+                      const isSelected = formData.topics.includes(topic.id);
                       return (
                         <button
-                          key={topic}
+                          key={topic.id}
                           type="button"
-                          onClick={() => handleTopicToggle(topic)}
-                          className={`p-2.5 rounded-xl border text-left text-xs sm:text-sm transition-all flex items-center gap-2.5 ${
-                            isSelected ? 'font-semibold' : 'text-stone-600 hover:bg-stone-50'
+                          role="checkbox"
+                          aria-checked={isSelected}
+                          aria-label={topic.id}
+                          onClick={() => handleTopicToggle(topic.id)}
+                          className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs transition-colors cursor-pointer ${
+                            isSelected
+                              ? 'font-semibold text-white'
+                              : 'bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium'
                           }`}
                           style={{
-                            borderColor: isSelected ? activeTheme.primary : activeTheme.border,
-                            backgroundColor: isSelected ? activeTheme.primaryLight : '#FFFFFF',
-                            color: isSelected ? activeTheme.primary : undefined,
+                            backgroundColor: isSelected ? activeTheme.primary : undefined,
                           }}
                         >
-                          <div
-                            className={`w-4 h-4 rounded-md border flex items-center justify-center shrink-0 ${
-                              isSelected ? 'bg-white text-emerald-700' : 'border-stone-300'
-                            }`}
-                          >
-                            {isSelected && <CheckCircle2 className="w-3.5 h-3.5 fill-current" />}
-                          </div>
-                          <span>{topic}</span>
+                          {isSelected && <Check className="w-3 h-3 stroke-[2.5]" />}
+                          <span>{topic.label}</span>
                         </button>
                       );
                     })}
                   </div>
                 </div>
 
-                {/* Notes */}
+                {/* Compact Note Input */}
                 <div>
-                  <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-700 mb-1">
-                    Optional Notes or Specific Questions
+                  <label htmlFor="booking-notes" className="block text-xs font-semibold text-stone-700 mb-1">
+                    Optional Note or Questions
                   </label>
-                  <textarea
-                    rows={3}
-                    placeholder="Tell me a bit about your family or what you'd like to achieve..."
+                  <input
+                    id="booking-notes"
+                    type="text"
+                    placeholder="e.g. Best time to call or specific goals..."
                     value={formData.notes}
                     onChange={e => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border text-sm text-stone-800 focus:outline-none focus:ring-2"
+                    className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
                     style={{ borderColor: activeTheme.border }}
                   />
                 </div>
@@ -349,16 +384,20 @@ export const BookingSection: React.FC = () => {
                 <button
                   type="submit"
                   id="submit-inquiry-form-btn"
-                  className="w-full min-h-[48px] py-4 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase text-white shadow-md transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full min-h-[46px] py-3 rounded-xl sm:rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                   style={{ backgroundColor: activeTheme.primary }}
                 >
                   <Send className="w-4 h-4" />
-                  <span>Submit Consultation Request</span>
+                  <span>Submit Quick Request — 100% Free</span>
                 </button>
 
-                <p className="text-xs text-stone-500 text-center">
-                  🔒 We respect your privacy. Your information is never sold or shared.
-                </p>
+                <div className="flex items-center justify-center gap-2 text-[11px] sm:text-xs text-stone-500">
+                  <span>🔒 Strictly Confidential</span>
+                  <span>•</span>
+                  <span>⚡ 24h Response</span>
+                  <span>•</span>
+                  <span>No obligations</span>
+                </div>
               </form>
             )}
           </motion.div>

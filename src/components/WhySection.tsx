@@ -33,27 +33,17 @@ export const WhySection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
         >
-          <div
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest"
-            style={{
-              backgroundColor: activeTheme.badgeBg,
-              color: activeTheme.badgeText,
-            }}
-          >
-            Core Advisory Purpose
-          </div>
-
           <h2
             className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Beyond the Numbers,{' '}
-            <span className="italic font-serif font-normal" style={{ color: activeTheme.primary }}>
-              Here’s My Why.
+            <span className="font-serif font-bold" style={{ color: activeTheme.primary }}>
+              Here’s My Core Purpose.
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Finance is rarely just about spreadsheets and market charts. It is about waking up knowing your family is safe, your hard work is compounding, and your future in Canada is anchored in certainty.
           </p>
         </motion.div>
@@ -67,7 +57,7 @@ export const WhySection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 sm:p-7 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative flex flex-col justify-between"
+              className="p-6 sm:p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between"
               style={{
                 backgroundColor: activeTheme.bgLight,
                 borderColor: activeTheme.border,
@@ -83,18 +73,17 @@ export const WhySection: React.FC = () => {
                     {pillar.number}
                   </span>
                   <div
-                    className="p-2.5 sm:p-3 rounded-xl shadow-xs"
+                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center shrink-0"
                     style={{
-                      backgroundColor: '#FFFFFF',
+                      backgroundColor: activeTheme.primaryLight,
                       color: activeTheme.primary,
-                      border: `1px solid ${activeTheme.border}`,
                     }}
                   >
                     {getIcon(pillar.icon)}
                   </div>
                 </div>
 
-                <p className="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-1.5">
+                <p className="text-xs font-semibold text-stone-600 mb-1.5">
                   {pillar.subtitle}
                 </p>
 
@@ -131,7 +120,7 @@ export const WhySection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="mt-10 sm:mt-16 p-5 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl border shadow-sm relative overflow-hidden transition-colors"
+          className="mt-10 sm:mt-16 p-6 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl border relative overflow-hidden transition-colors"
           style={{
             backgroundColor: activeTheme.primaryLight,
             borderColor: activeTheme.border,
@@ -142,7 +131,7 @@ export const WhySection: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Quote className="w-6 h-6 sm:w-8 sm:h-8 opacity-40" style={{ color: activeTheme.primary }} />
                 <span
-                  className="text-xs sm:text-sm font-bold uppercase tracking-widest"
+                  className="text-xs sm:text-sm font-semibold"
                   style={{ color: activeTheme.primary }}
                 >
                   The Words That Defined My Career
@@ -156,7 +145,7 @@ export const WhySection: React.FC = () => {
                 “You made something so confusing... finally make sense.”
               </blockquote>
 
-              <p className="text-sm sm:text-base text-stone-600 leading-relaxed max-w-2xl font-light">
+              <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-light" style={{ maxWidth: '420px' }}>
                 When a client shared that after our first strategy blueprint, I realized my role isn’t to sell complex products. My mission is to give you total mastery and clarity over your Canadian wealth, so you never feel intimidated by finance again.
               </p>
 
@@ -165,7 +154,7 @@ export const WhySection: React.FC = () => {
                 <img
                   src={ADVISOR_PROFILE.images.whyAvatar}
                   alt="Sarmila Reddy"
-                  className="w-12 h-12 rounded-full object-cover object-[center_15%] border-2 shadow-xs"
+                  className="w-12 h-12 rounded-full object-cover object-[center_15%] border-2"
                   style={{ borderColor: activeTheme.accent }}
                 />
                 <div>
@@ -179,35 +168,34 @@ export const WhySection: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: Desk Philosophy Highlight from her photos */}
+            {/* Right: Desk Philosophy Highlight with Clean Editorial Border */}
             <div
-              className="lg:col-span-4 p-5 sm:p-6 rounded-2xl bg-white/90 backdrop-blur-sm border shadow-sm space-y-4 text-left"
-              style={{ borderColor: activeTheme.border }}
+              className="lg:col-span-4 pt-6 lg:pt-0 lg:pl-8 lg:border-l border-stone-300/70 space-y-4 text-left"
             >
-              <h4 className="font-serif text-base font-bold" style={{ color: activeTheme.textDark }}>
+              <h4 className="font-serif text-base font-bold text-stone-900">
                 On My Daily Desk
               </h4>
 
-              <div className="space-y-3 text-xs text-stone-600">
+              <div className="space-y-3 text-xs text-stone-700">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-1.5 rounded-md bg-stone-100 text-stone-700 shrink-0">
+                  <div className="p-1.5 rounded-md bg-stone-100 text-stone-900 shrink-0">
                     <BookOpen className="w-4 h-4" />
                   </div>
-                  <span><strong>Plan. Protect. Grow.</strong> (Daily client roadmap)</span>
+                  <span><strong className="text-stone-900">Plan. Protect. Grow.</strong> (Daily client roadmap)</span>
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="p-1.5 rounded-md bg-stone-100 text-stone-700 shrink-0">
+                  <div className="p-1.5 rounded-md bg-stone-100 text-stone-900 shrink-0">
                     <Coffee className="w-4 h-4" />
                   </div>
-                  <span><strong>“Discipline brings Freedom”</strong> (My guiding motto)</span>
+                  <span><strong className="text-stone-900">“Discipline brings Freedom”</strong> (Guiding principle)</span>
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="p-1.5 rounded-md bg-stone-100 text-stone-700 shrink-0">
+                  <div className="p-1.5 rounded-md bg-stone-100 text-stone-900 shrink-0">
                     <Award className="w-4 h-4" />
                   </div>
-                  <span><strong>Atomic Habits</strong> (Small daily compounding wins)</span>
+                  <span><strong className="text-stone-900">Atomic Habits</strong> (Daily compounding steps)</span>
                 </div>
               </div>
             </div>
