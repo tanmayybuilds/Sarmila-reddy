@@ -174,10 +174,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   className="font-serif text-2xl sm:text-3xl font-bold tracking-tight"
                   style={{ color: activeTheme.primary }}
                 >
-                  <AnimatedCounter value={250} suffix="+" duration={1.5} />
+                  <AnimatedCounter value={300} suffix="+" duration={1.5} />
                 </p>
                 <p className="text-xs sm:text-sm text-stone-600 font-medium mt-0.5">
-                  Families Protected
+                  Clients
                 </p>
               </div>
               <div>
