@@ -297,6 +297,26 @@ export const CANADIAN_ACCOUNTS_GUIDE = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
+    id: '5',
+    quote: `I was initially hesitant about signing up and investing my money, but after sitting down with Sarmila, she made me feel comfortable and put my mind at ease. She took the time to thoroughly explain how everything worked, reviewed my existing investments, and guided me through my options for long-term goals.
+
+Sarmila is extremely knowledgeable, professional, approachable, and caring—she explains things clearly and never makes you feel uncomfortable asking questions. She truly made a difference in helping me make informed decisions and feel confident about planning my financial future. I would highly recommend Sarmila to anyone looking for a financial advisor!`,
+    clientName: 'Lorna M.',
+    location: 'Vancouver, BC',
+    category: 'Wealth & Investment Planning',
+    avatarUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+  },
+  {
+    id: '6',
+    quote: 'Sarmila helped me open my FHSA and finally get set up with life insurance — something I didn’t think about doing in my 30’s. She explained everything so clearly and patiently, with zero pressure. You can really tell she does this to genuinely help people, not just to make a sale. I felt so comfortable and well taken care of. I highly recommend!',
+    clientName: 'Susana',
+    location: 'Calgary, AB',
+    category: 'FHSA & Life Insurance',
+    avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+  },
+  {
     id: '1',
     quote: 'As a newcomer to Canada, the tax and banking system was like another language. Sarmila sat down with us patiently, explained the TFSA and RRSP in plain terms, and helped us protect our twins. She is genuinely the most trustworthy advisor we have ever met.',
     clientName: 'Priya & Gurpreet K.',

@@ -23,178 +23,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
   return (
     <>
-      <footer
-        className="border-t transition-colors duration-500 text-stone-700 bg-white"
-        style={{ borderColor: activeTheme.border }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 pb-20 sm:pb-10">
-          {/* Main 4 Equal Columns Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start text-left">
-            {/* Col 1: Brand & Identity */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full overflow-hidden p-0.5 bg-stone-50 border border-stone-200 shrink-0 flex items-center justify-center">
-                  <img
-                    src={ADVISOR_PROFILE.images.logo}
-                    alt="Sarmila Reddy"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-serif text-base font-bold leading-tight" style={{ color: activeTheme.textDark }}>
-                    Sarmila Reddy
-                  </h3>
-                  <p className="text-[11px] text-stone-500 font-medium">
-                    Financial Advisory • Canada
-                  </p>
-                </div>
-              </div>
-
-              <p className="text-xs text-stone-600 leading-relaxed font-light">
-                Empowering Canadian families, professionals, and newcomers with fiduciary-first financial strategies.
-              </p>
-
-              <div className="flex items-center gap-2 pt-0.5">
-                <a
-                  href={`https://instagram.com/${ADVISOR_PROFILE.instagram.replace('@', '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
-                  title="Follow Sarmila on Instagram"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-3.5 h-3.5" />
-                </a>
-                <a
-                  href={`https://${ADVISOR_PROFILE.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-7 px-2 rounded-full border border-stone-200 flex items-center justify-center text-[10px] font-mono font-semibold text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
-                  title="Official Website"
-                  aria-label="Official Website"
-                >
-                  .CA
-                </a>
-                <a
-                  href={ADVISOR_PROFILE.calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
-                  title="Calendly Booking"
-                  aria-label="Calendly"
-                >
-                  <Calendar className="w-3.5 h-3.5" />
-                </a>
-                <a
-                  href={`mailto:${ADVISOR_PROFILE.email}`}
-                  className="w-7 h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
-                  title="Email Sarmila"
-                  aria-label="Email"
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Col 2: Quick Links */}
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900">
-                Navigation
-              </h3>
-              <ul className="space-y-1.5 text-xs text-stone-600">
-                <li><a href="#services" className="hover:underline">Advisory Services</a></li>
-                <li><a href="#who-i-help" className="hover:underline">Who I Help in Canada</a></li>
-                <li><a href="#calculator" className="hover:underline">Wealth Calculator</a></li>
-                <li><a href="#accounts" className="hover:underline">TFSA & RRSP Guide</a></li>
-                <li><a href="#faq" className="hover:underline">Frequently Asked Questions</a></li>
-                <li>
-                  <button
-                    onClick={onOpenBooking}
-                    className="hover:underline cursor-pointer font-semibold flex items-center gap-1 text-xs"
-                    style={{ color: activeTheme.primary }}
-                  >
-                    <span>Book 1-on-1 Session</span>
-                    <span aria-hidden="true">→</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            {/* Col 3: Key Solutions */}
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900">
-                Solutions
-              </h3>
-              <ul className="space-y-1.5 text-xs text-stone-600">
-                <li><a href="#services" className="hover:underline">TFSA, RRSP & FHSA</a></li>
-                <li><a href="#services" className="hover:underline">Life Insurance (Term & Whole)</a></li>
-                <li><a href="#services" className="hover:underline">Critical Illness & Disability</a></li>
-                <li><a href="#services" className="hover:underline">RESP Education Planning</a></li>
-                <li><a href="#services" className="hover:underline">New Immigrant Financial Setup</a></li>
-                <li><a href="#services" className="hover:underline">Corporate & Business Wealth</a></li>
-              </ul>
-            </div>
-
-            {/* Col 4: Direct Contact & Office */}
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900">
-                Direct Contact
-              </h3>
-              <div className="space-y-2 text-xs text-stone-600">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-stone-400 shrink-0 mt-0.5" />
-                  <span>British Columbia & Canada-Wide (Virtual)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-                  <a href={`mailto:${ADVISOR_PROFILE.email}`} className="hover:underline">
-                    {ADVISOR_PROFILE.email}
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-                  <a href={ADVISOR_PROFILE.calendlyUrl} target="_blank" rel="noreferrer" className="hover:underline">
-                    calendly.com/{ADVISOR_PROFILE.calendlyHandle}
-                  </a>
-                </div>
-              </div>
-
-              <div className="pt-1 text-[11px]">
-                <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <span>100% Free Consultations</span>
-                </span>
-              </div>
-            </div>
+      <footer className="site-footer">
+        <div className="site-container">
+          <div className="footer-grid">
+            <div><a className="brand" href="#home"><span className="brand-monogram" aria-hidden="true">sr<span>.</span></span><span className="brand-name">Sarmila Reddy<small>Financial advisor</small></span></a><p className="footer-description">Thoughtful guidance.<br />A future that feels like yours.</p><a className="footer-social" href={`https://instagram.com/${ADVISOR_PROFILE.instagram.replace('@', '')}`} target="_blank" rel="noopener noreferrer"><Instagram size={17} /> Follow along on Instagram</a></div>
+            <div className="footer-links"><h3>Explore</h3><a href="#about">About Sarmila</a><a href="#services">How I can help</a><a href="#who-i-help">Who I work with</a><a href="#testimonials">Client stories</a></div>
+            <div className="footer-links"><h3>A little clarity</h3><a href="#calculator">Wealth calculator</a><a href="#accounts">Canadian account guide</a><a href="#process">How it works</a><a href="#faq">Common questions</a></div>
+            <div className="footer-links"><h3>Let’s connect</h3><a href={`mailto:${ADVISOR_PROFILE.email}`}>{ADVISOR_PROFILE.email}</a><span>British Columbia, Canada</span><button className="text-link" onClick={onOpenBooking}>Book a conversation <Calendar size={14} /></button></div>
           </div>
-
-          {/* Regulatory & Compliance Disclaimers */}
-          <div className="mt-7 pt-5 border-t space-y-2 text-left" style={{ borderColor: activeTheme.border }}>
-            <p className="text-[11px] text-stone-500 leading-relaxed max-w-4xl">
-              <strong className="text-stone-700 font-semibold">Regulatory Notice: </strong>
-              Sarmila Reddy is an independent licensed financial advisor and Life License Qualification Program (LLQP) certified professional in Canada. All initial strategy sessions are 100% complimentary with no direct client payments accepted through this website. Financial applications, insurance underwriting, and registered investments are executed through licensed Canadian carriers and institutions under compliance oversight. Calculations provide hypothetical modeling only and do not constitute formal legal, tax, or binding investment advice.
-            </p>
-
-            <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs text-stone-500 text-left border-t border-stone-100">
-              <p>© {new Date().getFullYear()} Sarmila Reddy. All rights reserved.</p>
-
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setActiveLegalModal('privacy')}
-                  className="hover:underline cursor-pointer"
-                >
-                  Privacy Policy (PIPEDA)
-                </button>
-                <span>•</span>
-                <button
-                  onClick={() => setActiveLegalModal('terms')}
-                  className="hover:underline cursor-pointer"
-                >
-                  Terms of Service
-                </button>
-              </div>
-            </div>
-          </div>
+          <p className="footer-disclaimer">Sarmila Reddy is an independent licensed financial advisor and Life License Qualification Program (LLQP) certified professional in Canada. Financial applications, insurance underwriting, and registered investments are executed through licensed Canadian carriers and institutions under compliance oversight. Calculations provide hypothetical modeling only and do not constitute formal legal, tax, or binding investment advice.</p>
+          <div className="footer-bottom"><p>© {new Date().getFullYear()} Sarmila Reddy. All rights reserved.</p><div><button onClick={() => setActiveLegalModal('privacy')}>Privacy policy</button><button onClick={() => setActiveLegalModal('terms')}>Terms of service</button><a href="#home">Back to top ↑</a></div></div>
         </div>
       </footer>
 
@@ -295,3 +133,4 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
     </>
   );
 };
+

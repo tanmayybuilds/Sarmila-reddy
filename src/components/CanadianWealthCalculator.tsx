@@ -1,362 +1,48 @@
-import React, { useState, useMemo } from 'react';
-import { useTheme } from '../context/ThemeContext';
-import { Calculator, Sparkles, TrendingUp, PiggyBank, DollarSign, ShieldAlert, ArrowRight } from 'lucide-react';
-import confetti from 'canvas-confetti';
-import { motion } from 'motion/react';
+import { useMemo, useState } from 'react';
+import { ArrowUpRight, Info } from 'lucide-react';
 
-interface CalculatorProps {
-  onOpenBooking: () => void;
-}
+const currency = (value: number) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(value);
+const accounts = ['TFSA', 'RRSP', 'FHSA', 'Non-registered'] as const;
 
-export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBooking }) => {
-  const { activeTheme } = useTheme();
-
-  const [initialDeposit, setInitialDeposit] = useState<number>(5000);
-  const [monthlyContribution, setMonthlyContribution] = useState<number>(500);
-  const [years, setYears] = useState<number>(20);
-  const [rateOfReturn, setRateOfReturn] = useState<number>(7);
-  const [accountType, setAccountType] = useState<'TFSA' | 'RRSP' | 'FHSA' | 'NON_REG'>('TFSA');
-
-  // Compound interest calculation
-  const calculations = useMemo(() => {
-    const r = rateOfReturn / 100 / 12;
-    const n = years * 12;
-
-    // FV of lump sum: P * (1 + r)^n
-    const fvInitial = initialDeposit * Math.pow(1 + r, n);
-
-    // FV of monthly series: PMT * ((1 + r)^n - 1) / r
-    const fvMonthly = r > 0 ? monthlyContribution * ((Math.pow(1 + r, n) - 1) / r) : monthlyContribution * n;
-
-    const totalPortfolio = Math.round(fvInitial + fvMonthly);
-    const totalContributed = Math.round(initialDeposit + (monthlyContribution * n));
-    const compoundGrowth = Math.max(0, totalPortfolio - totalContributed);
-
-    // Estimated Canadian tax savings estimate
-    let taxSaved = 0;
-    if (accountType === 'TFSA') {
-      taxSaved = Math.round(compoundGrowth * 0.15);
-    } else if (accountType === 'RRSP') {
-      taxSaved = Math.round(totalContributed * 0.30);
-    } else if (accountType === 'FHSA') {
-      taxSaved = Math.round((Math.min(totalContributed, 40000) * 0.30) + (compoundGrowth * 0.15));
-    } else {
-      taxSaved = 0;
-    }
-
-    return {
-      totalPortfolio,
-      totalContributed,
-      compoundGrowth,
-      taxSaved,
-    };
-  }, [initialDeposit, monthlyContribution, years, rateOfReturn, accountType]);
-
-  const triggerCelebration = () => {
-    confetti({
-      particleCount: 70,
-      spread: 60,
-      origin: { y: 0.7 },
-      colors: [activeTheme.primary, activeTheme.accent, '#10B981'],
+export function CanadianWealthCalculator({ onOpenBooking }: { onOpenBooking: () => void }) {
+  const [initial, setInitial] = useState(5000);
+  const [monthly, setMonthly] = useState(500);
+  const [years, setYears] = useState(20);
+  const [rate, setRate] = useState(7);
+  const [account, setAccount] = useState<typeof accounts[number]>('TFSA');
+  const projection = useMemo(() => {
+    const r = rate / 1200;
+    return Array.from({ length: years + 1 }, (_, year) => {
+      const months = year * 12;
+      const factor = Math.pow(1 + r, months);
+      return { contributed: initial + monthly * months, total: initial * factor + (r > 0 ? monthly * (factor - 1) / r : monthly * months) };
     });
-  };
-
-  const formatCurrency = (val: number) => {
-    return new Intl.NumberFormat('en-CA', {
-      style: 'currency',
-      currency: 'CAD',
-      maximumFractionDigits: 0,
-    }).format(val);
-  };
-
-  return (
-    <section id="calculator" className="py-16 sm:py-20 lg:py-28 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
-        >
-          <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
-            style={{
-              backgroundColor: activeTheme.badgeBg,
-              color: activeTheme.badgeText,
-            }}
-          >
-            <Calculator className="w-3.5 h-3.5" />
-            <span>Interactive Canadian Wealth Simulator</span>
-          </div>
-
-          <h2
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
-            style={{ color: activeTheme.textDark }}
-          >
-            Calculate Your{' '}
-            <span className="italic font-serif font-normal" style={{ color: activeTheme.primary }}>
-              Compound Growth in Canada.
-            </span>
-          </h2>
-
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
-            See the mathematical impact of time, steady monthly contributions, and Canadian registered tax shelters on your family's future net worth.
-          </p>
-        </motion.div>
-
-        {/* Calculator Main Shell */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.7 }}
-          className="rounded-2xl sm:rounded-3xl border bg-white p-4 sm:p-8 lg:p-10"
-          style={{ borderColor: activeTheme.border }}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            {/* Left Inputs (7 cols) */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
-              {/* Account Type Selector */}
-              <div>
-                <label className="block text-xs font-semibold text-stone-700 mb-2">
-                  Select Canadian Account Vehicle
-                </label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {[
-                    { id: 'TFSA', label: 'TFSA', desc: '100% Tax-Free' },
-                    { id: 'RRSP', label: 'RRSP', desc: 'Tax Deductible' },
-                    { id: 'FHSA', label: 'FHSA', desc: 'First Home' },
-                    { id: 'NON_REG', label: 'Taxable', desc: 'Standard' },
-                  ].map(acc => {
-                    const isSelected = accountType === acc.id;
-                    return (
-                      <button
-                        key={acc.id}
-                        type="button"
-                        onClick={() => setAccountType(acc.id as any)}
-                        className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer min-h-[44px] ${
-                          isSelected ? 'font-bold border-2' : 'text-stone-600 hover:bg-stone-50'
-                        }`}
-                        style={{
-                          backgroundColor: isSelected ? activeTheme.primaryLight : '#FFFFFF',
-                          borderColor: isSelected ? activeTheme.primary : activeTheme.border,
-                          color: isSelected ? activeTheme.primary : undefined,
-                        }}
-                      >
-                        <div className="text-sm font-bold">{acc.label}</div>
-                        <div className="text-xs text-stone-500">{acc.desc}</div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Sliders */}
-              <div className="space-y-4 sm:space-y-5">
-                {/* Initial Balance */}
-                <div>
-                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
-                    <span className="font-semibold text-stone-700">Initial Savings / Balance</span>
-                    <span className="font-bold text-stone-900 text-sm sm:text-base">{formatCurrency(initialDeposit)}</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={0}
-                    max={50000}
-                    step={1000}
-                    value={initialDeposit}
-                    aria-label="Initial Savings or Balance"
-                    onChange={e => setInitialDeposit(Number(e.target.value))}
-                    className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
-                    style={{ accentColor: activeTheme.primary }}
-                  />
-                  <div className="flex justify-between text-xs text-stone-500 mt-1">
-                    <span>$0</span>
-                    <span>$25,000</span>
-                    <span>$50,000+</span>
-                  </div>
-                </div>
-
-                {/* Monthly Contribution with Mobile Quick Presets */}
-                <div>
-                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
-                    <span className="font-semibold text-stone-700">Monthly Contribution</span>
-                    <span className="font-bold text-stone-900 text-sm sm:text-base">{formatCurrency(monthlyContribution)} / mo</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={50}
-                    max={3000}
-                    step={50}
-                    value={monthlyContribution}
-                    aria-label="Monthly Contribution"
-                    onChange={e => setMonthlyContribution(Number(e.target.value))}
-                    className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
-                    style={{ accentColor: activeTheme.primary }}
-                  />
-                  <div className="flex justify-between text-xs text-stone-500 mt-1">
-                    <span>$50/mo</span>
-                    <span>$1,500/mo</span>
-                    <span>$3,000/mo</span>
-                  </div>
-
-                  {/* Quick-tap presets for fast mobile interaction (44px touch targets) */}
-                  <div className="flex flex-wrap items-center gap-2 mt-2.5 pt-1">
-                    <span className="text-xs text-stone-600 font-semibold mr-1">Quick:</span>
-                    {[200, 500, 1000, 1500].map(amount => (
-                      <button
-                        key={amount}
-                        type="button"
-                        onClick={() => setMonthlyContribution(amount)}
-                        className={`text-xs px-3.5 py-2 rounded-full border transition-colors cursor-pointer min-h-[44px] flex items-center justify-center ${
-                          monthlyContribution === amount ? 'font-bold bg-stone-900 text-white border-stone-900' : 'bg-stone-50 text-stone-700 hover:bg-stone-100 border-stone-200 active:bg-stone-200'
-                        }`}
-                      >
-                        ${amount}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Years */}
-                <div>
-                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
-                    <span className="font-semibold text-stone-700">Investment Horizon</span>
-                    <span className="font-bold text-stone-900 text-sm sm:text-base">{years} Years</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={3}
-                    max={35}
-                    step={1}
-                    value={years}
-                    aria-label="Investment Horizon in Years"
-                    onChange={e => setYears(Number(e.target.value))}
-                    className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
-                    style={{ accentColor: activeTheme.primary }}
-                  />
-                  <div className="flex justify-between text-xs text-stone-500 mt-1">
-                    <span>3 yrs</span>
-                    <span>20 yrs</span>
-                    <span>35 yrs</span>
-                  </div>
-                </div>
-
-                {/* Expected Return */}
-                <div>
-                  <div className="flex justify-between items-center text-xs sm:text-sm mb-1.5">
-                    <span className="font-semibold text-stone-700">Estimated Annual Return</span>
-                    <span className="font-bold text-stone-900 text-sm sm:text-base">{rateOfReturn}%</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={3}
-                    max={11}
-                    step={0.5}
-                    value={rateOfReturn}
-                    aria-label="Estimated Annual Return Rate"
-                    onChange={e => setRateOfReturn(Number(e.target.value))}
-                    className="w-full h-2.5 rounded-lg appearance-none cursor-pointer bg-stone-200"
-                    style={{ accentColor: activeTheme.primary }}
-                  />
-                  <div className="flex justify-between text-xs text-stone-500 mt-1">
-                    <span>3% (Conservative)</span>
-                    <span>7% (Balanced)</span>
-                    <span>11% (Aggressive)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Output Panel with Editorial Vertical Divider */}
-            <div
-              className="lg:col-span-5 pt-6 lg:pt-0 lg:pl-8 lg:border-l space-y-5 sm:space-y-6 text-left"
-              style={{
-                borderColor: activeTheme.border,
-              }}
-            >
-              <div>
-                <span className="text-xs font-semibold text-stone-600">
-                  Projected Future Wealth ({years} Years)
-                </span>
-                <motion.div
-                  key={calculations.totalPortfolio}
-                  initial={{ scale: 0.98, opacity: 0.8 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.2 }}
-                  className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mt-1"
-                  style={{ color: activeTheme.primary }}
-                >
-                  {formatCurrency(calculations.totalPortfolio)}
-                </motion.div>
-              </div>
-
-              {/* Progress Bar Visualization */}
-              <div className="space-y-1.5">
-                <div className="w-full h-3 rounded-full overflow-hidden bg-stone-200 flex">
-                  <div
-                    className="h-full bg-stone-400 transition-all duration-300"
-                    style={{
-                      width: `${Math.round((calculations.totalContributed / calculations.totalPortfolio) * 100)}%`,
-                    }}
-                    title="Your Contributed Principal"
-                  />
-                  <div
-                    className="h-full transition-all duration-300"
-                    style={{
-                      backgroundColor: activeTheme.primary,
-                      width: `${Math.round((calculations.compoundGrowth / calculations.totalPortfolio) * 100)}%`,
-                    }}
-                    title="Compound Growth"
-                  />
-                </div>
-                <div className="flex justify-between text-xs sm:text-sm text-stone-600 flex-wrap gap-1">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-stone-400" /> Contributed: {formatCurrency(calculations.totalContributed)}
-                  </span>
-                  <span className="flex items-center gap-1.5 font-semibold" style={{ color: activeTheme.primary }}>
-                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: activeTheme.primary }} />
-                    Growth: {formatCurrency(calculations.compoundGrowth)}
-                  </span>
-                </div>
-              </div>
-
-              {/* Estimated Canadian Tax Shelter Savings */}
-              <div className="py-3 border-y border-stone-200/80 space-y-1">
-                <div className="flex items-center justify-between text-xs sm:text-sm">
-                  <span className="font-semibold text-stone-700">Estimated Canadian Tax Advantage:</span>
-                  <span className="font-bold text-emerald-700">+{formatCurrency(calculations.taxSaved)}</span>
-                </div>
-                <p className="text-xs text-stone-600 leading-relaxed">
-                  Taxes sheltered through registered Canadian accounts vs. paying regular capital gains or income tax.
-                </p>
-              </div>
-
-              {/* CTA */}
-              <div className="space-y-2 pt-1">
-                <button
-                  id="calc-book-strategy-btn"
-                  onClick={() => {
-                    triggerCelebration();
-                    onOpenBooking();
-                  }}
-                  className="w-full min-h-[48px] py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
-                  style={{ backgroundColor: activeTheme.primary }}
-                >
-                  <Sparkles className="w-4 h-4 shrink-0" />
-                  <span>Turn This Projection Into Reality</span>
-                </button>
-                <p className="text-center text-xs text-stone-500">
-                  * For educational modeling purposes. Returns are not guaranteed.
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+  }, [initial, monthly, years, rate]);
+  const total = projection[years].total;
+  const contributed = projection[years].contributed;
+  const max = Math.max(total, 1);
+  const points = (key: 'total' | 'contributed') => projection.map((point, i) => `${12 + i / years * 476},${185 - point[key] / max * 165}`).join(' ');
+  const controls = [
+    { id: 'initial', label: 'Starting savings', value: initial, min: 0, max: 50000, step: 1000, set: setInitial, display: currency(initial), ends: ['$0', '$50,000'] },
+    { id: 'monthly', label: 'Monthly contribution', value: monthly, min: 50, max: 3000, step: 50, set: setMonthly, display: currency(monthly), ends: ['$50', '$3,000'] },
+    { id: 'years', label: 'Time to grow', value: years, min: 3, max: 35, step: 1, set: setYears, display: `${years} years`, ends: ['3 years', '35 years'] },
+    { id: 'rate', label: 'Annual return assumption', value: rate, min: 0, max: 11, step: 0.5, set: setRate, display: `${rate}%`, ends: ['0%', '11%'] },
+  ];
+  return <section id="calculator" className="section calculator-section"><div className="site-container">
+    <div className="section-heading split-heading"><div><p className="section-label">Picture the possibilities</p><h2>Small steps today.<br />Room to grow tomorrow.</h2></div><p>Explore how time and regular contributions could shape your savings. Move the sliders and make it your own.</p></div>
+    <div className="calculator-shell"><div className="calculator-inputs"><fieldset className="account-selector"><legend>Your account</legend><div>{accounts.map(item => <button type="button" key={item} aria-pressed={account === item} onClick={() => setAccount(item)}>{item}</button>)}</div></fieldset>
+      {controls.map(control => <div className="range-control" key={control.id}><div><label htmlFor={`calculator-${control.id}`}>{control.label}</label><output htmlFor={`calculator-${control.id}`}>{control.display}</output></div><input id={`calculator-${control.id}`} type="range" min={control.min} max={control.max} step={control.step} value={control.value} aria-valuetext={control.display} onChange={event => control.set(Number(event.target.value))} /><div className="range-endpoints"><span>{control.ends[0]}</span><span>{control.ends[1]}</span></div>{control.id === 'monthly' && <div className="contribution-presets">{[200, 500, 1000, 1500].map(amount => <button key={amount} aria-pressed={monthly === amount} onClick={() => setMonthly(amount)}>{currency(amount)}</button>)}</div>}</div>)}
+    </div><div className="calculator-results"><p>Illustrative value after {years} years</p><output className="projected-total" aria-live="polite">{currency(total)}</output><span className="projection-account">{account} savings scenario · CAD</span>
+      <svg viewBox="0 0 500 215" role="img" aria-label={`Illustrative savings growth over ${years} years: ${currency(contributed)} contributed and ${currency(total - contributed)} growth.`} className="growth-chart">
+        {[45, 115, 185].map(y => <line key={y} x1="12" y1={y} x2="488" y2={y} stroke="#cfdbd1" strokeDasharray="3 5" />)}
+        <polygon points={`12,185 ${points('total')} 488,185`} fill="#dbe8db" />
+        <polyline points={points('contributed')} fill="none" stroke="#8c9b8b" strokeWidth="2" strokeDasharray="5 5" />
+        <polyline points={points('total')} fill="none" stroke="#234e3d" strokeWidth="3" />
+        <text x="12" y="211">Today</text><text x="488" y="211" textAnchor="end">Year {years}</text>
+      </svg>
+      <dl className="projection-breakdown"><div><dt><span className="legend-dot principal" /> Your contributions</dt><dd>{currency(contributed)}</dd></div><div><dt><span className="legend-dot" /> Potential growth</dt><dd>{currency(total - contributed)}</dd></div></dl>
+      <button className="button button-primary" id="calc-book-strategy-btn" onClick={onOpenBooking}>Let’s talk about your savings <ArrowUpRight size={17} /></button>
+    </div></div><p className="calculator-disclaimer"><Info size={15} /> Educational illustration, not a guaranteed return. Assumes monthly compounding and contributions at month-end. Taxes, fees, inflation, and account eligibility or contribution limits are not included. Account selection labels your scenario; it does not change the calculation.</p>
+  </div></section>;
+}
 

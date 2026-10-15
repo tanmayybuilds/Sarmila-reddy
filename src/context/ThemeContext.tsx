@@ -13,11 +13,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [themeId, setThemeIdState] = useState<ColorThemeId>(() => {
-    const saved = localStorage.getItem('sarmila_color_theme') as ColorThemeId;
-    if (saved && COLOR_THEMES.some(t => t.id === saved)) {
-      return saved;
-    }
-    return 'rose-champagne'; // Default light luxury aesthetic
+    return 'evergreen-sand';
   });
 
   const activeTheme = COLOR_THEMES.find(t => t.id === themeId) || COLOR_THEMES[0];
