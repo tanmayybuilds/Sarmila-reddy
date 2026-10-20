@@ -54,7 +54,7 @@ export const TestimonialsSection: React.FC = () => {
   const currentItem = TESTIMONIALS[currentIndex];
 
   return (
-    <section id="testimonials" className="py-16 sm:py-20 lg:py-28 bg-white transition-colors duration-500 overflow-hidden select-none">
+    <section id="testimonials" className="py-10 sm:py-14 lg:py-16 bg-white transition-colors duration-500 overflow-hidden select-none">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -62,7 +62,7 @@ export const TestimonialsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-10 sm:mb-14"
+          className="text-center max-w-3xl mx-auto space-y-2.5 sm:space-y-3 mb-6 sm:mb-8"
         >
           <div
             className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"

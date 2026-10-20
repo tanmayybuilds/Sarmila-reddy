@@ -43,23 +43,23 @@ export function AppContent() {
         {/* 1. Hero with Verified Credentials & Direct Calendly CTA */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* 2. Comprehensive Services & Category Selector (Investments, Life Insurance, Living Benefits, Business) */}
-        <ServicesSection onOpenBooking={handleOpenBooking} />
+        {/* 2. About Sarmila Reddy - Professional Story, Fiduciary Ethics & Mission */}
+        <AboutSarmila onOpenBooking={handleOpenBooking} />
 
-        {/* 3. Core Purpose & Why - Directly Translating Her Viral Principles */}
+        {/* 3. Core Purpose & Why - Her Core Values */}
         <WhySection />
 
-        {/* 4. Target Canadian Audiences (Immigrants, Professionals, Families, Business) */}
+        {/* 4. Comprehensive Services & Category Selector (Investments, Life Insurance, Living Benefits, Business) */}
+        <ServicesSection onOpenBooking={handleOpenBooking} />
+
+        {/* 5. Target Canadian Audiences (Immigrants, Professionals, Families, Business) */}
         <AudienceSolutions onOpenBooking={handleOpenBooking} />
 
-        {/* 5. Interactive Canadian Wealth & Tax Shelter Calculator */}
+        {/* 6. Interactive Canadian Wealth & Tax Shelter Calculator */}
         <CanadianWealthCalculator onOpenBooking={handleOpenBooking} />
 
-        {/* 6. CRA Registered Accounts Explainer (TFSA, RRSP, FHSA, RESP) */}
+        {/* 7. CRA Registered Accounts Explainer (TFSA, RRSP, FHSA, RESP) */}
         <AccountExplainer onOpenBooking={handleOpenBooking} />
-
-        {/* 7. About Sarmila Reddy - Journey, Fiduciary Ethics & Desk Philosophy */}
-        <AboutSarmila onOpenBooking={handleOpenBooking} />
 
         {/* 8. Client Testimonials & Experiences Across Canada */}
         <TestimonialsSection />

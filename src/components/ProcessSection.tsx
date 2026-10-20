@@ -12,7 +12,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
   const { activeTheme } = useTheme();
 
   return (
-    <section className="py-16 sm:py-20 lg:py-28 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
+    <section className="py-10 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -20,7 +20,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto space-y-2.5 sm:space-y-3 mb-6 sm:mb-8"
         >
           <div
             className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
@@ -48,37 +48,34 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
         </motion.div>
 
         {/* 4 Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {WORK_PROCESS.map((item, idx) => (
             <motion.div
-              key={item.step}
+              key={item.title}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 sm:p-7 rounded-3xl bg-white border transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl bg-white border transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between shadow-sm"
               style={{ borderColor: activeTheme.border }}
             >
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span
-                    className="font-serif text-3xl sm:text-4xl font-bold opacity-30"
-                    style={{ color: activeTheme.primary }}
-                  >
-                    {item.step}
-                  </span>
-                  <span
-                    className="text-xs font-bold px-2.5 py-1 rounded-full"
+                    className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
                     style={{
                       backgroundColor: activeTheme.primaryLight,
                       color: activeTheme.primary,
                     }}
                   >
+                    Phase {idx + 1}
+                  </span>
+                  <span className="text-xs text-stone-500 font-medium">
                     {item.time}
                   </span>
                 </div>
 
-                <h3 className="font-serif text-lg sm:text-xl font-bold" style={{ color: activeTheme.textDark }}>
+                <h3 className="font-serif text-lg font-bold" style={{ color: activeTheme.textDark }}>
                   {item.title}
                 </h3>
 
@@ -88,10 +85,10 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
               </div>
 
               <div
-                className="mt-6 pt-4 border-t text-xs font-semibold flex items-center justify-between text-stone-500"
+                className="mt-5 pt-3.5 border-t text-xs font-semibold flex items-center justify-between text-stone-500"
                 style={{ borderColor: activeTheme.border }}
               >
-                <span>Step {item.step} of 04</span>
+                <span>Fiduciary Commitment</span>
                 <ArrowRight className="w-3.5 h-3.5 text-stone-400" />
               </div>
             </motion.div>
@@ -104,16 +101,16 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 sm:mt-14 text-center"
+          className="mt-8 text-center"
         >
           <button
             id="process-start-journey-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center justify-center gap-2.5 min-h-[48px] w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2.5 min-h-[48px] w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer shadow-sm"
             style={{ backgroundColor: activeTheme.primary }}
           >
             <Calendar className="w-4 h-4" />
-            <span>Begin Step 01: Book Your Free Discovery Call</span>
+            <span>Book Your Free Discovery Call</span>
           </button>
         </motion.div>
       </div>

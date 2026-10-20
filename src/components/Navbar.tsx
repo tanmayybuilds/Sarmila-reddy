@@ -13,12 +13,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'My Why', href: '#my-why' },
-    { label: 'Who I Help', href: '#who-i-help' },
-    { label: 'Wealth Calculator', href: '#calculator' },
     { label: 'About', href: '#about' },
-    { label: 'Client Stories', href: '#testimonials' },
+    { label: 'My Purpose', href: '#my-why' },
+    { label: 'Services', href: '#services' },
+    { label: 'Who I Help', href: '#who-i-help' },
+    { label: 'Calculator', href: '#calculator' },
+    { label: 'Reviews', href: '#testimonials' },
     { label: 'FAQ', href: '#faq' },
   ];
 

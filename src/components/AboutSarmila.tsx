@@ -13,9 +13,9 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
   const { activeTheme } = useTheme();
 
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-28 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <section id="about" className="py-10 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Visual Showcase with Motion Reveal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,35 +24,35 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative mx-auto max-w-md">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Outer decorative halo */}
               <div
-                className="absolute -inset-2 rounded-3xl opacity-30 blur-xl"
+                className="absolute -inset-1.5 rounded-3xl opacity-25 blur-lg"
                 style={{ backgroundColor: activeTheme.accent }}
               />
 
               <div
-                className="relative rounded-3xl overflow-hidden border bg-white"
+                className="relative rounded-3xl overflow-hidden border bg-white shadow-sm"
                 style={{ borderColor: activeTheme.border }}
               >
-                <div className="aspect-[4/5] overflow-hidden relative">
+                <div className="aspect-[4/4.9] overflow-hidden relative">
                   <img
                     src={ADVISOR_PROFILE.images.about}
                     alt="Sarmila Reddy Financial Advisor"
                     className="w-full h-full object-cover object-[center_18%]"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                   <div className="absolute bottom-5 left-5 right-5 text-white">
-                    <span className="text-xs font-semibold text-amber-300">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-amber-300">
                       Sarmila Reddy
                     </span>
-                    <p className="font-serif text-xl sm:text-2xl font-bold mt-0.5">
+                    <p className="font-serif text-xl sm:text-2xl font-bold mt-0.5 leading-snug">
                       “I am back in business to build your legacy.”
                     </p>
-                    <p className="text-sm text-stone-200 mt-1 font-light">
-                      Financial Advisor • Serving Canada Coast to Coast
+                    <p className="text-xs sm:text-sm text-stone-200 mt-1 font-light">
+                      Independent Financial Advisor • Serving Canada Coast to Coast
                     </p>
                   </div>
                 </div>
@@ -60,7 +60,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                 {/* Sub info */}
                 <div className="p-4 sm:p-5 bg-white space-y-2.5 sm:space-y-3">
                   <div className="flex items-center justify-between text-xs sm:text-sm text-stone-600">
-                    <span className="font-semibold">Professional Status:</span>
+                    <span className="font-semibold text-stone-800">Professional Status:</span>
                     <span className="font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full text-xs">
                       Active LLQP License
                     </span>
@@ -81,10 +81,16 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="lg:col-span-7 space-y-5 sm:space-y-6 text-left"
+            className="lg:col-span-7 space-y-4 sm:space-y-5 text-left"
           >
+            {/* Eyebrow badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-stone-100 text-stone-800 border border-stone-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+              <span>About Sarmila Reddy • Independent Canadian Advisor</span>
+            </div>
+
             <h2
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
               style={{ color: activeTheme.textDark }}
             >
               Building Wealth.{' '}
@@ -94,21 +100,21 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
               Creating Freedom.
             </h2>
 
-            <div className="space-y-3.5 sm:space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed font-light" style={{ maxWidth: '480px' }}>
-              <p style={{ maxWidth: '480px' }}>
+            <div className="space-y-3 text-stone-600 text-sm sm:text-base leading-relaxed font-light max-w-2xl">
+              <p>
                 Hello, I’m <strong>Sarmila Reddy</strong>. As a licensed Canadian financial advisor and entrepreneur, my practice was founded on a simple realization: far too many Canadian families work tirelessly every single day, yet feel completely left in the dark when it comes to taxes, insurance, and retirement planning.
               </p>
-              <p style={{ maxWidth: '480px' }}>
+              <p>
                 The traditional banking system often sells generic products without taking the time to explain how they interact with your taxes or your children’s future. I take the exact opposite approach. I treat every client like family—listening to your worries, analyzing your numbers, and showing you step-by-step how to protect what you’ve built while accelerating your compound growth.
               </p>
-              <p style={{ maxWidth: '480px' }}>
+              <p>
                 Whether you’ve recently landed in Canada as a new immigrant trying to make sense of the CRA, a young professional seeking smart tax shelters, or a business owner safeguarding corporate retained earnings—you deserve honest, accessible guidance.
               </p>
             </div>
 
             {/* Micro Stats Banner with Clean Border Divider */}
             <div
-              className="py-4 border-y border-stone-200/80 grid grid-cols-3 gap-4"
+              className="py-3.5 border-y border-stone-200/80 grid grid-cols-3 gap-4 max-w-2xl"
             >
               <div>
                 <p className="font-serif text-xl sm:text-2xl font-bold" style={{ color: activeTheme.primary }}>
@@ -137,31 +143,31 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* Checklist of Principles */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1 text-xs sm:text-sm text-stone-700 font-medium">
-              <div className="flex items-center gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-0.5 text-xs sm:text-sm text-stone-700 font-medium max-w-2xl">
+              <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Zero Sales Pressure or Jargon</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Fiduciary Mindset (Client First)</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Access to Canada’s Top Carriers</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Complimentary Discovery Sessions</span>
               </div>
             </div>
 
             {/* CTAs */}
-            <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 id="about-schedule-consultation-btn"
                 onClick={onOpenBooking}
-                className="inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer shadow-sm"
                 style={{ backgroundColor: activeTheme.primary }}
               >
                 <Calendar className="w-4 h-4" />
@@ -170,7 +176,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
 
               <a
                 href="#testimonials"
-                className="inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full text-sm font-semibold border transition-all hover:bg-white cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 min-h-[48px] px-7 py-3.5 rounded-full text-sm font-semibold border transition-all hover:bg-stone-50 cursor-pointer"
                 style={{
                   borderColor: activeTheme.border,
                   color: activeTheme.textDark,

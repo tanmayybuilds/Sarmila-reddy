@@ -70,7 +70,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
   };
 
   return (
-    <section id="calculator" className="py-16 sm:py-20 lg:py-28 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
+    <section id="calculator" className="py-10 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -78,7 +78,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto space-y-2.5 sm:space-y-3 mb-6 sm:mb-8"
         >
           <div
             className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"

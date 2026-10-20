@@ -23,7 +23,7 @@ export const WhySection: React.FC = () => {
   };
 
   return (
-    <section id="my-why" className="py-16 sm:py-20 lg:py-28 relative overflow-hidden bg-white transition-colors duration-500">
+    <section id="my-why" className="py-10 sm:py-14 lg:py-16 relative overflow-hidden transition-colors duration-500" style={{ backgroundColor: activeTheme.bgLight }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -31,8 +31,13 @@ export const WhySection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-12 sm:mb-16"
+          className="text-center max-w-3xl mx-auto space-y-2.5 sm:space-y-3 mb-8 sm:mb-10"
         >
+          {/* Eyebrow badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white text-stone-800 border border-stone-200 shadow-sm">
+            <span>Guiding Principles</span>
+          </div>
+
           <h2
             className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
@@ -49,31 +54,24 @@ export const WhySection: React.FC = () => {
         </motion.div>
 
         {/* 4 Pillars Grid with Staggered Scroll Entrance */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
           {WHY_PILLARS.map((pillar, idx) => (
             <motion.div
-              key={pillar.number}
+              key={pillar.title}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 sm:p-7 rounded-2xl border transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 relative flex flex-col justify-between bg-white shadow-sm"
               style={{
-                backgroundColor: activeTheme.bgLight,
                 borderColor: activeTheme.border,
               }}
             >
               <div>
-                {/* Number & Icon Header */}
-                <div className="flex items-center justify-between mb-4 sm:mb-5">
-                  <span
-                    className="font-serif text-2xl font-bold opacity-40"
-                    style={{ color: activeTheme.primary }}
-                  >
-                    {pillar.number}
-                  </span>
+                {/* Icon Header without useless indexing numbers */}
+                <div className="flex items-center justify-between mb-3.5 sm:mb-4">
                   <div
-                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center shrink-0"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                     style={{
                       backgroundColor: activeTheme.primaryLight,
                       color: activeTheme.primary,
@@ -81,34 +79,21 @@ export const WhySection: React.FC = () => {
                   >
                     {getIcon(pillar.icon)}
                   </div>
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-stone-500">
+                    {pillar.subtitle}
+                  </span>
                 </div>
 
-                <p className="text-xs font-semibold text-stone-600 mb-1.5">
-                  {pillar.subtitle}
-                </p>
-
                 <h3
-                  className="font-serif text-lg sm:text-xl font-bold mb-2 sm:mb-3 tracking-tight"
+                  className="font-serif text-lg font-bold mb-2 tracking-tight"
                   style={{ color: activeTheme.textDark }}
                 >
                   {pillar.title}
                 </h3>
 
-                <p className="text-sm text-stone-600 leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
                   {pillar.description}
                 </p>
-              </div>
-
-              <div
-                className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t text-xs font-medium flex items-center gap-1.5"
-                style={{
-                  borderColor: activeTheme.border,
-                  color: activeTheme.primary,
-                }}
-              >
-                <span>Client Commitment</span>
-                <span className="w-1 h-1 rounded-full bg-stone-400" />
-                <span className="text-stone-500">Uncompromised</span>
               </div>
             </motion.div>
           ))}
@@ -116,13 +101,13 @@ export const WhySection: React.FC = () => {
 
         {/* The Quote That Stuck With Me - Big Editorial Highlight Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="mt-10 sm:mt-16 p-6 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl border relative overflow-hidden transition-colors"
+          className="mt-8 sm:mt-10 p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border relative overflow-hidden transition-colors shadow-sm"
           style={{
-            backgroundColor: activeTheme.primaryLight,
+            backgroundColor: '#FFFFFF',
             borderColor: activeTheme.border,
           }}
         >

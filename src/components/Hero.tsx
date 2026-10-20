@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
   return (
     <section
-      className="relative overflow-x-clip pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-14 lg:pb-24 transition-colors duration-500"
+      className="relative overflow-x-clip pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 transition-colors duration-500"
       style={{ backgroundColor: activeTheme.bgLight }}
     >
       {/* Subtle Background Lighting */}
@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Value Proposition & CTAs with Motion */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
