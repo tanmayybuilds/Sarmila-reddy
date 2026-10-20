@@ -61,3 +61,23 @@ export interface FAQItem {
   answer: string;
   category: 'General' | 'Investments' | 'Insurance' | 'Consultations';
 }
+
+export interface AccountComparisonItem {
+  feature: string;
+  shortLabel: string;
+  iconName: string;
+  category: 'limits' | 'tax' | 'growth' | 'withdrawals' | 'rules';
+  tfsa: {
+    highlight: string;
+    subtext: string;
+    badge: string;
+    isPositive: boolean;
+  };
+  fhsa: {
+    highlight: string;
+    subtext: string;
+    badge: string;
+    isPositive: boolean;
+  };
+}
+

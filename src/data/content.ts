@@ -1,4 +1,4 @@
-import { ServiceItem, TargetAudience, WhyPillar, Testimonial, FAQItem, ColorTheme } from '../types';
+import { ServiceItem, TargetAudience, WhyPillar, Testimonial, FAQItem, ColorTheme, AccountComparisonItem } from '../types';
 
 export const COLOR_THEMES: ColorTheme[] = [
   {
@@ -259,6 +259,117 @@ export const TARGET_AUDIENCES: TargetAudience[] = [
       'Custom group benefits packages designed for small agile teams',
     ],
     icon: 'Building2',
+  },
+];
+
+export const TFSA_VS_FHSA_COMPARISON: AccountComparisonItem[] = [
+  {
+    feature: '2026 Annual Contribution Limit',
+    shortLabel: 'Annual Limit',
+    iconName: 'DollarSign',
+    category: 'limits',
+    tfsa: {
+      highlight: '$7,000 / year',
+      subtext: 'Cumulative room carrying forward forever since age 18',
+      badge: 'Cumulative Room',
+      isPositive: true,
+    },
+    fhsa: {
+      highlight: '$8,000 / year',
+      subtext: '$40,000 lifetime maximum contribution ceiling',
+      badge: '$40k Lifetime Cap',
+      isPositive: true,
+    },
+  },
+  {
+    feature: 'Tax Deduction on Contributions',
+    shortLabel: 'Tax Deduction',
+    iconName: 'Receipt',
+    category: 'tax',
+    tfsa: {
+      highlight: 'No Tax Deduction',
+      subtext: 'Contributed with after-tax CAD income (no immediate CRA rebate)',
+      badge: 'After-Tax Dollars',
+      isPositive: false,
+    },
+    fhsa: {
+      highlight: 'Generally Yes (100%)',
+      subtext: 'Directly deducts from taxable income, triggering spring tax refund',
+      badge: 'Tax Deductible',
+      isPositive: true,
+    },
+  },
+  {
+    feature: 'Tax-Free Investment Growth',
+    shortLabel: 'Growth Tax-Free',
+    iconName: 'TrendingUp',
+    category: 'growth',
+    tfsa: {
+      highlight: 'Yes, 100% Tax-Free',
+      subtext: 'Interest, dividends, and capital gains accumulate completely tax-sheltered',
+      badge: 'Tax-Free Compounding',
+      isPositive: true,
+    },
+    fhsa: {
+      highlight: 'Yes, 100% Tax-Free',
+      subtext: 'Investments grow sheltered from CRA taxes to accelerate down payment',
+      badge: 'Tax-Free Compounding',
+      isPositive: true,
+    },
+  },
+  {
+    feature: 'Tax-Free Withdrawals',
+    shortLabel: 'Withdrawals',
+    iconName: 'ArrowDownToLine',
+    category: 'withdrawals',
+    tfsa: {
+      highlight: 'Generally Yes (Anytime)',
+      subtext: 'Withdraw for any life goal at any time; room restores next Jan 1',
+      badge: 'Complete Liquidity',
+      isPositive: true,
+    },
+    fhsa: {
+      highlight: 'For Qualifying Home',
+      subtext: '100% tax-free when used toward purchase of qualifying first home',
+      badge: 'First Home Purchase',
+      isPositive: true,
+    },
+  },
+  {
+    feature: 'Main Purpose & Best Use',
+    shortLabel: 'Main Purpose',
+    iconName: 'Target',
+    category: 'rules',
+    tfsa: {
+      highlight: 'Flexible Saving & Investing',
+      subtext: 'Emergency funds, vacations, investments, and lifelong tax-free wealth',
+      badge: 'All-Purpose Wealth',
+      isPositive: true,
+    },
+    fhsa: {
+      highlight: 'Buying First Home in Canada',
+      subtext: 'Accelerating down-payment wealth with combined RRSP + TFSA tax perks',
+      badge: 'Home Ownership',
+      isPositive: true,
+    },
+  },
+  {
+    feature: 'If You Don’t Buy or Plans Change',
+    shortLabel: 'Unused Room',
+    iconName: 'ShieldCheck',
+    category: 'rules',
+    tfsa: {
+      highlight: 'Keep Invested Forever',
+      subtext: 'Zero expiry date, no forced conversion age, funds stay tax-free',
+      badge: 'No Expiry Ever',
+      isPositive: true,
+    },
+    fhsa: {
+      highlight: 'Roll to RRSP Tax-Free',
+      subtext: 'Transfer directly into RRSP/RRIF without using personal RRSP room',
+      badge: 'Zero Room Penalty',
+      isPositive: true,
+    },
   },
 ];
 
