@@ -29,7 +29,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
   };
 
   return (
-    <section id="services" className="py-10 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden bg-white">
+    <section id="services" className="py-8 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -37,10 +37,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-2.5 sm:space-y-3 mb-8 sm:mb-10"
+          className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-6 sm:mb-10"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -50,7 +50,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
           </div>
 
           <h2
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Strategic Guidance for{' '}
@@ -59,13 +59,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             All financial recommendations in Canada are structured specifically around CRA tax regulations, your family goals, and established Canadian financial institutions.
           </p>
         </motion.div>
 
-        {/* Tab Selector - Touch Optimized & Clean Presentation */}
-        <div role="tablist" aria-label="Financial Services Categories" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
+        {/* Tab Selector - 2x2 grid on mobile, row on desktop */}
+        <div role="tablist" aria-label="Financial Services Categories" className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 mb-5 sm:mb-10">
           {SERVICES_LIST.map(service => {
             const isSelected = service.id === selectedService.id;
             return (
@@ -76,8 +76,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 aria-selected={isSelected}
                 aria-controls={`service-panel-${service.id}`}
                 onClick={() => setSelectedService(service)}
-                className={`p-3.5 sm:p-4 rounded-2xl border text-left transition-all duration-200 flex items-center sm:items-start gap-3 sm:gap-3.5 cursor-pointer min-h-[58px] ${
-                  isSelected ? 'scale-[1.01] border-2 font-bold' : 'hover:bg-white/80 bg-white/60 active:scale-98'
+                className={`p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border text-left transition-all duration-200 flex items-center sm:items-start gap-2 sm:gap-3.5 cursor-pointer min-h-[48px] sm:min-h-[58px] ${
+                  isSelected ? 'scale-[1.01] border-2 font-bold shadow-xs' : 'hover:bg-white/80 bg-white/60 active:scale-98'
                 }`}
                 style={{
                   borderColor: isSelected ? activeTheme.primary : activeTheme.border,
@@ -85,22 +85,22 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 }}
               >
                 <div
-                  className="p-2.5 rounded-xl shrink-0 transition-colors"
+                  className="p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl shrink-0 transition-colors"
                   style={{
                     backgroundColor: isSelected ? activeTheme.primary : activeTheme.primaryLight,
                     color: isSelected ? '#FFFFFF' : activeTheme.primary,
                   }}
                 >
-                  {getServiceIcon(service.iconName)}
+                  <span className="scale-90 sm:scale-100 inline-block">{getServiceIcon(service.iconName)}</span>
                 </div>
                 <div className="min-w-0 flex-1">
                   <span
-                    className="font-semibold text-sm sm:text-base leading-tight block"
+                    className="font-semibold text-xs sm:text-base leading-tight block truncate"
                     style={{ color: activeTheme.textDark }}
                   >
                     {service.title}
                   </span>
-                  <p className="text-xs text-stone-500 mt-1 leading-snug">{service.subtitle}</p>
+                  <p className="text-[10px] sm:text-xs text-stone-500 mt-0.5 leading-snug truncate">{service.subtitle}</p>
                 </div>
               </button>
             );
@@ -118,16 +118,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
-            className="rounded-2xl sm:rounded-3xl border bg-white p-6 sm:p-10 lg:p-12 text-left"
+            className="rounded-2xl sm:rounded-3xl border bg-white p-4 sm:p-10 lg:p-12 text-left shadow-xs"
             style={{ borderColor: activeTheme.border }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
               {/* Left: Deep Overview */}
-              <div className="lg:col-span-7 space-y-5 sm:space-y-6">
-                <div className="space-y-2">
+              <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+                <div className="space-y-1.5 sm:space-y-2">
                   <div className="flex items-center gap-2">
                     <span
-                      className="text-xs font-semibold px-2.5 py-0.5 rounded-md"
+                      className="text-[11px] sm:text-xs font-semibold px-2.5 py-0.5 rounded-md"
                       style={{
                         backgroundColor: activeTheme.primaryLight,
                         color: activeTheme.primary,
@@ -137,25 +137,25 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold" style={{ color: activeTheme.textDark }}>
+                  <h3 className="font-serif text-lg sm:text-2xl lg:text-3xl font-bold" style={{ color: activeTheme.textDark }}>
                     {selectedService.title}
                   </h3>
 
-                  <p className="text-stone-600 leading-relaxed text-sm sm:text-base font-light">
+                  <p className="text-stone-600 leading-relaxed text-xs sm:text-base font-light">
                     {selectedService.description}
                   </p>
                 </div>
 
                 {/* Core Features / Breakdown */}
-                <div className="space-y-3 pt-1">
-                  <h4 className="text-xs font-semibold text-stone-600">
+                <div className="space-y-2.5 sm:space-y-3 pt-0.5 sm:pt-1">
+                  <h4 className="text-[11px] sm:text-xs font-semibold text-stone-600 uppercase tracking-wider">
                     Included Strategic Solutions
                   </h4>
-                  <div className="space-y-2.5">
+                  <div className="space-y-2 sm:space-y-2.5">
                     {selectedService.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
+                      <div key={idx} className="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-sm text-stone-700">
                         <CheckCircle
-                          className="w-4 h-4 mt-0.5 shrink-0"
+                          className="w-3.5 h-3.5 sm:w-4 sm:h-4 mt-0.5 shrink-0"
                           style={{ color: activeTheme.primary }}
                         />
                         <span className="leading-snug">{feature}</span>
@@ -165,11 +165,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 </div>
 
                 {/* Booking CTA for this service */}
-                <div className="pt-2 sm:pt-4">
+                <div className="pt-1 sm:pt-4">
                   <button
                     id={`book-service-${selectedService.id}-btn`}
                     onClick={onOpenBooking}
-                    className="inline-flex items-center justify-center gap-2 min-h-[48px] w-full sm:w-auto px-7 py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 min-h-[42px] sm:min-h-[48px] w-full sm:w-auto px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer shadow-xs"
                     style={{ backgroundColor: activeTheme.primary }}
                   >
                     <span>{selectedService.ctaText}</span>
@@ -180,7 +180,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
 
               {/* Right: Canadian Regulatory & Strategic Highlights with Clean Vertical Border */}
               <div
-                className="lg:col-span-5 pt-6 lg:pt-0 lg:pl-10 lg:border-l border-stone-200/80 space-y-4 sm:space-y-5"
+                className="lg:col-span-5 pt-4 lg:pt-0 lg:pl-10 lg:border-l border-stone-200/80 space-y-3.5 sm:space-y-5"
               >
                 <div className="flex items-center gap-2">
                   <Info className="w-4 h-4" style={{ color: activeTheme.accent }} />
@@ -189,23 +189,23 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                   </h4>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2">
                   {selectedService.canadianKeyPoints.map((point, idx) => (
                     <div
                       key={idx}
-                      className="py-2.5 border-b border-stone-100 text-xs text-stone-700 space-y-1"
+                      className="py-2 sm:py-2.5 border-b border-stone-100 text-[11px] sm:text-xs text-stone-700 space-y-1"
                     >
-                      <div className="font-semibold text-stone-900 flex items-center gap-2">
+                      <div className="font-semibold text-stone-900 flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: activeTheme.primary }} />
                         <span>Strategic Rule</span>
                       </div>
-                      <p className="text-stone-600 pl-3.5 leading-relaxed">{point}</p>
+                      <p className="text-stone-600 pl-3 leading-relaxed">{point}</p>
                     </div>
                   ))}
                 </div>
 
                 <div
-                  className="pl-3.5 border-l-2 py-1 text-xs space-y-1"
+                  className="pl-3 border-l-2 py-1 text-[11px] sm:text-xs space-y-1"
                   style={{
                     borderColor: activeTheme.primary,
                   }}

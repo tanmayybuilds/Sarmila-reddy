@@ -13,7 +13,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-10 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
+    <section id="faq" className="py-8 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -21,21 +21,21 @@ export const FAQSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="text-center space-y-2.5 sm:space-y-3 mb-6 sm:mb-8"
+          className="text-center space-y-2 sm:space-y-3 mb-5 sm:mb-8"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
             }}
           >
-            <HelpCircle className="w-3.5 h-3.5" />
+            <HelpCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>Frequently Asked Questions</span>
           </div>
 
           <h2
-            className="font-serif text-3xl sm:text-4xl font-bold tracking-tight"
+            className="font-serif text-2xl sm:text-4xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Clear Answers to Your{' '}
@@ -44,13 +44,13 @@ export const FAQSection: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Everything you need to know about working with a licensed Canadian financial advisor, registered tax accounts, and protecting your family.
           </p>
         </motion.div>
 
         {/* Accordion List */}
-        <div className="space-y-3 sm:space-y-3.5">
+        <div className="space-y-2 sm:space-y-3.5">
           {FAQS.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -60,7 +60,7 @@ export const FAQSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-30px' }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="rounded-2xl border bg-white overflow-hidden transition-all"
+                className="rounded-xl sm:rounded-2xl border bg-white overflow-hidden transition-all"
                 style={{
                   borderColor: isOpen ? activeTheme.primary : activeTheme.border,
                 }}
@@ -71,13 +71,13 @@ export const FAQSection: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                   onClick={() => toggleAccordion(index)}
-                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 transition-colors cursor-pointer min-h-[48px]"
+                  className="w-full p-3 sm:p-5 text-left flex items-center justify-between gap-3 sm:gap-4 transition-colors cursor-pointer min-h-[42px] sm:min-h-[48px]"
                   style={{
                     backgroundColor: isOpen ? activeTheme.primaryLight : '#FFFFFF',
                   }}
                 >
                   <span
-                    className="font-serif font-bold text-sm sm:text-base tracking-tight leading-snug"
+                    className="font-serif font-bold text-xs sm:text-base tracking-tight leading-snug"
                     style={{ color: activeTheme.textDark }}
                   >
                     {faq.question}
@@ -88,7 +88,7 @@ export const FAQSection: React.FC = () => {
                     }`}
                     style={{ color: activeTheme.primary }}
                   >
-                    <ChevronDown className="w-5 h-5" />
+                    <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                 </button>
 
@@ -106,7 +106,7 @@ export const FAQSection: React.FC = () => {
                       className="overflow-hidden"
                     >
                       <div
-                        className="p-4 sm:p-5 pt-3 sm:pt-3 text-xs sm:text-sm text-stone-600 leading-relaxed font-light border-t"
+                        className="p-3 sm:p-5 pt-2 sm:pt-3 text-[11px] sm:text-sm text-stone-600 leading-relaxed font-light border-t"
                         style={{ borderColor: activeTheme.border }}
                       >
                         {faq.answer}

@@ -9,25 +9,25 @@ export const ColorProfileSwitcher: React.FC = () => {
 
   return (
     <>
-      {/* Floating Pill on Bottom-Right - Adjusted for mobile sticky bar */}
-      <aside aria-label="Color Palette Selector" className="fixed bottom-20 md:bottom-6 right-4 sm:right-6 z-40">
+      {/* Floating Pill / Icon on Bottom-Right - Ultra-compact on mobile to prevent blocking content */}
+      <aside aria-label="Color Palette Selector" className="fixed bottom-18 sm:bottom-6 right-2 sm:right-6 z-40">
         <button
           id="color-palette-floating-button"
           onClick={() => setIsOpen(prev => !prev)}
-          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border bg-white/95 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+          className="flex items-center justify-center gap-1.5 sm:gap-2 w-8 h-8 sm:w-auto sm:h-auto sm:px-4 sm:py-2.5 rounded-full border bg-white/95 backdrop-blur-md shadow-md transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           style={{
             borderColor: activeTheme.border,
           }}
           title="Customize light color profile"
         >
           <div
-            className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full shrink-0"
+            className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full shrink-0"
             style={{ backgroundColor: activeTheme.primary }}
           />
-          <span className="text-[11px] sm:text-xs font-semibold tracking-wide hidden xs:inline" style={{ color: activeTheme.textDark }}>
+          <span className="text-xs font-semibold tracking-wide hidden sm:inline" style={{ color: activeTheme.textDark }}>
             Theme: <span className="font-bold">{activeTheme.name.split(' ')[0]}</span>
           </span>
-          <Palette className="w-3.5 h-3.5" style={{ color: activeTheme.primary }} />
+          <Palette className="w-3 h-3 sm:w-3.5 sm:h-3.5" style={{ color: activeTheme.primary }} />
         </button>
       </aside>
 

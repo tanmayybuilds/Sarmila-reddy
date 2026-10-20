@@ -27,13 +27,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         className="border-t transition-colors duration-500 text-stone-700 bg-white"
         style={{ borderColor: activeTheme.border }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 pb-20 sm:pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 pb-20 sm:pb-10">
           {/* Main 4 Equal Columns Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-start text-left">
             {/* Col 1: Brand & Identity */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-full overflow-hidden p-0.5 bg-stone-50 border border-stone-200 shrink-0 flex items-center justify-center">
+            <div className="space-y-2.5 sm:space-y-3">
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden p-0.5 bg-stone-50 border border-stone-200 shrink-0 flex items-center justify-center">
                   <img
                     src={ADVISOR_PROFILE.images.logo}
                     alt="Sarmila Reddy"
@@ -41,35 +41,35 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-serif text-base font-bold leading-tight" style={{ color: activeTheme.textDark }}>
+                  <h3 className="font-serif text-sm sm:text-base font-bold leading-tight" style={{ color: activeTheme.textDark }}>
                     Sarmila Reddy
                   </h3>
-                  <p className="text-[11px] text-stone-500 font-medium">
+                  <p className="text-[10px] sm:text-[11px] text-stone-500 font-medium">
                     Financial Advisory • Canada
                   </p>
                 </div>
               </div>
 
-              <p className="text-xs text-stone-600 leading-relaxed font-light">
+              <p className="text-[11px] sm:text-xs text-stone-600 leading-relaxed font-light">
                 Empowering Canadian families, professionals, and newcomers with fiduciary-first financial strategies.
               </p>
 
-              <div className="flex items-center gap-2 pt-0.5">
+              <div className="flex items-center gap-1.5 sm:gap-2 pt-0.5">
                 <a
                   href={`https://instagram.com/${ADVISOR_PROFILE.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
+                  className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
                   title="Follow Sarmila on Instagram"
                   aria-label="Instagram"
                 >
-                  <Instagram className="w-3.5 h-3.5" />
+                  <Instagram className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </a>
                 <a
                   href={`https://${ADVISOR_PROFILE.website}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="h-7 px-2 rounded-full border border-stone-200 flex items-center justify-center text-[10px] font-mono font-semibold text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
+                  className="h-6 px-1.5 sm:h-7 sm:px-2 rounded-full border border-stone-200 flex items-center justify-center text-[9px] sm:text-[10px] font-mono font-semibold text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
                   title="Official Website"
                   aria-label="Official Website"
                 >
@@ -79,29 +79,29 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   href={ADVISOR_PROFILE.calendlyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
+                  className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
                   title="Calendly Booking"
                   aria-label="Calendly"
                 >
-                  <Calendar className="w-3.5 h-3.5" />
+                  <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </a>
                 <a
                   href={`mailto:${ADVISOR_PROFILE.email}`}
-                  className="w-7 h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
+                  className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-stone-200 flex items-center justify-center text-stone-600 hover:text-stone-900 hover:border-stone-400 hover:bg-stone-50 transition-colors"
                   title="Email Sarmila"
                   aria-label="Email"
                 >
-                  <Mail className="w-3.5 h-3.5" />
+                  <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </a>
               </div>
             </div>
 
             {/* Col 2: Quick Links */}
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900">
+            <div className="space-y-2 sm:space-y-2.5">
+              <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900">
                 Navigation
               </h3>
-              <ul className="space-y-1.5 text-xs text-stone-600">
+              <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs text-stone-600">
                 <li><a href="#services" className="hover:underline">Advisory Services</a></li>
                 <li><a href="#who-i-help" className="hover:underline">Who I Help in Canada</a></li>
                 <li><a href="#calculator" className="hover:underline">Wealth Calculator</a></li>
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 <li>
                   <button
                     onClick={onOpenBooking}
-                    className="hover:underline cursor-pointer font-semibold flex items-center gap-1 text-xs"
+                    className="hover:underline cursor-pointer font-semibold flex items-center gap-1 text-[11px] sm:text-xs"
                     style={{ color: activeTheme.primary }}
                   >
                     <span>Book 1-on-1 Session</span>
@@ -121,11 +121,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* Col 3: Key Solutions */}
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900">
+            <div className="space-y-2 sm:space-y-2.5">
+              <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900">
                 Solutions
               </h3>
-              <ul className="space-y-1.5 text-xs text-stone-600">
+              <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs text-stone-600">
                 <li><a href="#services" className="hover:underline">TFSA, RRSP & FHSA</a></li>
                 <li><a href="#services" className="hover:underline">Life Insurance (Term & Whole)</a></li>
                 <li><a href="#services" className="hover:underline">Critical Illness & Disability</a></li>
@@ -136,30 +136,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* Col 4: Direct Contact & Office */}
-            <div className="space-y-2.5">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-stone-900">
+            <div className="space-y-2 sm:space-y-2.5">
+              <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900">
                 Direct Contact
               </h3>
-              <div className="space-y-2 text-xs text-stone-600">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-stone-400 shrink-0 mt-0.5" />
+              <div className="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-stone-600">
+                <div className="flex items-start gap-1.5 sm:gap-2">
+                  <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 shrink-0 mt-0.5" />
                   <span>British Columbia & Canada-Wide (Virtual)</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 shrink-0" />
                   <a href={`mailto:${ADVISOR_PROFILE.email}`} className="hover:underline">
                     {ADVISOR_PROFILE.email}
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 shrink-0" />
                   <a href={ADVISOR_PROFILE.calendlyUrl} target="_blank" rel="noreferrer" className="hover:underline">
                     calendly.com/{ADVISOR_PROFILE.calendlyHandle}
                   </a>
                 </div>
               </div>
 
-              <div className="pt-1 text-[11px]">
+              <div className="pt-0.5 sm:pt-1 text-[10px] sm:text-[11px]">
                 <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   <span>100% Free Consultations</span>
@@ -169,13 +169,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           </div>
 
           {/* Regulatory & Compliance Disclaimers */}
-          <div className="mt-7 pt-5 border-t space-y-2 text-left" style={{ borderColor: activeTheme.border }}>
-            <p className="text-[11px] text-stone-500 leading-relaxed max-w-4xl">
+          <div className="mt-5 sm:mt-7 pt-4 sm:pt-5 border-t space-y-1.5 sm:space-y-2 text-left" style={{ borderColor: activeTheme.border }}>
+            <p className="text-[10px] sm:text-[11px] text-stone-500 leading-relaxed max-w-4xl">
               <strong className="text-stone-700 font-semibold">Regulatory Notice: </strong>
               Sarmila Reddy is an independent licensed financial advisor and Life License Qualification Program (LLQP) certified professional in Canada. All initial strategy sessions are 100% complimentary with no direct client payments accepted through this website. Financial applications, insurance underwriting, and registered investments are executed through licensed Canadian carriers and institutions under compliance oversight. Calculations provide hypothetical modeling only and do not constitute formal legal, tax, or binding investment advice.
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs text-stone-500 text-left border-t border-stone-100">
+            <div className="pt-1.5 sm:pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] sm:text-xs text-stone-500 text-left border-t border-stone-100">
               <p>© {new Date().getFullYear()} Sarmila Reddy. All rights reserved.</p>
 
               <div className="flex items-center gap-3">
@@ -204,21 +204,21 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           role="dialog"
           aria-modal="true"
           aria-labelledby="privacy-modal-title"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-sm animate-fade-in"
         >
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto border text-left relative">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto border text-left relative">
             <button
               onClick={() => setActiveLegalModal(null)}
-              className="absolute top-5 right-5 p-2 rounded-full hover:bg-stone-100 text-stone-400 cursor-pointer"
+              className="absolute top-4 right-4 p-1.5 sm:p-2 rounded-full hover:bg-stone-100 text-stone-400 cursor-pointer"
               aria-label="Close Privacy Policy"
             >
               <X className="w-5 h-5" />
             </button>
-            <h3 id="privacy-modal-title" className="font-serif text-2xl font-bold text-stone-900 mb-2">
+            <h3 id="privacy-modal-title" className="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-1.5 sm:mb-2 pr-8">
               Privacy Policy (PIPEDA Compliance)
             </h3>
-            <p className="text-xs text-stone-500 mb-4">Last Updated: Canadian Regulatory Revision 2026</p>
-            <div className="space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
+            <p className="text-[11px] sm:text-xs text-stone-500 mb-3 sm:mb-4">Last Updated: Canadian Regulatory Revision 2026</p>
+            <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
               <p>
                 Sarmila Reddy respects your privacy and is committed to safeguarding personal information under Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial privacy laws.
               </p>
@@ -235,10 +235,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 Under Canada's Anti-Spam Legislation (CASL), we only send electronic communications with your express consent, and every email includes an instant unsubscribe mechanism.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t flex justify-end">
+            <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t flex justify-end">
               <button
                 onClick={() => setActiveLegalModal(null)}
-                className="px-5 py-2 rounded-xl text-xs font-semibold text-white bg-stone-900 cursor-pointer hover:bg-stone-800"
+                className="px-4 sm:px-5 py-2 rounded-xl text-xs font-semibold text-white bg-stone-900 cursor-pointer hover:bg-stone-800"
               >
                 Close Privacy Policy
               </button>
@@ -253,21 +253,21 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           role="dialog"
           aria-modal="true"
           aria-labelledby="terms-modal-title"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-sm animate-fade-in"
         >
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto border text-left relative">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto border text-left relative">
             <button
               onClick={() => setActiveLegalModal(null)}
-              className="absolute top-5 right-5 p-2 rounded-full hover:bg-stone-100 text-stone-400 cursor-pointer"
+              className="absolute top-4 right-4 p-1.5 sm:p-2 rounded-full hover:bg-stone-100 text-stone-400 cursor-pointer"
               aria-label="Close Terms of Service"
             >
               <X className="w-5 h-5" />
             </button>
-            <h3 id="terms-modal-title" className="font-serif text-2xl font-bold text-stone-900 mb-2">
+            <h3 id="terms-modal-title" className="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-1.5 sm:mb-2 pr-8">
               Terms of Service & Advisory Scope
             </h3>
-            <p className="text-xs text-stone-500 mb-4">Effective: 2026</p>
-            <div className="space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
+            <p className="text-[11px] sm:text-xs text-stone-500 mb-3 sm:mb-4">Effective: 2026</p>
+            <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
               <h4 className="font-bold text-stone-800">1. Advisory Scope</h4>
               <p>
                 Sarmila Reddy operates as an independent licensed financial professional in Canada. All consultations promoted on this website are 100% complimentary. No payment processing, fee collection, or direct e-commerce occurs on this site.
@@ -281,10 +281,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 Consultation bookings via Calendly can be rescheduled or cancelled at any time with 24 hours notice.
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t flex justify-end">
+            <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t flex justify-end">
               <button
                 onClick={() => setActiveLegalModal(null)}
-                className="px-5 py-2 rounded-xl text-xs font-semibold text-white bg-stone-900 cursor-pointer hover:bg-stone-800"
+                className="px-4 sm:px-5 py-2 rounded-xl text-xs font-semibold text-white bg-stone-900 cursor-pointer hover:bg-stone-800"
               >
                 Close Terms
               </button>

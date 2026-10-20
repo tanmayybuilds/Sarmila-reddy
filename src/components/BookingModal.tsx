@@ -70,23 +70,23 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 12 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="relative w-full max-w-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl border bg-white transition-all max-h-[92vh] overflow-y-auto z-10 my-auto"
+            className="relative w-full max-w-xl p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border bg-white transition-all max-h-[92vh] overflow-y-auto z-10 my-auto"
             style={{ borderColor: activeTheme.border }}
           >
             {/* Close Button */}
             <button
               id="close-booking-modal-btn"
               onClick={onClose}
-              className="absolute top-5 right-5 p-2 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 transition-colors cursor-pointer"
+              className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 p-1.5 sm:p-2 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 transition-colors cursor-pointer"
               title="Close Modal"
               aria-label="Close booking modal"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
         {/* Modal Header */}
-        <div className="flex items-center gap-3.5 mb-6 text-left pr-8">
-          <div className="w-12 h-12 rounded-full overflow-hidden border p-0.5 bg-white shrink-0 flex items-center justify-center"
+        <div className="flex items-center gap-2.5 sm:gap-3.5 mb-3.5 sm:mb-6 text-left pr-7 sm:pr-8">
+          <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-full overflow-hidden border p-0.5 bg-white shrink-0 flex items-center justify-center"
             style={{ borderColor: activeTheme.accent }}
           >
             <img
@@ -95,9 +95,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="space-y-1">
+          <div className="space-y-0.5 sm:space-y-1">
             <span
-              className="text-xs font-semibold px-2.5 py-0.5 rounded-full inline-block"
+              className="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full inline-block"
               style={{
                 backgroundColor: activeTheme.badgeBg,
                 color: activeTheme.badgeText,
@@ -105,20 +105,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             >
               Complimentary Consultation
             </span>
-            <h3 id="booking-modal-title" className="font-serif text-xl sm:text-2xl font-bold leading-tight" style={{ color: activeTheme.textDark }}>
+            <h3 id="booking-modal-title" className="font-serif text-base sm:text-2xl font-bold leading-tight" style={{ color: activeTheme.textDark }}>
               Book with Sarmila Reddy
             </h3>
-            <p className="text-xs text-stone-500">
+            <p className="text-[10px] sm:text-xs text-stone-500">
               30-Minute 1-on-1 Virtual Strategy Session • Zero Obligation
             </p>
           </div>
         </div>
 
         {/* Switcher Tabs */}
-        <div className="flex border-b mb-6 text-xs font-semibold" style={{ borderColor: activeTheme.border }}>
+        <div className="flex border-b mb-3.5 sm:mb-6 text-[11px] sm:text-xs font-semibold" style={{ borderColor: activeTheme.border }}>
           <button
             onClick={() => setActiveTab('calendly')}
-            className={`pb-2.5 px-4 transition-all border-b-2 ${
+            className={`pb-2 px-3 sm:pb-2.5 sm:px-4 transition-all border-b-2 ${
               activeTab === 'calendly' ? 'border-amber-600 font-bold' : 'border-transparent text-stone-600 hover:text-stone-900'
             }`}
             style={{
@@ -130,7 +130,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
           </button>
           <button
             onClick={() => setActiveTab('quickForm')}
-            className={`pb-2.5 px-4 transition-all border-b-2 ${
+            className={`pb-2 px-3 sm:pb-2.5 sm:px-4 transition-all border-b-2 ${
               activeTab === 'quickForm' ? 'border-amber-600 font-bold' : 'border-transparent text-stone-600 hover:text-stone-900'
             }`}
             style={{
@@ -143,10 +143,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
         </div>
 
         {activeTab === 'calendly' ? (
-          <div className="space-y-5 text-left">
-            <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80 space-y-2 text-xs text-stone-600">
-              <div className="flex items-center gap-2 text-stone-800 font-semibold">
-                <Clock className="w-4 h-4 text-emerald-600" />
+          <div className="space-y-3.5 sm:space-y-5 text-left">
+            <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-stone-50 border border-stone-200/80 space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-stone-600">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-stone-800 font-semibold">
+                <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600" />
                 <span>30-Min Strategy Call via Zoom</span>
               </div>
               <p className="leading-relaxed">
@@ -154,17 +154,17 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border text-center space-y-3" style={{ borderColor: activeTheme.border }}>
+            <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl border text-center space-y-2.5 sm:space-y-3" style={{ borderColor: activeTheme.border }}>
               <div
-                className="w-12 h-12 rounded-full mx-auto flex items-center justify-center text-white"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mx-auto flex items-center justify-center text-white"
                 style={{ backgroundColor: activeTheme.primary }}
               >
-                <Calendar className="w-6 h-6" />
+                <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h4 className="font-serif text-lg font-bold" style={{ color: activeTheme.textDark }}>
+              <h4 className="font-serif text-base sm:text-lg font-bold" style={{ color: activeTheme.textDark }}>
                 Open Calendly Scheduler
               </h4>
-              <p className="text-xs text-stone-500 max-w-sm mx-auto">
+              <p className="text-[11px] sm:text-xs text-stone-500 max-w-sm mx-auto">
                 Click below to launch <strong>calendly.com/{ADVISOR_PROFILE.calendlyHandle}</strong> in a secure tab.
               </p>
 
@@ -173,61 +173,61 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 href={ADVISOR_PROFILE.calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 w-full min-h-[46px] py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 w-full min-h-[40px] sm:min-h-[46px] py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
                 style={{ backgroundColor: activeTheme.primary }}
               >
                 <span>Proceed to Calendly.com</span>
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
             </div>
           </div>
         ) : (
           <div>
             {submitted ? (
-              <div className="py-8 text-center space-y-3">
+              <div className="py-6 sm:py-8 text-center space-y-2.5 sm:space-y-3">
                 <div
-                  className="w-14 h-14 rounded-full mx-auto flex items-center justify-center text-emerald-700 bg-emerald-100"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full mx-auto flex items-center justify-center text-emerald-700 bg-emerald-100"
                 >
-                  <CheckCircle className="w-7 h-7" />
+                  <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
-                <h4 className="font-serif text-xl font-bold" style={{ color: activeTheme.textDark }}>
+                <h4 className="font-serif text-lg sm:text-xl font-bold" style={{ color: activeTheme.textDark }}>
                   Inquiry Prepared!
                 </h4>
-                <p className="text-xs text-stone-600 max-w-sm mx-auto leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-stone-600 max-w-sm mx-auto leading-relaxed">
                   Your details have been assembled for Sarmila Reddy. To guarantee immediate delivery or pick a confirmed slot:
                 </p>
-                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5">
                   <a
                     href={`mailto:${ADVISOR_PROFILE.email}?subject=${encodeURIComponent(`Strategy Session Inquiry - ${clientName}`)}&body=${encodeURIComponent(`Name: ${clientName}\nEmail: ${clientEmail}\nPhone: ${clientPhone}\nTopic: ${selectedTopic}`)}`}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white transition-all hover:brightness-110"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold text-white transition-all hover:brightness-110"
                     style={{ backgroundColor: activeTheme.primary }}
                   >
-                    <Send className="w-3.5 h-3.5" />
+                    <Send className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                     <span>Send via Email Client</span>
                   </a>
                   <a
                     href={ADVISOR_PROFILE.calendlyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold border text-stone-700 bg-stone-50 hover:bg-stone-100"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold border text-stone-700 bg-stone-50 hover:bg-stone-100"
                   >
-                    <Calendar className="w-3.5 h-3.5" />
+                    <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                     <span>Select Time on Calendly</span>
                   </a>
                 </div>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="mt-4 px-6 py-2 rounded-xl text-xs font-semibold border cursor-pointer hover:bg-stone-50"
+                  className="mt-3 sm:mt-4 px-5 py-1.5 rounded-xl text-xs font-semibold border cursor-pointer hover:bg-stone-50"
                   style={{ borderColor: activeTheme.border }}
                 >
                   Close Window
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-4 text-left">
+              <form onSubmit={handleFormSubmit} className="space-y-3 sm:space-y-4 text-left">
                 <div>
-                  <label htmlFor="modal-client-name" className="block text-xs font-semibold text-stone-700 mb-1">
+                  <label htmlFor="modal-client-name" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-1">
                     Your Name *
                   </label>
                   <input
@@ -237,13 +237,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     placeholder="First & Last Name"
                     value={clientName}
                     onChange={e => setClientName(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
+                    className="w-full px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
                     style={{ borderColor: activeTheme.border }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="modal-client-email" className="block text-xs font-semibold text-stone-700 mb-1">
+                  <label htmlFor="modal-client-email" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-1">
                     Email Address *
                   </label>
                   <input
@@ -253,13 +253,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     placeholder="email@example.ca"
                     value={clientEmail}
                     onChange={e => setClientEmail(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
+                    className="w-full px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
                     style={{ borderColor: activeTheme.border }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="modal-client-phone" className="block text-xs font-semibold text-stone-700 mb-1">
+                  <label htmlFor="modal-client-phone" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-1">
                     Phone (for appointment SMS reminder) *
                   </label>
                   <input
@@ -269,20 +269,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                     placeholder="(604) 555-0100"
                     value={clientPhone}
                     onChange={e => setClientPhone(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
+                    className="w-full px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
                     style={{ borderColor: activeTheme.border }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="modal-client-topic" className="block text-xs font-semibold text-stone-700 mb-1">
+                  <label htmlFor="modal-client-topic" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-1">
                     Primary Area of Interest
                   </label>
                   <select
                     id="modal-client-topic"
                     value={selectedTopic}
                     onChange={e => setSelectedTopic(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 bg-white"
+                    className="w-full px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl border text-xs text-stone-800 bg-white"
                     style={{ borderColor: activeTheme.border }}
                   >
                     <option value="TFSA & RRSP Wealth Plan">TFSA & RRSP Wealth Plan</option>
@@ -297,7 +297,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 <button
                   type="submit"
                   id="modal-submit-request-btn"
-                  className="w-full min-h-[46px] py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full min-h-[40px] sm:min-h-[46px] py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer mt-1"
                   style={{ backgroundColor: activeTheme.primary }}
                 >
                   <Send className="w-3.5 h-3.5" />

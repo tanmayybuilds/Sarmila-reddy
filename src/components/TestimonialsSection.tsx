@@ -54,7 +54,7 @@ export const TestimonialsSection: React.FC = () => {
   const currentItem = TESTIMONIALS[currentIndex];
 
   return (
-    <section id="testimonials" className="py-10 sm:py-14 lg:py-16 bg-white transition-colors duration-500 overflow-hidden select-none">
+    <section id="testimonials" className="py-8 sm:py-14 lg:py-16 bg-white transition-colors duration-500 overflow-hidden select-none">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -62,10 +62,10 @@ export const TestimonialsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto space-y-2.5 sm:space-y-3 mb-6 sm:mb-8"
+          className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-5 sm:mb-8"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -75,7 +75,7 @@ export const TestimonialsSection: React.FC = () => {
           </div>
 
           <h2
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Trusted by Canadian Families{' '}
@@ -84,7 +84,7 @@ export const TestimonialsSection: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Real stories from newcomers, professionals, entrepreneurs, and young families building their wealth and security with Sarmila Reddy.
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ export const TestimonialsSection: React.FC = () => {
           onTouchEnd={handleTouchEnd}
         >
           {/* Main Slide Card with Smooth Fade & Slide Animation */}
-          <div className="relative min-h-[340px] sm:min-h-[300px] flex items-center">
+          <div className="relative min-h-[260px] sm:min-h-[300px] flex items-center">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={currentItem.id}
@@ -106,64 +106,64 @@ export const TestimonialsSection: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 1, x: -20 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="w-full p-6 sm:p-10 lg:p-12 rounded-3xl border flex flex-col justify-between"
+                className="w-full p-4 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl border flex flex-col justify-between shadow-xs"
                 style={{
                   backgroundColor: activeTheme.bgLight,
                   borderColor: activeTheme.border,
                 }}
               >
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-3 sm:space-y-6">
                   {/* Top Bar inside card: Stars, Quote mark, and Category badge */}
-                  <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div className="flex items-center justify-between flex-wrap gap-1.5 sm:gap-2">
                     <div className="flex items-center gap-1 text-amber-500">
                       {[...Array(currentItem.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+                        <Star key={i} className="w-3.5 h-3.5 sm:w-5 sm:h-5 fill-current" />
                       ))}
-                      <span className="ml-2 text-xs font-semibold text-stone-500">5.0 Star Verified Review</span>
+                      <span className="ml-1.5 text-[11px] sm:text-xs font-semibold text-stone-500">5.0 Star Review</span>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
                       <span
-                        className="text-xs font-semibold px-3 py-1 rounded-full bg-stone-100 text-stone-700"
+                        className="text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-stone-100 text-stone-700"
                       >
                         {currentItem.category}
                       </span>
-                      <Quote className="w-8 h-8 opacity-25" style={{ color: activeTheme.primary }} />
+                      <Quote className="w-5 h-5 sm:w-8 sm:h-8 opacity-25" style={{ color: activeTheme.primary }} />
                     </div>
                   </div>
 
                   {/* Main Quote Content */}
-                  <p className="text-base sm:text-xl lg:text-2xl text-stone-800 font-light leading-relaxed italic">
+                  <p className="text-sm sm:text-xl lg:text-2xl text-stone-800 font-light leading-relaxed italic">
                     “{currentItem.quote}”
                   </p>
                 </div>
 
                 {/* Client Profile Footer */}
                 <div
-                  className="pt-6 border-t mt-6 sm:mt-8 flex items-center justify-between"
+                  className="pt-3.5 sm:pt-6 border-t mt-3.5 sm:mt-8 flex items-center justify-between"
                   style={{ borderColor: activeTheme.border }}
                 >
-                  <div className="flex items-center gap-3.5">
+                  <div className="flex items-center gap-2.5 sm:gap-3.5">
                     <img
                       src={currentItem.avatarUrl}
                       alt={currentItem.clientName}
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2"
+                      className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 shrink-0"
                       style={{ borderColor: activeTheme.primary }}
                       loading="lazy"
                       referrerPolicy="no-referrer"
                     />
                     <div>
-                      <h3 className="font-serif text-base sm:text-lg font-bold" style={{ color: activeTheme.textDark }}>
+                      <h3 className="font-serif text-sm sm:text-lg font-bold" style={{ color: activeTheme.textDark }}>
                         {currentItem.clientName}
                       </h3>
-                      <p className="text-xs sm:text-sm text-stone-500 font-medium">
+                      <p className="text-[11px] sm:text-sm text-stone-500 font-medium">
                         {currentItem.location} • Advisory Client
                       </p>
                     </div>
                   </div>
 
                   {/* Slide Position Counter */}
-                  <div className="text-xs sm:text-sm font-semibold text-stone-600">
+                  <div className="text-[11px] sm:text-sm font-semibold text-stone-600">
                     <span className="text-stone-900">{currentIndex + 1}</span> / {totalReviews}
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export const TestimonialsSection: React.FC = () => {
             id="testimonial-prev-btn-desktop"
             onClick={prevReview}
             aria-label="Previous testimonial"
-            className="hidden md:flex absolute -left-5 lg:-left-7 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border items-center justify-center text-stone-700 hover:bg-stone-50 active:scale-95 transition-all z-10 cursor-pointer"
+            className="hidden md:flex absolute -left-5 lg:-left-7 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border items-center justify-center text-stone-700 hover:bg-stone-50 active:scale-95 transition-all z-10 cursor-pointer shadow-xs"
             style={{ borderColor: activeTheme.border }}
           >
             <ChevronLeft className="w-6 h-6" />
@@ -186,7 +186,7 @@ export const TestimonialsSection: React.FC = () => {
             id="testimonial-next-btn-desktop"
             onClick={nextReview}
             aria-label="Next testimonial"
-            className="hidden md:flex absolute -right-5 lg:-right-7 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border items-center justify-center text-stone-700 hover:bg-stone-50 active:scale-95 transition-all z-10 cursor-pointer"
+            className="hidden md:flex absolute -right-5 lg:-right-7 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border items-center justify-center text-stone-700 hover:bg-stone-50 active:scale-95 transition-all z-10 cursor-pointer shadow-xs"
             style={{ borderColor: activeTheme.border }}
           >
             <ChevronRight className="w-6 h-6" />
@@ -194,28 +194,28 @@ export const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Carousel Pagination, Mobile Nav Arrows & Play/Pause Controls */}
-        <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+        <div className="flex items-center justify-center gap-2 sm:gap-4 mt-4 sm:mt-8">
           {/* Mobile Prev Arrow */}
           <button
             id="testimonial-prev-btn-mobile"
             onClick={prevReview}
             aria-label="Previous testimonial"
-            className="md:hidden w-10 h-10 rounded-full bg-white border flex items-center justify-center text-stone-700 active:scale-95 transition-transform cursor-pointer"
+            className="md:hidden w-8 h-8 rounded-full bg-white border flex items-center justify-center text-stone-700 active:scale-95 transition-transform cursor-pointer shadow-xs"
             style={{ borderColor: activeTheme.border }}
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-4 h-4" />
           </button>
 
           {/* Dots Indicator */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             {TESTIMONIALS.map((_, idx) => (
               <button
                 key={idx}
                 id={`testimonial-dot-${idx}`}
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to testimonial ${idx + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx ? 'w-8' : 'w-2.5 bg-stone-300 hover:bg-stone-400'
+                className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentIndex === idx ? 'w-6 sm:w-8' : 'w-2 sm:w-2.5 bg-stone-300 hover:bg-stone-400'
                 }`}
                 style={{
                   backgroundColor: currentIndex === idx ? activeTheme.primary : undefined,
@@ -229,20 +229,20 @@ export const TestimonialsSection: React.FC = () => {
             id="testimonial-next-btn-mobile"
             onClick={nextReview}
             aria-label="Next testimonial"
-            className="md:hidden w-10 h-10 rounded-full bg-white border flex items-center justify-center text-stone-700 active:scale-95 transition-transform cursor-pointer"
+            className="md:hidden w-8 h-8 rounded-full bg-white border flex items-center justify-center text-stone-700 active:scale-95 transition-transform cursor-pointer shadow-xs"
             style={{ borderColor: activeTheme.border }}
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-4 h-4" />
           </button>
 
           {/* Play / Pause Toggle */}
           <button
             onClick={() => setIsPaused(!isPaused)}
             aria-label={isPaused ? 'Resume autoplay' : 'Pause autoplay'}
-            className="p-2 rounded-full text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors ml-1 sm:ml-2"
+            className="p-1.5 sm:p-2 rounded-full text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition-colors ml-1 sm:ml-2 cursor-pointer"
             title={isPaused ? 'Resume auto-advance' : 'Pause auto-advance'}
           >
-            {isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
+            {isPaused ? <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Pause className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
           </button>
         </div>
 
@@ -252,7 +252,7 @@ export const TestimonialsSection: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 sm:mt-16 p-5 sm:p-6 rounded-2xl border text-center flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm text-stone-600"
+          className="mt-6 sm:mt-16 p-3.5 sm:p-6 rounded-xl sm:rounded-2xl border text-center flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-8 text-[11px] sm:text-sm text-stone-600 shadow-xs"
           style={{
             backgroundColor: activeTheme.accentLight,
             borderColor: activeTheme.border,
