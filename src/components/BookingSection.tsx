@@ -97,74 +97,75 @@ export const BookingSection: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left Column: Direct Calendly Integration Card (5 cols) */}
           <motion.div
             initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border space-y-5 sm:space-y-6 text-left relative overflow-hidden"
+            className="lg:col-span-5 p-5 sm:p-7 rounded-2xl sm:rounded-3xl border text-left relative overflow-hidden flex flex-col justify-between h-full"
             style={{
               backgroundColor: activeTheme.bgLight,
               borderColor: activeTheme.border,
             }}
           >
-            {/* Visual Working Session Photo */}
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden">
-              <img
-                src={ADVISOR_PROFILE.images.workingDesk}
-                alt="1-on-1 Strategy Session with Sarmila Reddy"
-                className="w-full h-full object-cover object-[center_25%]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-3 right-3 text-white flex items-center justify-between">
-                <span className="text-xs font-medium bg-black/60 px-3 py-1 rounded-full text-white">
-                  Virtual & In-Person Sessions
+            <div className="space-y-4">
+              {/* Visual Working Session Photo */}
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xs">
+                <img
+                  src={ADVISOR_PROFILE.images.workingDesk}
+                  alt="1-on-1 Strategy Session with Sarmila Reddy"
+                  className="w-full h-full object-cover object-[center_25%]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 text-white flex items-center justify-between">
+                  <span className="text-xs font-medium bg-black/60 px-3 py-1 rounded-full text-white">
+                    Virtual & In-Person Sessions
+                  </span>
+                  <span className="text-xs font-semibold text-emerald-300">
+                    100% Free
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block">
+                  Instant Online Booking
                 </span>
-                <span className="text-xs font-semibold text-emerald-300">
-                  100% Free
-                </span>
+                <h3 className="font-serif text-2xl font-bold tracking-tight" style={{ color: activeTheme.textDark }}>
+                  Book on Sarmila’s Calendar
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+                  Direct integration with Calendly. Pick an open slot that fits your schedule, and receive an instant Zoom meeting link.
+                </p>
+              </div>
+
+              {/* Calendly Details with Clean Divider */}
+              <div className="space-y-2.5 py-3 border-y border-stone-200/80">
+                <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                  <Clock className="w-4 h-4 text-stone-400 shrink-0" />
+                  <span>30 Minutes • Confidential Strategy Call</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                  <Video className="w-4 h-4 text-stone-400 shrink-0" />
+                  <span>Web conferencing details provided upon confirmation</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                  <Shield className="w-4 h-4 text-stone-400 shrink-0" />
+                  <span>100% Free • No out-of-pocket fees or obligation</span>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 inline-block">
-                Instant Online Booking
-              </span>
-              <h3 className="font-serif text-2xl font-bold" style={{ color: activeTheme.textDark }}>
-                Book on Sarmila’s Calendar
-              </h3>
-              <p className="text-sm text-stone-600 leading-relaxed font-light">
-                Direct integration with Calendly. Pick an open slot that fits your schedule, and receive an instant Zoom meeting link.
-              </p>
-            </div>
-
-            {/* Calendly Details with Clean Divider */}
-            <div className="space-y-3 py-3 border-y border-stone-200/80">
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                <Clock className="w-4 h-4 text-stone-400 shrink-0" />
-                <span>30 Minutes • Confidential Strategy Call</span>
-              </div>
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                <Video className="w-4 h-4 text-stone-400 shrink-0" />
-                <span>Web conferencing details provided upon confirmation</span>
-              </div>
-              <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                <Shield className="w-4 h-4 text-stone-400 shrink-0" />
-                <span>100% Free • No out-of-pocket fees or obligation</span>
-              </div>
-            </div>
-
-            {/* Direct Calendly Link Button */}
-            <div className="space-y-3">
+            <div className="space-y-3 pt-4">
               <a
                 id="direct-calendly-external-link"
                 href={ADVISOR_PROFILE.calendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full min-h-[48px] py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full min-h-[46px] py-3 rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                 style={{ backgroundColor: activeTheme.primary }}
               >
                 <span>Open calendly.com/{ADVISOR_PROFILE.calendlyHandle}</span>
@@ -174,12 +175,12 @@ export const BookingSection: React.FC = () => {
               <p className="text-center text-xs text-stone-500">
                 Direct calendar link for verified booking.
               </p>
-            </div>
 
-            <div className="pt-4 border-t text-xs sm:text-sm text-stone-600 space-y-1" style={{ borderColor: activeTheme.border }}>
-              <p className="font-semibold text-stone-800">Questions before booking?</p>
-              <p>Email: <a href={`mailto:${ADVISOR_PROFILE.email}`} className="font-medium underline text-stone-800">{ADVISOR_PROFILE.email}</a></p>
-              <p>Instagram: <a href={`https://instagram.com/${ADVISOR_PROFILE.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="font-medium underline text-stone-800">{ADVISOR_PROFILE.instagram}</a></p>
+              <div className="pt-3 border-t text-xs text-stone-600 space-y-1" style={{ borderColor: activeTheme.border }}>
+                <p className="font-semibold text-stone-800">Questions before booking?</p>
+                <p>Email: <a href={`mailto:${ADVISOR_PROFILE.email}`} className="font-medium underline text-stone-800">{ADVISOR_PROFILE.email}</a></p>
+                <p>Instagram: <a href={`https://instagram.com/${ADVISOR_PROFILE.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="font-medium underline text-stone-800">{ADVISOR_PROFILE.instagram}</a></p>
+              </div>
             </div>
           </motion.div>
 
@@ -189,7 +190,7 @@ export const BookingSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 p-5 sm:p-7 rounded-2xl sm:rounded-3xl border bg-white space-y-4 text-left shadow-xs"
+            className="lg:col-span-7 p-5 sm:p-7 rounded-2xl sm:rounded-3xl border bg-white text-left shadow-xs flex flex-col justify-between h-full"
             style={{ borderColor: activeTheme.border }}
           >
             {formSubmitted ? (
@@ -237,166 +238,170 @@ export const BookingSection: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
-                <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <div>
-                    <h3 className="font-serif text-lg sm:text-xl font-bold tracking-tight" style={{ color: activeTheme.textDark }}>
-                      Send an Inquiry or Quote Request
-                    </h3>
-                    <p className="text-xs sm:text-sm text-stone-500 mt-0.5">
-                      Fast 20-second form • Sarmila connects within 24 hours.
-                    </p>
-                  </div>
-                  <span
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold shrink-0"
-                    style={{ backgroundColor: activeTheme.primaryLight, color: activeTheme.primary }}
-                  >
-                    <Clock className="w-3 h-3" />
-                    <span>Quick 20s Form</span>
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label htmlFor="booking-full-name" className="block text-xs font-semibold text-stone-700 mb-1">
-                      Full Name *
-                    </label>
-                    <input
-                      id="booking-full-name"
-                      name="name"
-                      autoComplete="name"
-                      type="text"
-                      required
-                      placeholder="e.g. Jessica Chen"
-                      value={formData.fullName}
-                      onChange={e => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
-                      style={{ borderColor: activeTheme.border }}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="booking-phone-number" className="block text-xs font-semibold text-stone-700 mb-1">
-                      Mobile Number *
-                    </label>
-                    <input
-                      id="booking-phone-number"
-                      name="tel"
-                      autoComplete="tel"
-                      type="tel"
-                      required
-                      placeholder="(604) 555-0199"
-                      value={formData.phone}
-                      onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
-                      style={{ borderColor: activeTheme.border }}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label htmlFor="booking-email-address" className="block text-xs font-semibold text-stone-700 mb-1">
-                      Email Address <span className="font-normal text-stone-400">(Optional)</span>
-                    </label>
-                    <input
-                      id="booking-email-address"
-                      name="email"
-                      autoComplete="email"
-                      type="email"
-                      placeholder="jessica@example.ca"
-                      value={formData.email}
-                      onChange={e => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
-                      style={{ borderColor: activeTheme.border }}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="booking-province" className="block text-xs font-semibold text-stone-700 mb-1">
-                      Province / Territory
-                    </label>
-                    <select
-                      id="booking-province"
-                      value={formData.province}
-                      onChange={e => setFormData({ ...formData, province: e.target.value })}
-                      className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2 bg-white"
-                      style={{ borderColor: activeTheme.border }}
+              <form onSubmit={handleSubmit} className="flex flex-col justify-between h-full space-y-3.5 sm:space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <div>
+                      <h3 className="font-serif text-lg sm:text-xl font-bold tracking-tight" style={{ color: activeTheme.textDark }}>
+                        Send an Inquiry or Quote Request
+                      </h3>
+                      <p className="text-xs text-stone-500 mt-0.5">
+                        Fast 20-second form • Sarmila connects within 24 hours.
+                      </p>
+                    </div>
+                    <span
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold shrink-0"
+                      style={{ backgroundColor: activeTheme.primaryLight, color: activeTheme.primary }}
                     >
-                      {availableProvinces.map(prov => (
-                        <option key={prov} value={prov}>
-                          {prov}
-                        </option>
-                      ))}
-                    </select>
+                      <Clock className="w-3 h-3" />
+                      <span>Quick 20s Form</span>
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label htmlFor="booking-full-name" className="block text-xs font-semibold text-stone-700 mb-1">
+                        Full Name *
+                      </label>
+                      <input
+                        id="booking-full-name"
+                        name="name"
+                        autoComplete="name"
+                        type="text"
+                        required
+                        placeholder="e.g. Jessica Chen"
+                        value={formData.fullName}
+                        onChange={e => setFormData({ ...formData, fullName: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
+                        style={{ borderColor: activeTheme.border }}
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="booking-phone-number" className="block text-xs font-semibold text-stone-700 mb-1">
+                        Mobile Number *
+                      </label>
+                      <input
+                        id="booking-phone-number"
+                        name="tel"
+                        autoComplete="tel"
+                        type="tel"
+                        required
+                        placeholder="(604) 555-0199"
+                        value={formData.phone}
+                        onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
+                        style={{ borderColor: activeTheme.border }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label htmlFor="booking-email-address" className="block text-xs font-semibold text-stone-700 mb-1">
+                        Email Address <span className="font-normal text-stone-400">(Optional)</span>
+                      </label>
+                      <input
+                        id="booking-email-address"
+                        name="email"
+                        autoComplete="email"
+                        type="email"
+                        placeholder="jessica@example.ca"
+                        value={formData.email}
+                        onChange={e => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
+                        style={{ borderColor: activeTheme.border }}
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="booking-province" className="block text-xs font-semibold text-stone-700 mb-1">
+                        Province / Territory
+                      </label>
+                      <select
+                        id="booking-province"
+                        value={formData.province}
+                        onChange={e => setFormData({ ...formData, province: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2 bg-white"
+                        style={{ borderColor: activeTheme.border }}
+                      >
+                        {availableProvinces.map(prov => (
+                          <option key={prov} value={prov}>
+                            {prov}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Topics of Interest (Compact Horizontal Pills) */}
+                  <div>
+                    <span id="booking-topics-group-label" className="block text-xs font-semibold text-stone-700 mb-1.5">
+                      Focus Areas (tap to select):
+                    </span>
+                    <div className="flex flex-wrap gap-1.5" role="group" aria-labelledby="booking-topics-group-label">
+                      {financialTopics.map(topic => {
+                        const isSelected = formData.topics.includes(topic.id);
+                        return (
+                          <button
+                            key={topic.id}
+                            type="button"
+                            role="checkbox"
+                            aria-checked={isSelected}
+                            aria-label={topic.id}
+                            onClick={() => handleTopicToggle(topic.id)}
+                            className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs transition-colors cursor-pointer ${
+                              isSelected
+                                ? 'font-semibold text-white'
+                                : 'bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium'
+                            }`}
+                            style={{
+                              backgroundColor: isSelected ? activeTheme.primary : undefined,
+                            }}
+                          >
+                            {isSelected && <Check className="w-3 h-3 stroke-[2.5]" />}
+                            <span>{topic.label}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Textarea to balance height 1 to 1 */}
+                  <div>
+                    <label htmlFor="booking-notes" className="block text-xs font-semibold text-stone-700 mb-1">
+                      Optional Note or Questions
+                    </label>
+                    <textarea
+                      id="booking-notes"
+                      rows={3}
+                      placeholder="e.g. Best time to call, specific goals, or financial questions..."
+                      value={formData.notes}
+                      onChange={e => setFormData({ ...formData, notes: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2 resize-none"
+                      style={{ borderColor: activeTheme.border }}
+                    />
                   </div>
                 </div>
 
-                {/* Topics of Interest (Compact Horizontal Pills) */}
-                <div>
-                  <span id="booking-topics-group-label" className="block text-xs font-semibold text-stone-700 mb-1.5">
-                    Focus Areas (tap to select):
-                  </span>
-                  <div className="flex flex-wrap gap-1.5" role="group" aria-labelledby="booking-topics-group-label">
-                    {financialTopics.map(topic => {
-                      const isSelected = formData.topics.includes(topic.id);
-                      return (
-                        <button
-                          key={topic.id}
-                          type="button"
-                          role="checkbox"
-                          aria-checked={isSelected}
-                          aria-label={topic.id}
-                          onClick={() => handleTopicToggle(topic.id)}
-                          className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs transition-colors cursor-pointer ${
-                            isSelected
-                              ? 'font-semibold text-white'
-                              : 'bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium'
-                          }`}
-                          style={{
-                            backgroundColor: isSelected ? activeTheme.primary : undefined,
-                          }}
-                        >
-                          {isSelected && <Check className="w-3 h-3 stroke-[2.5]" />}
-                          <span>{topic.label}</span>
-                        </button>
-                      );
-                    })}
+                <div className="space-y-2 pt-2">
+                  <button
+                    type="submit"
+                    id="submit-inquiry-form-btn"
+                    className="w-full min-h-[46px] py-3 rounded-xl sm:rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                    style={{ backgroundColor: activeTheme.primary }}
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>Submit Quick Request — 100% Free</span>
+                  </button>
+
+                  <div className="flex items-center justify-center gap-2 text-[11px] sm:text-xs text-stone-500">
+                    <span>🔒 Strictly Confidential</span>
+                    <span>•</span>
+                    <span>⚡ 24h Response</span>
+                    <span>•</span>
+                    <span>No obligations</span>
                   </div>
-                </div>
-
-                {/* Compact Note Input */}
-                <div>
-                  <label htmlFor="booking-notes" className="block text-xs font-semibold text-stone-700 mb-1">
-                    Optional Note or Questions
-                  </label>
-                  <input
-                    id="booking-notes"
-                    type="text"
-                    placeholder="e.g. Best time to call or specific goals..."
-                    value={formData.notes}
-                    onChange={e => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full px-3.5 py-2 rounded-xl border text-xs sm:text-sm text-stone-800 focus:outline-none focus:ring-2"
-                    style={{ borderColor: activeTheme.border }}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  id="submit-inquiry-form-btn"
-                  className="w-full min-h-[46px] py-3 rounded-xl sm:rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-                  style={{ backgroundColor: activeTheme.primary }}
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Submit Quick Request — 100% Free</span>
-                </button>
-
-                <div className="flex items-center justify-center gap-2 text-[11px] sm:text-xs text-stone-500">
-                  <span>🔒 Strictly Confidential</span>
-                  <span>•</span>
-                  <span>⚡ 24h Response</span>
-                  <span>•</span>
-                  <span>No obligations</span>
                 </div>
               </form>
             )}
