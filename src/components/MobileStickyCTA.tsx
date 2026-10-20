@@ -40,7 +40,7 @@ export const MobileStickyCTA: React.FC<MobileStickyCTAProps> = ({ onOpenBooking 
           <div className="flex items-center gap-2 max-w-md mx-auto">
             {/* Quick Call or Email icon */}
             <a
-              href={`mailto:${ADVISOR_PROFILE.email}?subject=Financial%20Advisory%20Inquiry`}
+              href={`mailto:${ADVISOR_PROFILE.email}?subject=Financial%20and%20Insurance%20Planning%20Inquiry`}
               className="flex items-center justify-center w-9 h-9 rounded-full border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100 transition-colors shrink-0"
               aria-label="Email Sarmila"
               title="Email Sarmila"
@@ -56,7 +56,7 @@ export const MobileStickyCTA: React.FC<MobileStickyCTAProps> = ({ onOpenBooking 
               style={{ backgroundColor: activeTheme.primary }}
             >
               <Calendar className="w-3.5 h-3.5 shrink-0" />
-              <span className="truncate">Book Free Consultation</span>
+              <span className="truncate">Book Consultation</span>
             </button>
           </div>
         </motion.div>

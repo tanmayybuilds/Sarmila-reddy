@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </div>
 
               <p className="text-[11px] sm:text-xs text-stone-600 leading-relaxed font-light">
-                Empowering Canadian families, professionals, and newcomers with fiduciary-first financial strategies.
+                Empowering Canadian families, professionals, and newcomers with client-first financial and insurance strategies.
               </p>
 
               <div className="flex items-center gap-1.5 sm:gap-2 pt-0.5">
@@ -162,17 +162,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               <div className="pt-0.5 sm:pt-1 text-[10px] sm:text-[11px]">
                 <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <span>100% Free Consultations</span>
+                  <span>Complimentary Consultations</span>
                 </span>
               </div>
             </div>
           </div>
 
           {/* Regulatory & Compliance Disclaimers */}
-          <div className="mt-5 sm:mt-7 pt-4 sm:pt-5 border-t space-y-1.5 sm:space-y-2 text-left" style={{ borderColor: activeTheme.border }}>
-            <p className="text-[10px] sm:text-[11px] text-stone-500 leading-relaxed max-w-4xl">
-              <strong className="text-stone-700 font-semibold">Regulatory Notice: </strong>
-              Sarmila Reddy is an independent licensed financial advisor and Life License Qualification Program (LLQP) certified professional in Canada. All initial strategy sessions are 100% complimentary with no direct client payments accepted through this website. Financial applications, insurance underwriting, and registered investments are executed through licensed Canadian carriers and institutions under compliance oversight. Calculations provide hypothetical modeling only and do not constitute formal legal, tax, or binding investment advice.
+          <div className="mt-5 sm:mt-7 pt-4 sm:pt-5 border-t space-y-2 text-left" style={{ borderColor: activeTheme.border }}>
+            <p className="text-[10px] sm:text-[11px] text-stone-500 leading-relaxed max-w-5xl">
+              <strong className="text-stone-700 font-semibold">Regulatory Notice & Licensing Disclosure: </strong>
+              Sarmila Reddy is a Life License Qualification Program (LLQP) certified professional and Licensed Life & Living Benefits Representative authorized in British Columbia (BC), Alberta (AB), and Ontario (ON). All introductory sessions are complimentary discovery discussions; no direct consumer payments or portfolio transactions are conducted directly through this website. Life insurance, critical illness, disability, and living benefits policies are underwritten and issued by authorized Canadian life insurance companies. Registered wealth accounts (TFSA, RRSP, FHSA, RESP) and mutual fund solutions are facilitated through authorized Canadian financial institutions and partner dealers in accordance with applicable provincial and CIRO regulatory standards.
+            </p>
+            <p className="text-[10px] sm:text-[11px] text-stone-500 leading-relaxed max-w-5xl">
+              Website content and calculator simulations are provided solely for general educational and informational modeling purposes. They do not constitute personalized Know-Your-Client (KYC) investment advice, tax opinions, or legal counsel. Investment returns are not guaranteed; market values, yields, and unit prices fluctuate with market conditions.
             </p>
 
             <div className="pt-1.5 sm:pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] sm:text-xs text-stone-500 text-left border-t border-stone-100">
@@ -268,15 +271,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </h3>
             <p className="text-[11px] sm:text-xs text-stone-500 mb-3 sm:mb-4">Effective: 2026</p>
             <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
-              <h4 className="font-bold text-stone-800">1. Advisory Scope</h4>
+              <h4 className="font-bold text-stone-800">1. Advisory Scope & Registration</h4>
               <p>
-                Sarmila Reddy operates as an independent licensed financial professional in Canada. All consultations promoted on this website are 100% complimentary. No payment processing, fee collection, or direct e-commerce occurs on this site.
+                Sarmila Reddy is a Life License Qualification Program (LLQP) certified professional and licensed life and living benefits representative authorized in British Columbia (BC), Alberta (AB), and Ontario (ON). All introductory strategy sessions promoted on this website are complimentary discovery discussions. No direct retail payments, transactions, or fee processing occur on this website.
               </p>
               <h4 className="font-bold text-stone-800">2. No Guaranteed Investment Outcomes</h4>
               <p>
-                All calculators and content provide educational modeling only. Mutual funds, segregated funds, and market investments are subject to market volatility. Past performance does not guarantee future results.
+                All calculators, simulators, and guides provide educational modeling only. Investments, mutual funds, and equities are subject to market volatility. Past performance does not guarantee future results.
               </p>
-              <h4 className="font-bold text-stone-800">3. Appointments & Scheduling</h4>
+              <h4 className="font-bold text-stone-800">3. Suitability & Know-Your-Client (KYC)</h4>
+              <p>
+                Website browsing or submitting an inquiry does not constitute a formal advisory relationship. Tailored recommendations are only provided following a personalized discovery process and formal application through authorized Canadian carriers and institutions.
+              </p>
+              <h4 className="font-bold text-stone-800">4. Appointments & Scheduling</h4>
               <p>
                 Consultation bookings via Calendly can be rescheduled or cancelled at any time with 24 hours notice.
               </p>

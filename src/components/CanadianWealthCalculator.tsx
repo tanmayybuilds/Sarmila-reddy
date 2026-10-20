@@ -125,7 +125,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2">
                   {[
-                    { id: 'TFSA', label: 'TFSA', desc: '100% Tax-Free' },
+                    { id: 'TFSA', label: 'TFSA', desc: 'Tax-Free Growth' },
                     { id: 'RRSP', label: 'RRSP', desc: 'Tax Deductible' },
                     { id: 'FHSA', label: 'FHSA', desc: 'First Home' },
                     { id: 'NON_REG', label: 'Taxable', desc: 'Standard' },
@@ -346,10 +346,10 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                   style={{ backgroundColor: activeTheme.primary }}
                 >
                   <Sparkles className="w-4 h-4 shrink-0" />
-                  <span>Turn This Projection Into Reality</span>
+                  <span>Explore Your Custom Strategy</span>
                 </button>
-                <p className="text-center text-[10px] sm:text-xs text-stone-500">
-                  * For educational modeling purposes. Returns are not guaranteed.
+                <p className="text-center text-[10px] sm:text-[11px] text-stone-500 leading-relaxed pt-1">
+                  * Hypothetical calculator modeling is for illustrative and educational purposes only. Assumed compound growth rates are hypothetical and do not represent past or future performance. Actual returns vary with market fluctuations and fees.
                 </p>
               </div>
             </div>

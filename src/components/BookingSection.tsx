@@ -86,7 +86,7 @@ export const BookingSection: React.FC = () => {
             className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
-            Schedule Your Free{' '}
+            Schedule Your Complimentary{' '}
             <span className="italic font-serif font-normal" style={{ color: activeTheme.primary }}>
               Strategy Session.
             </span>
@@ -125,7 +125,7 @@ export const BookingSection: React.FC = () => {
                     Virtual & In-Person Sessions
                   </span>
                   <span className="text-[11px] sm:text-xs font-semibold text-emerald-300">
-                    100% Free
+                    Complimentary
                   </span>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export const BookingSection: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2 text-[11px] sm:text-xs text-stone-700">
                   <Shield className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-                  <span>100% Free • No out-of-pocket fees or obligation</span>
+                  <span>Complimentary Discovery • No out-of-pocket fees or obligation</span>
                 </div>
               </div>
             </div>
@@ -205,7 +205,7 @@ export const BookingSection: React.FC = () => {
                   Thank You, {formData.fullName || 'Valued Client'}!
                 </h3>
                 <p className="text-stone-600 max-w-md mx-auto text-xs sm:text-sm leading-relaxed">
-                  Your strategy inquiry details have been prepared for Sarmila Reddy. To guarantee immediate delivery or instantly secure your time slot, you can choose below:
+                  Your strategy inquiry details have been prepared for Sarmila Reddy. To ensure immediate delivery or instantly secure your time slot, you can choose below:
                 </p>
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
                   <a
@@ -392,7 +392,7 @@ export const BookingSection: React.FC = () => {
                     style={{ backgroundColor: activeTheme.primary }}
                   >
                     <Send className="w-4 h-4" />
-                    <span>Submit Quick Request — 100% Free</span>
+                    <span>Submit Quick Request — Complimentary</span>
                   </button>
 
                   <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-stone-500">

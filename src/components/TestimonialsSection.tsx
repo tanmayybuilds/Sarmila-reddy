@@ -119,7 +119,7 @@ export const TestimonialsSection: React.FC = () => {
                       {[...Array(currentItem.rating)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 sm:w-5 sm:h-5 fill-current" />
                       ))}
-                      <span className="ml-1.5 text-[11px] sm:text-xs font-semibold text-stone-500">5.0 Star Review</span>
+                      <span className="ml-1.5 text-[11px] sm:text-xs font-semibold text-stone-500">Verified Client Feedback</span>
                     </div>
 
                     <div className="flex items-center gap-1.5 sm:gap-2">
@@ -267,6 +267,11 @@ export const TestimonialsSection: React.FC = () => {
           <span className="hidden sm:inline text-stone-300">•</span>
           <span>Zero Obligation or Hidden Product Fees</span>
         </motion.div>
+
+        {/* Mandatory Regulatory Testimonial Disclosure */}
+        <p className="mt-3.5 sm:mt-5 text-[10px] sm:text-xs text-stone-500 text-center max-w-3xl mx-auto leading-relaxed">
+          <strong className="text-stone-700">Regulatory Testimonial Disclosure:</strong> Testimonials presented reflect the individual experiences of specific clients. Individual circumstances and financial situations vary. No compensation was provided in exchange for any testimonial or endorsement. Testimonials do not guarantee future performance, outcomes, or policy approval.
+        </p>
       </div>
     </section>
   );

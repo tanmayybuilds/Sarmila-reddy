@@ -36,11 +36,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3">
             <span className="inline-flex items-center gap-1 sm:gap-1.5 font-semibold text-[10px] sm:text-xs md:text-sm">
-              <span className="text-red-600 font-normal">🍁</span> Licensed Canadian Financial Advisor
+              <span className="text-red-600 font-normal">🍁</span> Licensed Life & Living Benefits Representative
             </span>
             <span className="hidden md:inline text-stone-300">•</span>
             <span className="hidden md:inline text-stone-500 font-normal text-xs sm:text-sm">
-              LLQP Certified • Life Insurance & Living Benefits Specialist
+              LLQP Certified • Life, Health & Canadian Registered Planning
             </span>
           </div>
 
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full overflow-hidden p-0.5 bg-white transition-transform duration-300 group-hover:scale-105 shrink-0 flex items-center justify-center border border-stone-100">
               <img
                 src={ADVISOR_PROFILE.images.logo}
-                alt="Sarmila Reddy - Financial Advisor"
+                alt="Sarmila Reddy - Life & Living Benefits Representative"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 Sarmila Reddy
               </span>
               <span className="text-[10px] sm:text-xs font-medium text-stone-500 mt-0.5">
-                Financial Advisory • Canada
+                Life, Health & Wealth Planning • Canada
               </span>
             </div>
           </a>
@@ -191,7 +191,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   style={{ backgroundColor: activeTheme.primary }}
                 >
                   <Calendar className="w-3.5 h-3.5" />
-                  <span>Book Free Consultation</span>
+                  <span>Book Complimentary Consultation</span>
                 </button>
               </div>
             </motion.div>

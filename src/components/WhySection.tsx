@@ -49,7 +49,7 @@ export const WhySection: React.FC = () => {
           </h2>
 
           <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
-            Finance is rarely just about spreadsheets and market charts. It is about waking up knowing your family is safe, your hard work is compounding, and your future in Canada is anchored in certainty.
+            Finance is rarely just about spreadsheets and market charts. It is about waking up knowing your family is protected, your hard work is compounding, and your future in Canada is anchored in clarity.
           </p>
         </motion.div>
 
@@ -147,7 +147,7 @@ export const WhySection: React.FC = () => {
                     Sarmila Reddy
                   </h4>
                   <p className="text-[11px] sm:text-sm text-stone-500 font-medium">
-                    Licensed Financial Advisor • Serving Canada
+                    Licensed Life & Living Benefits Representative • Canada
                   </p>
                 </div>
               </div>

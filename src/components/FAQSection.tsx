@@ -45,7 +45,7 @@ export const FAQSection: React.FC = () => {
           </h2>
 
           <p className="text-xs sm:text-base text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
-            Everything you need to know about working with a licensed Canadian financial advisor, registered tax accounts, and protecting your family.
+            Everything you need to know about working with a licensed Canadian financial and insurance representative, registered tax accounts, and protecting your family.
           </p>
         </motion.div>
 

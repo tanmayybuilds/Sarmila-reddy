@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               }}
             >
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-600 shrink-0" />
-              <span className="font-semibold">Licensed Financial Advisor</span>
+              <span className="font-semibold">Licensed Life & Living Benefits Representative</span>
               <span className="text-stone-300">•</span>
               <span className="text-stone-600">Serving Canada Coast-to-Coast</span>
             </motion.div>
@@ -78,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-xs sm:text-base lg:text-lg text-stone-600 leading-relaxed max-w-xl font-light"
             >
-              Trusted, independent financial and protection guidance for every chapter of your journey in Canada. From maximizing your first tax-advantaged accounts (TFSA, RRSP, FHSA) to safeguarding family income with living benefits—we replace financial overwhelm with enduring clarity.
+              Trusted, client-first financial and insurance protection guidance for every chapter of your journey in Canada. From maximizing your first tax-advantaged accounts (TFSA, RRSP, FHSA) to safeguarding family income with living benefits—we replace financial overwhelm with enduring clarity.
             </motion.p>
 
             {/* Key Value Assurances */}
@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 >
                   <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[3]" />
                 </div>
-                <span>100% Free, Zero-Pressure Consultations</span>
+                <span>Complimentary, Zero-Pressure Consultations</span>
               </div>
               <div className="flex items-center gap-2 sm:gap-2.5">
                 <div
@@ -142,7 +142,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 }}
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book Free 30-Min Strategy Call</span>
+                <span>Book Complimentary Strategy Call</span>
               </button>
 
               <a
@@ -161,7 +161,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
             <p className="text-[11px] sm:text-xs text-stone-600 flex items-center gap-1.5 pt-0.5">
               <Shield className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-              <span>Independent Fiduciary Care • Strictly Confidential • Zero Obligation</span>
+              <span>Client Best-Interest Standard • Strictly Confidential • Zero Obligation</span>
             </p>
 
             {/* Quick Proof Metrics Strip with Animated Counters */}
@@ -247,7 +247,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                     </div>
 
                     <div className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-stone-900 text-[11px] sm:text-xs font-medium text-white shadow-xs">
-                      Independent Practice
+                      Client-First Practice
                     </div>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                     Sarmila Reddy
                   </h2>
                   <p className="text-[11px] sm:text-sm text-stone-300 font-medium">
-                    Licensed Financial Advisor & Wealth Strategist
+                    Licensed Life Insurance & Living Benefits Representative
                   </p>
                 </div>
 

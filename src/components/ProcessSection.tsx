@@ -38,12 +38,12 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
           >
             Simple, Transparent &{' '}
             <span className="italic font-serif font-normal" style={{ color: activeTheme.primary }}>
-              Completely Free.
+              100% Complimentary.
             </span>
           </h2>
 
           <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
-            Here is what working with an independent licensed financial advisor looks like—from our first conversation to long-term generational wealth.
+            Here is what working with a licensed Canadian life and health advisory professional looks like—from our initial conversation to generational protection.
           </p>
         </motion.div>
 
@@ -88,7 +88,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
                 className="mt-3.5 sm:mt-5 pt-2.5 sm:pt-3.5 border-t text-[11px] sm:text-xs font-semibold flex items-center justify-between text-stone-500"
                 style={{ borderColor: activeTheme.border }}
               >
-                <span>Fiduciary Commitment</span>
+                <span>Client-First Commitment</span>
                 <ArrowRight className="w-3.5 h-3.5 text-stone-400" />
               </div>
             </motion.div>
@@ -110,7 +110,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
             style={{ backgroundColor: activeTheme.primary }}
           >
             <Calendar className="w-4 h-4" />
-            <span>Book Your Free Discovery Call</span>
+            <span>Book Your Complimentary Discovery Call</span>
           </button>
         </motion.div>
       </div>

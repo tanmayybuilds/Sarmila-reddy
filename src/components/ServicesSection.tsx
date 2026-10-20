@@ -210,9 +210,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                     borderColor: activeTheme.primary,
                   }}
                 >
-                  <span className="font-bold text-stone-900 block">Licensed Independent Advisor Promise:</span>
+                  <span className="font-bold text-stone-900 block">Client-First Advisory Standard:</span>
                   <p className="text-stone-600 leading-relaxed">
-                    We compare and recommend policies from Canada’s leading tier-1 insurance institutions and investment managers to find your optimum rate.
+                    We compare and recommend policies from Canada’s authorized tier-1 insurance carriers and financial institutions to find your optimum coverage.
                   </p>
                 </div>
               </div>

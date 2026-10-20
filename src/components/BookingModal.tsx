@@ -194,7 +194,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   Inquiry Prepared!
                 </h4>
                 <p className="text-[11px] sm:text-xs text-stone-600 max-w-sm mx-auto leading-relaxed">
-                  Your details have been assembled for Sarmila Reddy. To guarantee immediate delivery or pick a confirmed slot:
+                  Your details have been assembled for Sarmila Reddy. To ensure immediate delivery or pick a confirmed slot:
                 </p>
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5">
                   <a

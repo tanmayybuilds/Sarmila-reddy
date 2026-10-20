@@ -4,7 +4,7 @@ export const COLOR_THEMES: ColorTheme[] = [
   {
     id: 'rose-champagne',
     name: 'Champagne Gold & Editorial Espresso',
-    tagline: 'Quiet luxury, warm alabaster linen, and rich champagne gold inspired by premier wealth advisory firms',
+    tagline: 'Quiet luxury, warm alabaster linen, and rich champagne gold inspired by Canadian wealth advisory firms',
     primary: '#1F1B18', // Deep tailored espresso obsidian
     primaryHover: '#332E29',
     primaryLight: '#F5F2EB', // Soft warm ivory linen
@@ -38,7 +38,7 @@ export const COLOR_THEMES: ColorTheme[] = [
   {
     id: 'sapphire-alabaster',
     name: 'Sovereign Navy & Classic Brass',
-    tagline: 'Crisp, timeless institutional prestige with warm fiduciary undertones',
+    tagline: 'Crisp, timeless institutional prestige with warm client-first undertones',
     primary: '#14253D', // Deep sovereign navy
     primaryHover: '#0E1B2D',
     primaryLight: '#EFF4FA',
@@ -73,9 +73,11 @@ export const COLOR_THEMES: ColorTheme[] = [
 
 export const ADVISOR_PROFILE = {
   name: 'Sarmila Reddy',
-  credentialsTitle: 'Licensed Financial Advisor & Entrepreneur',
-  license: 'LLQP Certified • Life Insurance & Living Benefits Licensed in Canada',
-  territory: 'Proudly serving individuals and families coast-to-coast across Canada',
+  credentialsTitle: 'Licensed Life & Living Benefits Representative • Canada',
+  license: 'LLQP Certified • Life Insurance & Living Benefits Licensed in Canada (BC, AB, ON)',
+  registrationCategory: 'Licensed Life Insurance Agent & Living Benefits Representative',
+  brokerageNotice: 'Insurance contracts underwritten by licensed Canadian life insurance carriers. Registered accounts and investment solutions administered through authorized Canadian financial institutions.',
+  territory: 'British Columbia, Alberta & Ontario (Virtual & In-Person Sessions)',
   tagline: 'Guiding you today for a stronger tomorrow.',
   subTagline: 'Plan Smart. Live Confident. Build Your Legacy.',
   calendlyUrl: 'https://calendly.com/sarmilareddy13',
@@ -84,8 +86,8 @@ export const ADVISOR_PROFILE = {
   instagram: '@sarmilareddy.ca',
   phone: '+1 (604) 555-0192', // Canadian formatted placeholder
   email: 'sarmila@sarmilareddy.ca',
-  location: 'British Columbia & Across Canada',
-  consultationFee: '100% Free / No Consultation Fees',
+  location: 'British Columbia & Across Canada (Virtual)',
+  consultationFee: 'Complimentary Initial Consultation',
   images: {
     logo: `${import.meta.env.BASE_URL}images/logo.png`,
     hero: `${import.meta.env.BASE_URL}images/sarmila-hero-green.jpg`,
@@ -154,7 +156,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     iconName: 'Shield',
     features: [
       'Term Life Insurance: Cost-effective family mortgage protection and income replacement during peak earning years',
-      'Permanent & Whole Life: Guaranteed cash value growth, permanent death benefit, and tax-sheltered wealth transfer',
+      'Permanent & Whole Life: Contractually established cash value accumulation, permanent death benefit, and tax-sheltered wealth transfer',
       'Universal Life: Flexible premium structure combining life insurance protection with tax-advantaged investment accounts',
       'Estate liquidity planning ensuring Canadian probate and capital gains taxes do not burden your beneficiaries',
     ],
@@ -179,7 +181,7 @@ export const SERVICES_LIST: ServiceItem[] = [
     ],
     canadianKeyPoints: [
       'Preserves Canadian families from debt during medical recovery',
-      'Independent from employer-tied benefits',
+      'Portable coverage not tied to an employer',
       'Customized waiting periods and benefit durations',
     ],
     ctaText: 'Explore Living Benefits',
@@ -209,7 +211,7 @@ export const TARGET_AUDIENCES: TargetAudience[] = [
   {
     id: 'immigrants',
     title: 'New Immigrants & PRs',
-    subtitle: 'Building a Secure Future in Canada',
+    subtitle: 'Establishing Your Canadian Financial Foundation',
     description: 'Relocating to Canada is an incredible milestone, but the Canadian tax, banking, and insurance system can feel confusing. I guide you step-by-step so you build credit, save on taxes, and protect your family from day one.',
     bulletPoints: [
       'Understanding how CRA registered accounts (TFSA & RRSP) operate',
@@ -291,7 +293,7 @@ export const CANADIAN_ACCOUNTS_GUIDE = [
     annualLimit: '$50,000 lifetime limit per child',
     taxTreatment: 'Tax-sheltered growth + Government grants (CESG match 20% up to $7,200)',
     bestFor: 'Parents, grandparents, and guardians preparing for college or university tuition',
-    proTip: 'The federal government gives you up to $500 free grant money each year on the first $2,500 contributed.',
+    proTip: 'The federal government provides up to $500 in matching CESG grant funds annually on the first $2,500 contributed.',
   },
 ];
 
@@ -300,7 +302,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '5',
     quote: `I was initially hesitant about signing up and investing my money, but after sitting down with Sarmila, she made me feel comfortable and put my mind at ease. She took the time to thoroughly explain how everything worked, reviewed my existing investments, and guided me through my options for long-term goals.
 
-Sarmila is extremely knowledgeable, professional, approachable, and caring—she explains things clearly and never makes you feel uncomfortable asking questions. She truly made a difference in helping me make informed decisions and feel confident about planning my financial future. I would highly recommend Sarmila to anyone looking for a financial advisor!`,
+Sarmila is extremely knowledgeable, professional, approachable, and caring—she explains things clearly and never makes you feel uncomfortable asking questions. She truly made a difference in helping me make informed decisions and feel confident about planning my financial future. I would highly recommend Sarmila to anyone looking for a trusted financial and insurance professional!`,
     clientName: 'Lorna M.',
     location: 'Vancouver, BC',
     category: 'Wealth & Investment Planning',
@@ -356,8 +358,8 @@ Sarmila is extremely knowledgeable, professional, approachable, and caring—she
 
 export const FAQS: FAQItem[] = [
   {
-    question: 'How much does an initial consultation with Sarmila cost?',
-    answer: 'Initial strategy sessions and consultations are 100% complimentary. As an independent licensed financial advisor in Canada, I am compensated directly by the established Canadian financial institutions and insurance carriers when a policy or account is placed. There are never any out-of-pocket advisory retainers or hidden surprise fees.',
+    question: 'How does an initial consultation with Sarmila work?',
+    answer: 'Initial discovery consultations are 100% complimentary. When an insurance policy or registered investment account is established, compensation is paid directly by the authorized Canadian financial institutions and insurance carriers, adhering strictly to Canadian disclosure standards. You will receive transparent disclosure on product features, premiums, and account structures with zero pressure.',
     category: 'Consultations',
   },
   {
@@ -366,18 +368,18 @@ export const FAQS: FAQItem[] = [
     category: 'Investments',
   },
   {
-    question: 'Why do I need life or critical illness insurance if I have coverage through work?',
-    answer: 'Employer group plans typically offer limited coverage (often just 1-2x your annual salary) that disappears immediately if you change jobs, get laid off, or retire. Additionally, group plans rarely provide comprehensive Critical Illness living benefits. Personal policies are locked-in, custom-tailored, portable anywhere in Canada, and guarantee your rates never spike arbitrarily.',
+    question: 'Why consider individual life or critical illness insurance if I have coverage through work?',
+    answer: 'Employer group plans typically offer limited coverage (often just 1-2x your annual salary) that terminates if you change employers, transition careers, or retire. Additionally, group plans rarely provide comprehensive Critical Illness living benefits. Personal policies are individually owned, portable anywhere in Canada, and provide contractually determined premium rates.',
     category: 'Insurance',
   },
   {
     question: 'I recently immigrated to Canada. Can I start investing right away?',
-    answer: 'Yes! As soon as you receive your Canadian Social Insurance Number (SIN), you are eligible to open a Tax-Free Savings Account (TFSA) and begin building savings. As you begin reporting Canadian earned income on your tax return, you will also accumulate RRSP room. We specialize in helping new permanent residents and work permit holders avoid costly cross-border and tax compliance mistakes.',
+    answer: 'Yes! As soon as you receive your Canadian Social Insurance Number (SIN), you are eligible to open a Tax-Free Savings Account (TFSA) and begin building savings. As you begin reporting Canadian earned income on your tax return, you will also accumulate RRSP room. I focus on helping new permanent residents and work permit holders navigate Canadian registered accounts and avoid costly cross-border mistakes.',
     category: 'General',
   },
   {
-    question: 'What is the new First Home Savings Account (FHSA)?',
-    answer: 'The FHSA is a premier registered account introduced by the Canadian federal government for first-time home buyers. You can contribute up to $8,000 per year (to a lifetime maximum of $40,000). Contributions are tax-deductible (like an RRSP) and withdrawals for a qualifying home purchase are completely tax-free (like a TFSA).',
+    question: 'What is the First Home Savings Account (FHSA)?',
+    answer: 'The FHSA is a registered account introduced by the Canadian federal government for first-time home buyers. Qualifying individuals can contribute up to $8,000 per year (to a lifetime maximum of $40,000). Contributions are tax-deductible (like an RRSP) and withdrawals for a qualifying home purchase are completely tax-free (like a TFSA).',
     category: 'Investments',
   },
   {
@@ -390,7 +392,7 @@ export const FAQS: FAQItem[] = [
 export const WORK_PROCESS = [
   {
     step: '01',
-    title: 'Free Discovery Session',
+    title: 'Complimentary Discovery Session',
     time: '30 Minutes',
     description: 'We meet via video or phone to understand your lifestyle, current savings, liabilities, and short- & long-term goals without any judgment or pressure.',
   },
@@ -404,7 +406,7 @@ export const WORK_PROCESS = [
     step: '03',
     title: 'Seamless Implementation',
     time: 'Interactive Walkthrough',
-    description: 'Together, we review carrier options, locked-in guarantees, and set up your accounts and protection with Canada’s most reputable financial institutions.',
+    description: 'Together, we review carrier options, policy terms, and contractual protections with Canada’s most reputable financial institutions.',
   },
   {
     step: '04',

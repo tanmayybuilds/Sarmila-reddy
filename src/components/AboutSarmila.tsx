@@ -52,7 +52,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                       “I am back in business to build your legacy.”
                     </p>
                     <p className="text-[11px] sm:text-sm text-stone-200 mt-0.5 sm:mt-1 font-light">
-                      Independent Financial Advisor • Serving Canada Coast to Coast
+                      Licensed Life & Living Benefits Representative • Canada
                     </p>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
             {/* Eyebrow badge */}
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-stone-100 text-stone-800 border border-stone-200">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-              <span>About Sarmila Reddy • Independent Canadian Advisor</span>
+              <span>About Sarmila Reddy • Licensed Canadian Advisory Professional</span>
             </div>
 
             <h2
@@ -102,7 +102,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
 
             <div className="space-y-2.5 text-stone-600 text-xs sm:text-base leading-relaxed font-light max-w-2xl">
               <p>
-                Hello, I’m <strong>Sarmila Reddy</strong>. As a licensed Canadian financial advisor and entrepreneur, my practice was founded on a simple realization: far too many Canadian families work tirelessly every single day, yet feel completely left in the dark when it comes to taxes, insurance, and retirement planning.
+                Hello, I’m <strong>Sarmila Reddy</strong>. As a licensed Canadian life and living benefits representative and entrepreneur, my practice was founded on a simple realization: far too many Canadian families work tirelessly every single day, yet feel completely left in the dark when it comes to taxes, insurance, and retirement planning.
               </p>
               <p>
                 The traditional banking system often sells generic products without taking the time to explain how they interact with your taxes or your children’s future. I take the exact opposite approach. I treat every client like family—listening to your worries, analyzing your numbers, and showing you step-by-step how to protect what you’ve built while accelerating your compound growth.
@@ -121,7 +121,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                   <AnimatedCounter value={100} suffix="%" duration={1.2} />
                 </p>
                 <p className="text-[10px] sm:text-sm text-stone-700 font-medium mt-0.5">
-                  Fiduciary Mindset
+                  Client Best-Interest
                 </p>
               </div>
               <div>
@@ -129,7 +129,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                   <AnimatedCounter value={30} suffix=" Min" duration={1.0} />
                 </p>
                 <p className="text-[10px] sm:text-sm text-stone-700 font-medium mt-0.5">
-                  Free Strategy Call
+                  Complimentary Call
                 </p>
               </div>
               <div>
@@ -150,7 +150,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
-                <span>Fiduciary Mindset (Client First)</span>
+                <span>Client-First Ethical Practice</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />

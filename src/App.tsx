@@ -43,7 +43,7 @@ export function AppContent() {
         {/* 1. Hero with Verified Credentials & Direct Calendly CTA */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* 2. About Sarmila Reddy - Professional Story, Fiduciary Ethics & Mission */}
+        {/* 2. About Sarmila Reddy - Professional Story, Client-First Ethics & Mission */}
         <AboutSarmila onOpenBooking={handleOpenBooking} />
 
         {/* 3. Core Purpose & Why - Her Core Values */}
@@ -64,7 +64,7 @@ export function AppContent() {
         {/* 8. Client Testimonials & Experiences Across Canada */}
         <TestimonialsSection />
 
-        {/* 9. The 4-Step Advisory Process (100% Free Discovery) */}
+        {/* 9. The 4-Step Advisory Process (Complimentary Discovery) */}
         <ProcessSection onOpenBooking={handleOpenBooking} />
 
         {/* 10. Direct Calendly Scheduling & Strategy Inquiry Form */}
