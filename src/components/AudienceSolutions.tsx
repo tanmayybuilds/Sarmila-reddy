@@ -15,15 +15,15 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'PlaneLanding':
-        return <Plane className="w-5 h-5" />;
+        return <Plane className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
       case 'BriefcaseBusiness':
-        return <Briefcase className="w-5 h-5" />;
+        return <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
       case 'Users':
-        return <Users className="w-5 h-5" />;
+        return <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
       case 'Building2':
-        return <Building className="w-5 h-5" />;
+        return <Building className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
       default:
-        return <Users className="w-5 h-5" />;
+        return <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
     }
   };
 
@@ -65,29 +65,54 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
           </p>
         </motion.div>
 
-        {/* Audience Selector Pills - 2x2 grid on mobile, row on larger screens */}
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-1.5 sm:gap-3 mb-5 sm:mb-10">
-          {TARGET_AUDIENCES.map(audience => {
-            const isSelected = audience.id === activeTab;
-            return (
-              <button
-                key={audience.id}
-                id={`audience-pill-${audience.id}`}
-                onClick={() => setActiveTab(audience.id)}
-                className={`flex items-center justify-center text-center gap-1.5 sm:gap-2 px-2.5 sm:px-5 py-2 sm:py-3 rounded-xl sm:rounded-full text-[11px] sm:text-sm font-semibold transition-all duration-200 border cursor-pointer min-h-[38px] sm:min-h-[44px] leading-tight ${
-                  isSelected ? 'scale-[1.01] sm:scale-102 border-2 shadow-xs' : 'hover:bg-stone-50 text-stone-600 active:scale-98'
-                }`}
-                style={{
-                  backgroundColor: isSelected ? activeTheme.primary : '#FFFFFF',
-                  color: isSelected ? '#FFFFFF' : undefined,
-                  borderColor: isSelected ? activeTheme.primary : activeTheme.border,
-                }}
-              >
-                <span className="shrink-0 scale-90 sm:scale-100">{getIcon(audience.icon)}</span>
-                <span>{audience.title}</span>
-              </button>
-            );
-          })}
+        {/* Luxury Segmented Audience Switcher: 2x2 symmetrical grid on mobile, sleek capsule on desktop */}
+        <div className="max-w-3xl mx-auto mb-6 sm:mb-10">
+          <div
+            role="tablist"
+            aria-label="Canadian Life Chapters"
+            className="p-1 sm:p-1.5 rounded-2xl sm:rounded-full border shadow-inner bg-stone-100/90 backdrop-blur-md grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-1.5"
+            style={{
+              borderColor: activeTheme.border,
+            }}
+          >
+            {TARGET_AUDIENCES.map(audience => {
+              const isSelected = audience.id === activeTab;
+              return (
+                <button
+                  key={audience.id}
+                  role="tab"
+                  id={`audience-tab-${audience.id}`}
+                  aria-selected={isSelected}
+                  aria-controls={`audience-panel-${audience.id}`}
+                  onClick={() => setActiveTab(audience.id)}
+                  className={`relative flex items-center justify-center text-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-[11px] sm:text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[48px] leading-tight select-none z-10 ${
+                    isSelected
+                      ? 'text-white font-bold'
+                      : 'text-stone-600 hover:text-stone-900 hover:bg-white/50 active:scale-98'
+                  }`}
+                >
+                  {/* Sliding Animated Active Pill */}
+                  {isSelected && (
+                    <motion.div
+                      layoutId="activeAudiencePill"
+                      transition={{ type: 'spring', bounce: 0.15, duration: 0.35 }}
+                      className="absolute inset-0 rounded-xl sm:rounded-full shadow-sm"
+                      style={{
+                        backgroundColor: activeTheme.primary,
+                      }}
+                    />
+                  )}
+
+                  <span className="relative z-10 shrink-0">
+                    {getIcon(audience.icon)}
+                  </span>
+                  <span className="relative z-10">
+                    {audience.title}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Active Audience Card */}
@@ -98,6 +123,9 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
+            id={`audience-panel-${currentAudience.id}`}
+            role="tabpanel"
+            aria-labelledby={`audience-tab-${currentAudience.id}`}
             className="rounded-2xl sm:rounded-3xl border p-4 sm:p-8 lg:p-12 transition-all duration-300 text-left"
             style={{
               backgroundColor: activeTheme.bgLight,
