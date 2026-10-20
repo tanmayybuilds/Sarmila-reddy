@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -13,35 +13,86 @@ import { ProcessSection } from './components/ProcessSection';
 import { BookingSection } from './components/BookingSection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
+import { ColorProfileSwitcher } from './components/ColorProfileSwitcher';
 import { BookingModal } from './components/BookingModal';
 import { MobileStickyCTA } from './components/MobileStickyCTA';
 
+import { ScrollProgressBar } from './components/ScrollProgressBar';
+
 export function AppContent() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const openBooking = () => setIsBookingOpen(true);
-  return <div className="site-shell">
-    <a href="#main-content" className="skip-link">Skip to content</a>
-    <Navbar onOpenBooking={openBooking} />
-    <main id="main-content" tabIndex={-1}>
-      <Hero onOpenBooking={openBooking} />
-      <ServicesSection onOpenBooking={openBooking} />
-      <AboutSarmila onOpenBooking={openBooking} />
-      <WhySection />
-      <AudienceSolutions onOpenBooking={openBooking} />
-      <CanadianWealthCalculator onOpenBooking={openBooking} />
-      <AccountExplainer onOpenBooking={openBooking} />
-      <TestimonialsSection />
-      <ProcessSection onOpenBooking={openBooking} />
-      <FAQSection />
-      <BookingSection />
-    </main>
-    <Footer onOpenBooking={openBooking} />
-    <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
-    <MobileStickyCTA onOpenBooking={openBooking} />
-  </div>;
+
+  const handleOpenBooking = () => {
+    setIsBookingOpen(true);
+  };
+
+  const handleCloseBooking = () => {
+    setIsBookingOpen(false);
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col font-sans transition-colors duration-500 overflow-x-hidden selection:bg-amber-100 selection:text-amber-900">
+      {/* Top Scroll Indicator */}
+      <ScrollProgressBar />
+
+      {/* Navigation */}
+      <Navbar onOpenBooking={handleOpenBooking} />
+
+      {/* Main Content Sections */}
+      <main className="flex-grow">
+        {/* 1. Hero with Verified Credentials & Direct Calendly CTA */}
+        <Hero onOpenBooking={handleOpenBooking} />
+
+        {/* 2. Comprehensive Services & Category Selector (Investments, Life Insurance, Living Benefits, Business) */}
+        <ServicesSection onOpenBooking={handleOpenBooking} />
+
+        {/* 3. Core Purpose & Why - Directly Translating Her Viral Principles */}
+        <WhySection />
+
+        {/* 4. Target Canadian Audiences (Immigrants, Professionals, Families, Business) */}
+        <AudienceSolutions onOpenBooking={handleOpenBooking} />
+
+        {/* 5. Interactive Canadian Wealth & Tax Shelter Calculator */}
+        <CanadianWealthCalculator onOpenBooking={handleOpenBooking} />
+
+        {/* 6. CRA Registered Accounts Explainer (TFSA, RRSP, FHSA, RESP) */}
+        <AccountExplainer onOpenBooking={handleOpenBooking} />
+
+        {/* 7. About Sarmila Reddy - Journey, Fiduciary Ethics & Desk Philosophy */}
+        <AboutSarmila onOpenBooking={handleOpenBooking} />
+
+        {/* 8. Client Testimonials & Experiences Across Canada */}
+        <TestimonialsSection />
+
+        {/* 9. The 4-Step Advisory Process (100% Free Discovery) */}
+        <ProcessSection onOpenBooking={handleOpenBooking} />
+
+        {/* 10. Direct Calendly Scheduling & Strategy Inquiry Form */}
+        <BookingSection />
+
+        {/* 11. Frequently Asked Questions */}
+        <FAQSection />
+      </main>
+
+      {/* Footer with Canadian Regulatory Notice & PIPEDA Disclosures */}
+      <Footer onOpenBooking={handleOpenBooking} />
+
+      {/* Interactive Light Color Profile Switcher */}
+      <ColorProfileSwitcher />
+
+      {/* Universal Booking Modal */}
+      <BookingModal isOpen={isBookingOpen} onClose={handleCloseBooking} />
+
+      {/* Mobile Sticky Booking Bar */}
+      <MobileStickyCTA onOpenBooking={handleOpenBooking} />
+    </div>
+  );
 }
 
 export default function App() {
-  return <ThemeProvider><AppContent /></ThemeProvider>;
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
 }
-

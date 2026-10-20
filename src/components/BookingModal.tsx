@@ -1,26 +1,315 @@
-import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Clock, Video, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { useTheme } from '../context/ThemeContext';
 import { ADVISOR_PROFILE } from '../data/content';
-import { ConsultationForm } from './ConsultationForm';
+import { X, Calendar, Clock, Video, CheckCircle, ExternalLink, Send } from 'lucide-react';
+import confetti from 'canvas-confetti';
+import { motion, AnimatePresence } from 'motion/react';
 
-export function BookingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const [showForm, setShowForm] = useState(false);
-  useEffect(() => {
-    if (!isOpen) return;
-    const previous = document.activeElement as HTMLElement | null;
-    const overflow = document.body.style.overflow;
-    const element = dialog.current;
-    element?.showModal();
-    document.body.style.overflow = 'hidden';
-    return () => { element?.close(); document.body.style.overflow = overflow; previous?.focus(); };
-  }, [isOpen]);
-  if (!isOpen) return null;
-  return <dialog ref={dialog} className="booking-dialog" aria-labelledby="booking-modal-title" onCancel={event => { event.preventDefault(); onClose(); }} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
-    <div className="booking-dialog-content"><button className="dialog-close" aria-label="Close booking modal" onClick={onClose} autoFocus><X size={21} /></button><p className="section-label">A conversation is a good start</p><h2 id="booking-modal-title">Let’s talk about you.</h2><p>Take the first step with a complimentary, no-pressure conversation with Sarmila.</p><div className="meeting-details"><span><Clock size={16} /> 30 minutes</span><span><Video size={16} /> Video or phone</span></div>
-    <div className="booking-choice"><button aria-pressed={!showForm} onClick={() => setShowForm(false)}>Choose a time</button><button aria-pressed={showForm} onClick={() => setShowForm(true)}>Send an inquiry</button></div>
-    {showForm ? <ConsultationForm /> : <div className="scheduler-panel"><p>Find a time that works for you on Sarmila’s calendar. You can choose your time zone before booking.</p><a id="modal-calendly-launch-btn" className="button button-primary" href={ADVISOR_PROFILE.calendlyUrl} target="_blank" rel="noopener noreferrer">Open Calendly <ArrowUpRight size={17} /></a><small>Opens in a new tab</small></div>}
-    </div>
-  </dialog>;
+interface BookingModalProps {
+  isOpen: boolean;
+  onClose: () => void;
 }
 
+export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
+  const { activeTheme } = useTheme();
+  const [activeTab, setActiveTab] = useState<'calendly' | 'quickForm'>('calendly');
+  const [submitted, setSubmitted] = useState(false);
+  const [clientName, setClientName] = useState('');
+  const [clientEmail, setClientEmail] = useState('');
+  const [clientPhone, setClientPhone] = useState('');
+  const [selectedTopic, setSelectedTopic] = useState('TFSA & RRSP Wealth Plan');
+
+  // Keyboard accessibility: dismiss on Escape
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    confetti({
+      particleCount: 60,
+      spread: 60,
+      origin: { y: 0.6 },
+      colors: [activeTheme.primary, activeTheme.accent, '#10B981'],
+    });
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="booking-modal-title"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+        >
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-black/50 backdrop-blur-xs cursor-pointer"
+          />
+
+          {/* Modal Container */}
+          <motion.div
+            id="booking-modal-container"
+            initial={{ opacity: 0, scale: 0.95, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 12 }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
+            className="relative w-full max-w-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl border bg-white transition-all max-h-[92vh] overflow-y-auto z-10 my-auto"
+            style={{ borderColor: activeTheme.border }}
+          >
+            {/* Close Button */}
+            <button
+              id="close-booking-modal-btn"
+              onClick={onClose}
+              className="absolute top-5 right-5 p-2 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 transition-colors cursor-pointer"
+              title="Close Modal"
+              aria-label="Close booking modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+        {/* Modal Header */}
+        <div className="flex items-center gap-3.5 mb-6 text-left pr-8">
+          <div className="w-12 h-12 rounded-full overflow-hidden border p-0.5 bg-white shrink-0 flex items-center justify-center"
+            style={{ borderColor: activeTheme.accent }}
+          >
+            <img
+              src={ADVISOR_PROFILE.images.logo}
+              alt="Sarmila Reddy"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="space-y-1">
+            <span
+              className="text-xs font-semibold px-2.5 py-0.5 rounded-full inline-block"
+              style={{
+                backgroundColor: activeTheme.badgeBg,
+                color: activeTheme.badgeText,
+              }}
+            >
+              Complimentary Consultation
+            </span>
+            <h3 id="booking-modal-title" className="font-serif text-xl sm:text-2xl font-bold leading-tight" style={{ color: activeTheme.textDark }}>
+              Book with Sarmila Reddy
+            </h3>
+            <p className="text-xs text-stone-500">
+              30-Minute 1-on-1 Virtual Strategy Session • Zero Obligation
+            </p>
+          </div>
+        </div>
+
+        {/* Switcher Tabs */}
+        <div className="flex border-b mb-6 text-xs font-semibold" style={{ borderColor: activeTheme.border }}>
+          <button
+            onClick={() => setActiveTab('calendly')}
+            className={`pb-2.5 px-4 transition-all border-b-2 ${
+              activeTab === 'calendly' ? 'border-amber-600 font-bold' : 'border-transparent text-stone-600 hover:text-stone-900'
+            }`}
+            style={{
+              borderColor: activeTab === 'calendly' ? activeTheme.primary : 'transparent',
+              color: activeTab === 'calendly' ? activeTheme.primary : undefined,
+            }}
+          >
+            Direct Calendly Booking
+          </button>
+          <button
+            onClick={() => setActiveTab('quickForm')}
+            className={`pb-2.5 px-4 transition-all border-b-2 ${
+              activeTab === 'quickForm' ? 'border-amber-600 font-bold' : 'border-transparent text-stone-600 hover:text-stone-900'
+            }`}
+            style={{
+              borderColor: activeTab === 'quickForm' ? activeTheme.primary : 'transparent',
+              color: activeTab === 'quickForm' ? activeTheme.primary : undefined,
+            }}
+          >
+            Quick Request Form
+          </button>
+        </div>
+
+        {activeTab === 'calendly' ? (
+          <div className="space-y-5 text-left">
+            <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200/80 space-y-2 text-xs text-stone-600">
+              <div className="flex items-center gap-2 text-stone-800 font-semibold">
+                <Clock className="w-4 h-4 text-emerald-600" />
+                <span>30-Min Strategy Call via Zoom</span>
+              </div>
+              <p className="leading-relaxed">
+                Connect directly to Sarmila's live calendar. You will be able to select your Canadian time zone and pick from upcoming morning, afternoon, or evening availability.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl border text-center space-y-3" style={{ borderColor: activeTheme.border }}>
+              <div
+                className="w-12 h-12 rounded-full mx-auto flex items-center justify-center text-white"
+                style={{ backgroundColor: activeTheme.primary }}
+              >
+                <Calendar className="w-6 h-6" />
+              </div>
+              <h4 className="font-serif text-lg font-bold" style={{ color: activeTheme.textDark }}>
+                Open Calendly Scheduler
+              </h4>
+              <p className="text-xs text-stone-500 max-w-sm mx-auto">
+                Click below to launch <strong>calendly.com/{ADVISOR_PROFILE.calendlyHandle}</strong> in a secure tab.
+              </p>
+
+              <a
+                id="modal-calendly-launch-btn"
+                href={ADVISOR_PROFILE.calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full min-h-[46px] py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer"
+                style={{ backgroundColor: activeTheme.primary }}
+              >
+                <span>Proceed to Calendly.com</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        ) : (
+          <div>
+            {submitted ? (
+              <div className="py-8 text-center space-y-3">
+                <div
+                  className="w-14 h-14 rounded-full mx-auto flex items-center justify-center text-emerald-700 bg-emerald-100"
+                >
+                  <CheckCircle className="w-7 h-7" />
+                </div>
+                <h4 className="font-serif text-xl font-bold" style={{ color: activeTheme.textDark }}>
+                  Inquiry Prepared!
+                </h4>
+                <p className="text-xs text-stone-600 max-w-sm mx-auto leading-relaxed">
+                  Your details have been assembled for Sarmila Reddy. To guarantee immediate delivery or pick a confirmed slot:
+                </p>
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+                  <a
+                    href={`mailto:${ADVISOR_PROFILE.email}?subject=${encodeURIComponent(`Strategy Session Inquiry - ${clientName}`)}&body=${encodeURIComponent(`Name: ${clientName}\nEmail: ${clientEmail}\nPhone: ${clientPhone}\nTopic: ${selectedTopic}`)}`}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white transition-all hover:brightness-110"
+                    style={{ backgroundColor: activeTheme.primary }}
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                    <span>Send via Email Client</span>
+                  </a>
+                  <a
+                    href={ADVISOR_PROFILE.calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold border text-stone-700 bg-stone-50 hover:bg-stone-100"
+                  >
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>Select Time on Calendly</span>
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="mt-4 px-6 py-2 rounded-xl text-xs font-semibold border cursor-pointer hover:bg-stone-50"
+                  style={{ borderColor: activeTheme.border }}
+                >
+                  Close Window
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleFormSubmit} className="space-y-4 text-left">
+                <div>
+                  <label htmlFor="modal-client-name" className="block text-xs font-semibold text-stone-700 mb-1">
+                    Your Name *
+                  </label>
+                  <input
+                    id="modal-client-name"
+                    type="text"
+                    required
+                    placeholder="First & Last Name"
+                    value={clientName}
+                    onChange={e => setClientName(e.target.value)}
+                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
+                    style={{ borderColor: activeTheme.border }}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="modal-client-email" className="block text-xs font-semibold text-stone-700 mb-1">
+                    Email Address *
+                  </label>
+                  <input
+                    id="modal-client-email"
+                    type="email"
+                    required
+                    placeholder="email@example.ca"
+                    value={clientEmail}
+                    onChange={e => setClientEmail(e.target.value)}
+                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
+                    style={{ borderColor: activeTheme.border }}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="modal-client-phone" className="block text-xs font-semibold text-stone-700 mb-1">
+                    Phone (for appointment SMS reminder) *
+                  </label>
+                  <input
+                    id="modal-client-phone"
+                    type="tel"
+                    required
+                    placeholder="(604) 555-0100"
+                    value={clientPhone}
+                    onChange={e => setClientPhone(e.target.value)}
+                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 focus:outline-none focus:ring-1"
+                    style={{ borderColor: activeTheme.border }}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="modal-client-topic" className="block text-xs font-semibold text-stone-700 mb-1">
+                    Primary Area of Interest
+                  </label>
+                  <select
+                    id="modal-client-topic"
+                    value={selectedTopic}
+                    onChange={e => setSelectedTopic(e.target.value)}
+                    className="w-full px-3.5 py-2 rounded-xl border text-xs text-stone-800 bg-white"
+                    style={{ borderColor: activeTheme.border }}
+                  >
+                    <option value="TFSA & RRSP Wealth Plan">TFSA & RRSP Wealth Plan</option>
+                    <option value="Family Life & Critical Illness Insurance">Family Life & Critical Illness Insurance</option>
+                    <option value="First Home Savings Account (FHSA)">First Home Savings Account (FHSA)</option>
+                    <option value="RESP (Kids Education Grant)">RESP (Kids Education Grant)</option>
+                    <option value="New Immigrant Financial Setup">New Immigrant Financial Setup</option>
+                    <option value="Business Owner & Corporate Strategy">Business Owner & Corporate Strategy</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  id="modal-submit-request-btn"
+                  className="w-full min-h-[46px] py-3.5 rounded-full text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  style={{ backgroundColor: activeTheme.primary }}
+                >
+                  <Send className="w-3.5 h-3.5" />
+                  <span>Request Consultation</span>
+                </button>
+              </form>
+            )}
+          </div>
+        )}
+      </motion.div>
+    </div>
+      )}
+    </AnimatePresence>
+  );
+};
