@@ -154,7 +154,7 @@ export const WhySection: React.FC = () => {
                 <img
                   src={ADVISOR_PROFILE.images.whyAvatar}
                   alt="Sarmila Reddy"
-                  className="w-12 h-12 rounded-full object-cover object-[center_15%] border-2"
+                  className="w-12 h-12 rounded-full object-cover object-center border-2 shadow-sm"
                   style={{ borderColor: activeTheme.accent }}
                 />
                 <div>

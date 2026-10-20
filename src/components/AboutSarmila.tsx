@@ -39,10 +39,10 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                   <img
                     src={ADVISOR_PROFILE.images.about}
                     alt="Sarmila Reddy Financial Advisor"
-                    className="w-full h-full object-cover object-[center_12%] filter brightness-[1.01]"
+                    className="w-full h-full object-cover object-[center_18%]"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
 
                   <div className="absolute bottom-5 left-5 right-5 text-white">
                     <span className="text-xs font-semibold text-amber-300">

@@ -232,12 +232,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   <img
                     src={ADVISOR_PROFILE.images.hero}
                     alt="Sarmila Reddy - Licensed Financial Advisor Canada"
-                    className="w-full h-full object-cover object-[center_20%] filter brightness-[1.01]"
+                    className="w-full h-full object-cover object-[center_15%]"
                     loading="eager"
                   />
 
-                  {/* High-Contrast Gradient Vignette for Guaranteed Legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 pointer-events-none" />
+                  {/* Gentle vignette to let the photo shine through */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/15 pointer-events-none" />
 
                   {/* Top Subtle Pill */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
