@@ -41,7 +41,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
           className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-5 sm:mb-8"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -51,7 +51,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Proudly Serving Clients{' '}
@@ -60,7 +60,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Financial guidance isn’t one-size-fits-all. Each chapter of life in Canada carries distinct CRA tax rules, residency considerations, and family responsibilities.
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
                   aria-selected={isSelected}
                   aria-controls={`audience-panel-${audience.id}`}
                   onClick={() => setActiveTab(audience.id)}
-                  className={`relative flex items-center justify-center text-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-[11px] sm:text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[48px] leading-tight select-none z-10 ${
+                  className={`relative flex items-center justify-center text-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all duration-200 cursor-pointer min-h-[44px] sm:min-h-[48px] leading-tight select-none z-10 ${
                     isSelected
                       ? 'text-white font-bold'
                       : 'text-stone-600 hover:text-stone-900 hover:bg-white/50 active:scale-98'
@@ -139,7 +139,7 @@ export const AudienceSolutions: React.FC<AudienceSolutionsProps> = ({ onOpenBook
                     Financial Strategy for {currentAudience.title}
                   </h3>
 
-                  <p className="text-[11px] sm:text-xs font-semibold text-stone-700 tracking-wide">
+                  <p className="text-xs sm:text-sm font-semibold text-stone-700 tracking-wide">
                     Focus: {currentAudience.subtitle}
                   </p>
 

@@ -72,7 +72,7 @@ export const BookingSection: React.FC = () => {
           className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-5 sm:mb-8"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -83,7 +83,7 @@ export const BookingSection: React.FC = () => {
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Schedule Your Complimentary{' '}
@@ -92,7 +92,7 @@ export const BookingSection: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Select a convenient time directly on Calendly or send an inquiry below. We will discuss your goals, answer your questions in plain English, and map out your next steps.
           </p>
         </motion.div>
@@ -124,7 +124,7 @@ export const BookingSection: React.FC = () => {
                   <span className="text-[11px] sm:text-xs font-medium bg-black/60 px-2.5 py-0.5 rounded-full text-white">
                     Virtual & In-Person Sessions
                   </span>
-                  <span className="text-[11px] sm:text-xs font-semibold text-emerald-300">
+                  <span className="text-xs sm:text-sm font-semibold text-emerald-300">
                     Complimentary
                   </span>
                 </div>
@@ -176,7 +176,7 @@ export const BookingSection: React.FC = () => {
                 Direct calendar link for verified booking.
               </p>
 
-              <div className="pt-2 sm:pt-3 border-t text-[11px] sm:text-xs text-stone-600 space-y-0.5 sm:space-y-1" style={{ borderColor: activeTheme.border }}>
+              <div className="pt-2 sm:pt-3 border-t text-xs sm:text-sm text-stone-600 space-y-0.5 sm:space-y-1" style={{ borderColor: activeTheme.border }}>
                 <p className="font-semibold text-stone-800">Questions before booking?</p>
                 <p>Email: <a href={`mailto:${ADVISOR_PROFILE.email}`} className="font-medium underline text-stone-800">{ADVISOR_PROFILE.email}</a></p>
                 <p>Instagram: <a href={`https://instagram.com/${ADVISOR_PROFILE.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="font-medium underline text-stone-800">{ADVISOR_PROFILE.instagram}</a></p>
@@ -260,7 +260,7 @@ export const BookingSection: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     <div>
-                      <label htmlFor="booking-full-name" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-0.5 sm:mb-1">
+                      <label htmlFor="booking-full-name" className="block text-sm font-semibold text-stone-700 mb-0.5 sm:mb-1">
                         Full Name *
                       </label>
                       <input
@@ -278,7 +278,7 @@ export const BookingSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="booking-phone-number" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-0.5 sm:mb-1">
+                      <label htmlFor="booking-phone-number" className="block text-sm font-semibold text-stone-700 mb-0.5 sm:mb-1">
                         Mobile Number *
                       </label>
                       <input
@@ -298,7 +298,7 @@ export const BookingSection: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     <div>
-                      <label htmlFor="booking-email-address" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-0.5 sm:mb-1">
+                      <label htmlFor="booking-email-address" className="block text-sm font-semibold text-stone-700 mb-0.5 sm:mb-1">
                         Email Address <span className="font-normal text-stone-400">(Optional)</span>
                       </label>
                       <input
@@ -315,7 +315,7 @@ export const BookingSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="booking-province" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-0.5 sm:mb-1">
+                      <label htmlFor="booking-province" className="block text-sm font-semibold text-stone-700 mb-0.5 sm:mb-1">
                         Province / Territory
                       </label>
                       <select
@@ -336,7 +336,7 @@ export const BookingSection: React.FC = () => {
 
                   {/* Topics of Interest (Compact Horizontal Pills) */}
                   <div>
-                    <span id="booking-topics-group-label" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-1">
+                    <span id="booking-topics-group-label" className="block text-sm font-semibold text-stone-700 mb-1">
                       Focus Areas (tap to select):
                     </span>
                     <div className="flex flex-wrap gap-1 sm:gap-1.5" role="group" aria-labelledby="booking-topics-group-label">
@@ -369,7 +369,7 @@ export const BookingSection: React.FC = () => {
 
                   {/* Textarea to balance height 1 to 1 */}
                   <div>
-                    <label htmlFor="booking-notes" className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-0.5 sm:mb-1">
+                    <label htmlFor="booking-notes" className="block text-sm font-semibold text-stone-700 mb-0.5 sm:mb-1">
                       Optional Note or Questions
                     </label>
                     <textarea

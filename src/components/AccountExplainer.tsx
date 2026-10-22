@@ -70,7 +70,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
         >
           {/* Eyebrow with active CRA pulse */}
           <div
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -84,7 +84,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Canadian Accounts{' '}
@@ -93,7 +93,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             The Canadian tax code offers unmatched shelters for building wealth and buying a home.
             Compare TFSA vs. FHSA head-to-head or explore how to stack them strategically.
           </p>
@@ -513,7 +513,7 @@ export const AccountExplainer: React.FC<AccountExplainerProps> = ({ onOpenBookin
                         >
                           {acc.code}
                         </span>
-                        <p className="text-[11px] sm:text-xs font-semibold text-stone-700">{acc.fullName}</p>
+                        <p className="text-xs sm:text-sm font-semibold text-stone-700">{acc.fullName}</p>
                       </div>
                       <span className="text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-stone-100 text-stone-700">
                         {acc.annualLimit}

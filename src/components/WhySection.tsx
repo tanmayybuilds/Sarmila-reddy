@@ -34,12 +34,12 @@ export const WhySection: React.FC = () => {
           className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-6 sm:mb-10"
         >
           {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-white text-stone-800 border border-stone-200 shadow-xs">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-white text-stone-800 border border-stone-200 shadow-xs">
             <span>Guiding Principles</span>
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Beyond the Numbers,{' '}
@@ -48,7 +48,7 @@ export const WhySection: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Finance is rarely just about spreadsheets and market charts. It is about waking up knowing your family is protected, your hard work is compounding, and your future in Canada is anchored in clarity.
           </p>
         </motion.div>
@@ -79,19 +79,19 @@ export const WhySection: React.FC = () => {
                   >
                     {getIcon(pillar.icon)}
                   </div>
-                  <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-stone-500">
+                  <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-stone-500">
                     {pillar.subtitle}
                   </span>
                 </div>
 
                 <h3
-                  className="font-serif text-base sm:text-lg font-bold mb-1 sm:mb-2 tracking-tight"
+                  className="font-serif text-lg sm:text-xl font-bold mb-1 sm:mb-2 tracking-tight"
                   style={{ color: activeTheme.textDark }}
                 >
                   {pillar.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+                <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-light">
                   {pillar.description}
                 </p>
               </div>

@@ -40,7 +40,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
           className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-6 sm:mb-10"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -50,7 +50,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Strategic Guidance for{' '}
@@ -59,7 +59,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             All financial recommendations in Canada are structured specifically around CRA tax regulations, your family goals, and established Canadian financial institutions.
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                   >
                     {service.title}
                   </span>
-                  <p className="text-[10px] sm:text-xs text-stone-500 mt-0.5 leading-snug truncate">{service.subtitle}</p>
+                  <p className="text-xs sm:text-sm text-stone-500 mt-0.5 leading-snug truncate">{service.subtitle}</p>
                 </div>
               </button>
             );
@@ -127,7 +127,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                 <div className="space-y-1.5 sm:space-y-2">
                   <div className="flex items-center gap-2">
                     <span
-                      className="text-[11px] sm:text-xs font-semibold px-2.5 py-0.5 rounded-md"
+                      className="text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-md"
                       style={{
                         backgroundColor: activeTheme.primaryLight,
                         color: activeTheme.primary,
@@ -141,14 +141,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                     {selectedService.title}
                   </h3>
 
-                  <p className="text-stone-600 leading-relaxed text-xs sm:text-base font-light">
+                  <p className="text-stone-600 leading-relaxed text-sm sm:text-base font-light">
                     {selectedService.description}
                   </p>
                 </div>
 
                 {/* Core Features / Breakdown */}
                 <div className="space-y-2.5 sm:space-y-3 pt-0.5 sm:pt-1">
-                  <h4 className="text-[11px] sm:text-xs font-semibold text-stone-600 uppercase tracking-wider">
+                  <h4 className="text-xs sm:text-sm font-semibold text-stone-600 uppercase tracking-wider">
                     Included Strategic Solutions
                   </h4>
                   <div className="space-y-2 sm:space-y-2.5">
@@ -169,7 +169,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking 
                   <button
                     id={`book-service-${selectedService.id}-btn`}
                     onClick={onOpenBooking}
-                    className="inline-flex items-center justify-center gap-2 min-h-[42px] sm:min-h-[48px] w-full sm:w-auto px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer shadow-xs"
+                    className="inline-flex items-center justify-center gap-2 min-h-[46px] sm:min-h-[48px] w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-semibold text-white transition-all hover:brightness-110 active:scale-95 cursor-pointer shadow-xs"
                     style={{ backgroundColor: activeTheme.primary }}
                   >
                     <span>{selectedService.ctaText}</span>

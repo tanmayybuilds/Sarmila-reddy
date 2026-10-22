@@ -23,7 +23,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
           className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-6 sm:mb-10"
         >
           <div
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -37,7 +37,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Simple, Transparent &{' '}
@@ -46,7 +46,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Education first, personalized strategy second, protection last. Here is the structured path every client experiences from initial conversation to lifelong security.
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
                 </div>
 
                 <div
-                  className="mt-4 pt-3 border-t text-[11px] sm:text-xs font-semibold flex items-center justify-between"
+                  className="mt-4 pt-3 border-t text-xs sm:text-sm font-semibold flex items-center justify-between"
                   style={{ borderColor: activeTheme.border }}
                 >
                   <span className="text-stone-500 font-medium">Client-First Standard</span>

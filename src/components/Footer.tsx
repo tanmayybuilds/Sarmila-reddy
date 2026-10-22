@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         className="border-t transition-colors duration-500 text-stone-700 bg-white"
         style={{ borderColor: activeTheme.border }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 pb-20 sm:pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 pb-28 sm:pb-12">
           {/* Main 4 Equal Columns Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-start text-left">
             {/* Col 1: Brand & Identity */}
@@ -44,13 +44,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   <h3 className="font-serif text-sm sm:text-base font-bold leading-tight" style={{ color: activeTheme.textDark }}>
                     Sarmila Reddy
                   </h3>
-                  <p className="text-[10px] sm:text-[11px] text-stone-500 font-medium">
+                  <p className="text-xs text-stone-500 font-medium">
                     Financial Advisory • Canada
                   </p>
                 </div>
               </div>
 
-              <p className="text-[11px] sm:text-xs text-stone-600 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
                 Empowering Canadian families, professionals, and newcomers with client-first financial and insurance strategies.
               </p>
 
@@ -98,10 +98,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
             {/* Col 2: Quick Links */}
             <div className="space-y-2 sm:space-y-2.5">
-              <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900">
+              <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-900">
                 Navigation
               </h3>
-              <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs text-stone-600">
+              <ul className="space-y-1 sm:space-y-1.5 text-xs sm:text-sm text-stone-600">
                 <li><a href="#services" className="hover:underline">Advisory Services</a></li>
                 <li><a href="#who-i-help" className="hover:underline">Who I Help in Canada</a></li>
                 <li><a href="#calculator" className="hover:underline">Wealth Calculator</a></li>
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 <li>
                   <button
                     onClick={onOpenBooking}
-                    className="hover:underline cursor-pointer font-semibold flex items-center gap-1 text-[11px] sm:text-xs"
+                    className="hover:underline cursor-pointer font-semibold flex items-center gap-1 text-xs sm:text-sm"
                     style={{ color: activeTheme.primary }}
                   >
                     <span>Book 1-on-1 Session</span>
@@ -122,10 +122,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
             {/* Col 3: Key Solutions */}
             <div className="space-y-2 sm:space-y-2.5">
-              <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900">
+              <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-900">
                 Solutions
               </h3>
-              <ul className="space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs text-stone-600">
+              <ul className="space-y-1 sm:space-y-1.5 text-xs sm:text-sm text-stone-600">
                 <li><a href="#services" className="hover:underline">TFSA, RRSP & FHSA</a></li>
                 <li><a href="#services" className="hover:underline">Life Insurance (Term & Whole)</a></li>
                 <li><a href="#services" className="hover:underline">Critical Illness & Disability</a></li>
@@ -137,10 +137,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
             {/* Col 4: Direct Contact & Office */}
             <div className="space-y-2 sm:space-y-2.5">
-              <h3 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-900">
+              <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-stone-900">
                 Direct Contact
               </h3>
-              <div className="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-stone-600">
+              <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-stone-600">
                 <div className="flex items-start gap-1.5 sm:gap-2">
                   <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 shrink-0 mt-0.5" />
                   <span>British Columbia & Canada-Wide (Virtual)</span>
@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 </div>
               </div>
 
-              <div className="pt-0.5 sm:pt-1 text-[10px] sm:text-[11px]">
+              <div className="pt-0.5 sm:pt-1 text-xs">
                 <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   <span>Complimentary Consultations</span>
@@ -170,11 +170,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           {/* Regulatory & Compliance Disclaimers */}
           <div className="mt-5 sm:mt-7 pt-4 sm:pt-5 border-t space-y-2 text-left" style={{ borderColor: activeTheme.border }}>
-            <p className="text-[10px] sm:text-[11px] text-stone-500 leading-relaxed max-w-5xl">
+            <p className="text-xs text-stone-500 leading-relaxed max-w-5xl">
               <strong className="text-stone-700 font-semibold">Regulatory Notice & Licensing Disclosure: </strong>
               Sarmila Reddy is a Life License Qualification Program (LLQP) certified professional and Licensed Life & Living Benefits Representative authorized in British Columbia (BC), Alberta (AB), and Ontario (ON). All introductory sessions are complimentary discovery discussions; no direct consumer payments or portfolio transactions are conducted directly through this website. Life insurance, critical illness, disability, and living benefits policies are underwritten and issued by authorized Canadian life insurance companies. Registered wealth accounts (TFSA, RRSP, FHSA, RESP) and mutual fund solutions are facilitated through authorized Canadian financial institutions and partner dealers in accordance with applicable provincial and CIRO regulatory standards.
             </p>
-            <p className="text-[10px] sm:text-[11px] text-stone-500 leading-relaxed max-w-5xl">
+            <p className="text-xs text-stone-500 leading-relaxed max-w-5xl">
               Website content and calculator simulations are provided solely for general educational and informational modeling purposes. They do not constitute personalized Know-Your-Client (KYC) investment advice, tax opinions, or legal counsel. Investment returns are not guaranteed; market values, yields, and unit prices fluctuate with market conditions.
             </p>
 
@@ -220,7 +220,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <h3 id="privacy-modal-title" className="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-1.5 sm:mb-2 pr-8">
               Privacy Policy (PIPEDA Compliance)
             </h3>
-            <p className="text-[11px] sm:text-xs text-stone-500 mb-3 sm:mb-4">Last Updated: Canadian Regulatory Revision 2026</p>
+            <p className="text-xs sm:text-sm text-stone-500 mb-3 sm:mb-4">Last Updated: Canadian Regulatory Revision 2026</p>
             <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
               <p>
                 Sarmila Reddy respects your privacy and is committed to safeguarding personal information under Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable provincial privacy laws.
@@ -269,7 +269,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <h3 id="terms-modal-title" className="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-1.5 sm:mb-2 pr-8">
               Terms of Service & Advisory Scope
             </h3>
-            <p className="text-[11px] sm:text-xs text-stone-500 mb-3 sm:mb-4">Effective: 2026</p>
+            <p className="text-xs sm:text-sm text-stone-500 mb-3 sm:mb-4">Effective: 2026</p>
             <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-stone-600 leading-relaxed">
               <h4 className="font-bold text-stone-800">1. Advisory Scope & Registration</h4>
               <p>

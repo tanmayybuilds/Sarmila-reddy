@@ -35,7 +35,7 @@ export const FAQSection: React.FC = () => {
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Clear Answers to Your{' '}
@@ -44,7 +44,7 @@ export const FAQSection: React.FC = () => {
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             Everything you need to know about working with a licensed Canadian financial and insurance representative, registered tax accounts, and protecting your family.
           </p>
         </motion.div>

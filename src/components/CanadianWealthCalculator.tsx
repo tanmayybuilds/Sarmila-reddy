@@ -81,7 +81,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
           className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3 mb-5 sm:mb-8"
         >
           <div
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
             style={{
               backgroundColor: activeTheme.badgeBg,
               color: activeTheme.badgeText,
@@ -92,7 +92,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
           </div>
 
           <h2
-            className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             style={{ color: activeTheme.textDark }}
           >
             Calculate Your{' '}
@@ -101,7 +101,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
             </span>
           </h2>
 
-          <p className="text-xs sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
             See the mathematical impact of time, steady monthly contributions, and Canadian registered tax shelters on your family's future net worth.
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
             <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
               {/* Account Type Selector */}
               <div>
-                <label className="block text-[11px] sm:text-xs font-semibold text-stone-700 mb-1.5">
+                <label className="block text-xs sm:text-sm font-semibold text-stone-700 mb-1.5">
                   Select Canadian Account Vehicle
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2">
@@ -278,7 +278,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
               }}
             >
               <div>
-                <span className="text-[11px] sm:text-xs font-semibold text-stone-600">
+                <span className="text-xs sm:text-sm font-semibold text-stone-600">
                   Projected Future Wealth ({years} Years)
                 </span>
                 <motion.div

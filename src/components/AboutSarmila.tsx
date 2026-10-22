@@ -45,13 +45,13 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
                   <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-5 sm:left-5 sm:right-5 text-white">
-                    <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-amber-300">
+                    <span className="text-xs font-semibold font-semibold uppercase tracking-wider text-amber-300">
                       Sarmila Reddy
                     </span>
                     <p className="font-serif text-lg sm:text-2xl font-bold mt-0.5 leading-snug">
                       “I am back in business to build your legacy.”
                     </p>
-                    <p className="text-[11px] sm:text-sm text-stone-200 mt-0.5 sm:mt-1 font-light">
+                    <p className="text-xs sm:text-sm text-stone-200 mt-0.5 sm:mt-1 font-light">
                       Licensed Life & Living Benefits Representative • Canada
                     </p>
                   </div>
@@ -59,14 +59,14 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
 
                 {/* Sub info */}
                 <div className="p-3 sm:p-5 bg-white space-y-2 sm:space-y-3">
-                  <div className="flex items-center justify-between text-[11px] sm:text-sm text-stone-600">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-stone-600">
                     <span className="font-semibold text-stone-800">Professional Status:</span>
                     <span className="font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs">
                       Active LLQP License
                     </span>
                   </div>
 
-                  <div className="text-[11px] sm:text-sm text-stone-600 flex items-center gap-2">
+                  <div className="text-xs sm:text-sm text-stone-600 flex items-center gap-2">
                     <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
                     <span>Compliant with Canadian Insurance Regulations</span>
                   </div>
@@ -84,13 +84,13 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
             className="lg:col-span-7 space-y-3.5 sm:space-y-5 text-left"
           >
             {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-stone-100 text-stone-800 border border-stone-200">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold bg-stone-100 text-stone-800 border border-stone-200">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
               <span>About Sarmila Reddy • Licensed Canadian Advisory Professional</span>
             </div>
 
             <h2
-              className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
+              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
               style={{ color: activeTheme.textDark }}
             >
               Building Wealth.{' '}
@@ -100,7 +100,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
               Creating Freedom.
             </h2>
 
-            <div className="space-y-2.5 text-stone-600 text-xs sm:text-base leading-relaxed font-light max-w-2xl">
+            <div className="space-y-2.5 text-stone-600 text-sm sm:text-base leading-relaxed font-light max-w-2xl">
               <p>
                 Hello, I’m <strong>Sarmila Reddy</strong>. As a licensed Canadian life and living benefits representative and entrepreneur, my practice was founded on a simple realization: far too many Canadian families work tirelessly every single day, yet feel completely left in the dark when it comes to taxes, insurance, and retirement planning.
               </p>
@@ -120,7 +120,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                 <p className="font-serif text-lg sm:text-2xl font-bold" style={{ color: activeTheme.primary }}>
                   <AnimatedCounter value={100} suffix="%" duration={1.2} />
                 </p>
-                <p className="text-[10px] sm:text-sm text-stone-700 font-medium mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-700 font-medium mt-0.5">
                   Client Best-Interest
                 </p>
               </div>
@@ -128,7 +128,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                 <p className="font-serif text-lg sm:text-2xl font-bold" style={{ color: activeTheme.primary }}>
                   <AnimatedCounter value={30} suffix=" Min" duration={1.0} />
                 </p>
-                <p className="text-[10px] sm:text-sm text-stone-700 font-medium mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-700 font-medium mt-0.5">
                   Complimentary Call
                 </p>
               </div>
@@ -136,7 +136,7 @@ export const AboutSarmila: React.FC<AboutProps> = ({ onOpenBooking }) => {
                 <p className="font-serif text-lg sm:text-2xl font-bold" style={{ color: activeTheme.primary }}>
                   <AnimatedCounter value={10} suffix=" Prov" duration={1.2} />
                 </p>
-                <p className="text-[10px] sm:text-sm text-stone-700 font-medium mt-0.5">
+                <p className="text-xs sm:text-sm text-stone-700 font-medium mt-0.5">
                   Coast-to-Coast
                 </p>
               </div>
