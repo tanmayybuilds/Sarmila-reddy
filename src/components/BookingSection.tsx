@@ -112,11 +112,11 @@ export const BookingSection: React.FC = () => {
           >
             <div className="space-y-3 sm:space-y-4">
               {/* Visual Working Session Photo */}
-              <div className="relative aspect-[16/9] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
                 <img
                   src={ADVISOR_PROFILE.images.workingDesk}
                   alt="1-on-1 Strategy Session with Sarmila Reddy"
-                  className="w-full h-full object-cover object-[center_25%]"
+                  className="w-full h-full object-cover object-[center_40%]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />

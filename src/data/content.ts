@@ -91,9 +91,9 @@ export const ADVISOR_PROFILE = {
   images: {
     logo: `${import.meta.env.BASE_URL}images/logo.png`,
     hero: `${import.meta.env.BASE_URL}images/sarmila-hero-navy.jpg`,
-    about: `${import.meta.env.BASE_URL}images/sarmila-bench-navy.jpg`,
+    about: `${import.meta.env.BASE_URL}images/sarmila-office-standing.jpg`,
     whyAvatar: `${import.meta.env.BASE_URL}images/sarmila-avatar.jpg`,
-    workingDesk: `${import.meta.env.BASE_URL}images/sarmila-desk-laptop.jpg`,
+    workingDesk: `${import.meta.env.BASE_URL}images/sarmila-desk-consultation.jpg`,
   },
 };
 
