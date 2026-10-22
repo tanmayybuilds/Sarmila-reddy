@@ -90,7 +90,7 @@ export const ADVISOR_PROFILE = {
   consultationFee: 'Complimentary Initial Consultation',
   images: {
     logo: `${import.meta.env.BASE_URL}images/logo.png`,
-    hero: `${import.meta.env.BASE_URL}images/sarmila-hero-green.jpg`,
+    hero: `${import.meta.env.BASE_URL}images/sarmila-hero-navy.jpg`,
     about: `${import.meta.env.BASE_URL}images/sarmila-bench-navy.jpg`,
     whyAvatar: `${import.meta.env.BASE_URL}images/sarmila-avatar.jpg`,
     workingDesk: `${import.meta.env.BASE_URL}images/sarmila-desk-laptop.jpg`,

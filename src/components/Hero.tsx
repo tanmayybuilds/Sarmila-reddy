@@ -235,7 +235,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   <img
                     src={ADVISOR_PROFILE.images.hero}
                     alt="Sarmila Reddy - Licensed Financial Advisor Canada"
-                    className="w-full h-full object-cover object-[center_15%]"
+                    className="w-full h-full object-cover object-[center_20%]"
                     loading="eager"
                   />
 
