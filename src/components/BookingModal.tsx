@@ -86,13 +86,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
 
         {/* Modal Header */}
         <div className="flex items-center gap-2.5 sm:gap-3.5 mb-3.5 sm:mb-6 text-left pr-7 sm:pr-8">
-          <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-full overflow-hidden border p-0.5 bg-white shrink-0 flex items-center justify-center"
+<div
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl p-1 bg-white border-2 shadow-xs shrink-0 flex items-center justify-center ring-1 ring-black/5"
             style={{ borderColor: activeTheme.accent }}
           >
             <img
-              src={ADVISOR_PROFILE.images.logo}
+              src={ADVISOR_PROFILE.images.logoEmblem || ADVISOR_PROFILE.images.logo}
               alt="Sarmila Reddy"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain filter drop-shadow-xs"
             />
           </div>
           <div className="space-y-0.5 sm:space-y-1">

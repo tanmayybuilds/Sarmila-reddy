@@ -51,7 +51,7 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
               className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-2 bg-white border border-stone-200/80 shadow-md flex items-center justify-center"
             >
               <img
-                src={ADVISOR_PROFILE.images.logo}
+                src={ADVISOR_PROFILE.images.logoEmblem || ADVISOR_PROFILE.images.logo}
                 alt="Sarmila Reddy"
                 className="w-full h-full object-contain filter drop-shadow-xs"
               />

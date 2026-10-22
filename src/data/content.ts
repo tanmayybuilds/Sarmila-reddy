@@ -2,6 +2,23 @@ import { ServiceItem, TargetAudience, WhyPillar, Testimonial, FAQItem, ColorThem
 
 export const COLOR_THEMES: ColorTheme[] = [
   {
+    id: 'sapphire-alabaster',
+    name: 'Sovereign Navy & Classic Brass',
+    tagline: 'Crisp, timeless institutional prestige with warm client-first undertones',
+    primary: '#14253D', // Deep sovereign navy
+    primaryHover: '#0E1B2D',
+    primaryLight: '#EFF4FA',
+    accent: '#C2953C', // Classic brass gold
+    accentLight: '#FAF6EC',
+    bgLight: '#F8FAFC',
+    surface: '#FFFFFF',
+    textDark: '#0F1A2B',
+    textMuted: '#4E5F78',
+    border: '#D8E2ED',
+    badgeBg: '#E7EFF8',
+    badgeText: '#14253D',
+  },
+  {
     id: 'rose-champagne',
     name: 'Champagne Gold & Editorial Espresso',
     tagline: 'Quiet luxury, warm alabaster linen, and rich champagne gold inspired by Canadian wealth advisory firms',
@@ -34,23 +51,6 @@ export const COLOR_THEMES: ColorTheme[] = [
     border: '#DAE3DC',
     badgeBg: '#EAF2ED',
     badgeText: '#1A3B2F',
-  },
-  {
-    id: 'sapphire-alabaster',
-    name: 'Sovereign Navy & Classic Brass',
-    tagline: 'Crisp, timeless institutional prestige with warm client-first undertones',
-    primary: '#14253D', // Deep sovereign navy
-    primaryHover: '#0E1B2D',
-    primaryLight: '#EFF4FA',
-    accent: '#C2953C', // Classic brass gold
-    accentLight: '#FAF6EC',
-    bgLight: '#F8FAFC',
-    surface: '#FFFFFF',
-    textDark: '#0F1A2B',
-    textMuted: '#4E5F78',
-    border: '#D8E2ED',
-    badgeBg: '#E7EFF8',
-    badgeText: '#14253D',
   },
   {
     id: 'cashmere-amber',
@@ -90,6 +90,8 @@ export const ADVISOR_PROFILE = {
   consultationFee: 'Complimentary Initial Consultation',
   images: {
     logo: `${import.meta.env.BASE_URL}images/logo.png`,
+    logoEmblem: `${import.meta.env.BASE_URL}images/logo-emblem.png`,
+    logoFull: `${import.meta.env.BASE_URL}images/logo-full.png`,
     hero: `${import.meta.env.BASE_URL}images/sarmila-hero-navy.jpg`,
     about: `${import.meta.env.BASE_URL}images/sarmila-office-standing.jpg`,
     whyAvatar: `${import.meta.env.BASE_URL}images/sarmila-avatar.jpg`,

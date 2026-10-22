@@ -33,19 +33,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             {/* Col 1: Brand & Identity */}
             <div className="space-y-2.5 sm:space-y-3">
               <div className="flex items-center gap-2 sm:gap-2.5">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden p-0.5 bg-stone-50 border border-stone-200 shrink-0 flex items-center justify-center">
+<div
+                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl p-1 bg-white border-2 shadow-xs shrink-0 flex items-center justify-center ring-1 ring-black/5"
+                  style={{ borderColor: activeTheme.accent }}
+                >
                   <img
-                    src={ADVISOR_PROFILE.images.logo}
-                    alt="Sarmila Reddy"
-                    className="w-full h-full object-contain"
+                    src={ADVISOR_PROFILE.images.logoEmblem || ADVISOR_PROFILE.images.logo}
+                    alt="Sarmila Reddy - Financial Advisor Canada"
+                    className="w-full h-full object-contain filter drop-shadow-xs"
                   />
                 </div>
                 <div>
-                  <h3 className="font-serif text-sm sm:text-base font-bold leading-tight" style={{ color: activeTheme.textDark }}>
+                  <h3 className="font-serif text-base sm:text-lg font-bold leading-tight" style={{ color: activeTheme.textDark }}>
                     Sarmila Reddy
                   </h3>
-                  <p className="text-xs text-stone-500 font-medium">
-                    Financial Advisory • Canada
+                  <p className="text-xs sm:text-sm font-semibold tracking-normal mt-0.5" style={{ color: activeTheme.accent }}>
+                    Financial Advisor • Canada
                   </p>
                 </div>
               </div>

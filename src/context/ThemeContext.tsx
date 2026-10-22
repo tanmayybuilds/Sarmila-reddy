@@ -13,18 +13,18 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [themeId, setThemeIdState] = useState<ColorThemeId>(() => {
-    const saved = localStorage.getItem('sarmila_color_theme') as ColorThemeId;
+    const saved = localStorage.getItem('sarmila_color_theme_v2') as ColorThemeId;
     if (saved && COLOR_THEMES.some(t => t.id === saved)) {
       return saved;
     }
-    return 'rose-champagne'; // Default light luxury aesthetic
+    return 'sapphire-alabaster'; // Default Sovereign Navy matching Sarmila's outfit
   });
 
   const activeTheme = COLOR_THEMES.find(t => t.id === themeId) || COLOR_THEMES[0];
 
   const setThemeId = (id: ColorThemeId) => {
     setThemeIdState(id);
-    localStorage.setItem('sarmila_color_theme', id);
+    localStorage.setItem('sarmila_color_theme_v2', id);
   };
 
   useEffect(() => {
