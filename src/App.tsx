@@ -43,14 +43,14 @@ export function AppContent() {
         {/* 1. Hero with Verified Credentials & Direct Calendly CTA */}
         <Hero onOpenBooking={handleOpenBooking} />
 
-        {/* 2. About Sarmila Reddy - Professional Story, Client-First Ethics & Mission */}
+        {/* 2. Comprehensive Services & Category Selector (Investments, Life Insurance, Living Benefits, Business) */}
+        <ServicesSection onOpenBooking={handleOpenBooking} />
+
+        {/* 3. About Sarmila Reddy - Professional Story, Client-First Ethics & Mission */}
         <AboutSarmila onOpenBooking={handleOpenBooking} />
 
-        {/* 3. Core Purpose & Why - Her Core Values */}
+        {/* 4. Core Purpose & Why - Her Core Values */}
         <WhySection />
-
-        {/* 4. Comprehensive Services & Category Selector (Investments, Life Insurance, Living Benefits, Business) */}
-        <ServicesSection onOpenBooking={handleOpenBooking} />
 
         {/* 5. Target Canadian Audiences (Immigrants, Professionals, Families, Business) */}
         <AudienceSolutions onOpenBooking={handleOpenBooking} />

@@ -13,11 +13,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Why Sarmila', href: '#why-sarmila' },
-    { label: 'Solutions', href: '#solutions' },
+    { label: 'Services', href: '#services' },
+    { label: 'About Sarmila', href: '#about' },
+    { label: 'My Why', href: '#my-why' },
+    { label: 'Who I Help', href: '#who-i-help' },
     { label: 'Tax Accounts', href: '#accounts' },
-    { label: 'Who I Help', href: '#audiences' },
-    { label: 'Calculator', href: '#wealth-calculator' },
+    { label: 'Calculator', href: '#calculator' },
     { label: 'Process', href: '#process' },
     { label: 'FAQ', href: '#faq' },
   ];

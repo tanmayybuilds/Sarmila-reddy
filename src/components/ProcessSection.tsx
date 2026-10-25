@@ -12,7 +12,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenBooking })
   const { activeTheme } = useTheme();
 
   return (
-    <section className="py-8 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
+    <section id="process" className="py-8 sm:py-14 lg:py-16 transition-colors duration-500 overflow-hidden" style={{ backgroundColor: activeTheme.bgLight }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

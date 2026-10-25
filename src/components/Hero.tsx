@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   const { activeTheme } = useTheme();
 
   return (
-    <section className="relative overflow-x-hidden bg-[#0A111E] text-white">
+    <section id="home" className="relative overflow-x-hidden bg-[#0A111E] text-white">
       {/* =========================================================================
           1. MOBILE VIEW (Screen width < 1024px / lg:hidden)
           Matches the reference image exactly:
@@ -131,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               {/* Secondary Underlined Link */}
               <div className="pt-1">
                 <a
-                  href="#solutions"
+                  href="#services"
                   className="inline-flex items-center gap-2 text-white/90 hover:text-amber-200 transition-colors text-sm font-medium group"
                 >
                   <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-amber-300">
@@ -329,7 +329,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 </button>
 
                 <a
-                  href="#wealth-calculator"
+                  href="#calculator"
                   className="whitespace-nowrap px-6 py-3.5 rounded-full text-base font-semibold border border-white/20 bg-white/5 hover:bg-white/10 text-white transition-all duration-200 cursor-pointer inline-flex items-center gap-2"
                 >
                   <span>Interactive Calculator</span>
