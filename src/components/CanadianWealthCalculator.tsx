@@ -14,7 +14,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
   const [initialDeposit, setInitialDeposit] = useState<number>(5000);
   const [monthlyContribution, setMonthlyContribution] = useState<number>(500);
   const [years, setYears] = useState<number>(20);
-  const [rateOfReturn, setRateOfReturn] = useState<number>(7);
+  const [rateOfReturn, setRateOfReturn] = useState<number>(14);
   const [accountType, setAccountType] = useState<'TFSA' | 'RRSP' | 'FHSA' | 'NON_REG'>('TFSA');
 
   // Compound interest calculation
@@ -254,7 +254,7 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                   <input
                     type="range"
                     min={3}
-                    max={11}
+                    max={15}
                     step={0.5}
                     value={rateOfReturn}
                     aria-label="Estimated Annual Return Rate"
@@ -264,8 +264,25 @@ export const CanadianWealthCalculator: React.FC<CalculatorProps> = ({ onOpenBook
                   />
                   <div className="flex justify-between text-[10px] sm:text-xs text-stone-500 mt-0.5 sm:mt-1">
                     <span>3% (Conservative)</span>
-                    <span>7% (Balanced)</span>
-                    <span>11% (Aggressive)</span>
+                    <span>8% (Growth)</span>
+                    <span>14%+ (High Return)</span>
+                  </div>
+
+                  {/* Quick-tap return presets */}
+                  <div className="flex flex-wrap items-center gap-1.5 mt-2 pt-0.5">
+                    <span className="text-[11px] sm:text-xs text-stone-600 font-semibold mr-0.5 sm:mr-1">Quick:</span>
+                    {[6, 8, 10, 12, 14].map(rate => (
+                      <button
+                        key={rate}
+                        type="button"
+                        onClick={() => setRateOfReturn(rate)}
+                        className={`text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border transition-colors cursor-pointer min-h-[30px] sm:min-h-[36px] flex items-center justify-center ${
+                          rateOfReturn === rate ? 'font-bold bg-stone-900 text-white border-stone-900' : 'bg-stone-50 text-stone-700 hover:bg-stone-100 border-stone-200 active:bg-stone-200'
+                        }`}
+                      >
+                        {rate}%
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>
