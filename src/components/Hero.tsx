@@ -349,47 +349,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, x: 25, scale: 0.98 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-              className="col-span-6 xl:col-span-7 relative h-[480px] xl:h-[520px] flex items-center justify-end"
+              className="col-span-6 xl:col-span-7 relative flex items-center justify-end"
             >
-              {/* Outer Decorative Wrapper with Diagonal Cuts */}
-              <div className="relative w-full h-full max-w-2xl">
-                {/* 1. Underlying Solid Brand Color Wedge */}
-                <div
-                  className="absolute inset-0 transition-colors duration-500 rounded-3xl"
-                  style={{
-                    backgroundColor: activeTheme.primary || '#14253D',
-                    clipPath: 'polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 55%)',
-                  }}
+              {/* Outer Decorative Wrapper */}
+              <div className="relative w-full max-w-2xl h-[480px] xl:h-[540px]">
+                {/* Subtle Luxury Gold Ambient Glow behind Card */}
+                <div 
+                  className="absolute -inset-1 rounded-3xl opacity-25 blur-xl pointer-events-none"
+                  style={{ backgroundColor: activeTheme.accent || '#D4A359' }}
                 />
 
-                {/* 2. Secondary Warm Gold Accent Triangle */}
-                <div
-                  className="absolute bottom-0 left-0 w-36 h-36 opacity-75"
-                  style={{
-                    backgroundColor: activeTheme.accent || '#D4A359',
-                    clipPath: 'polygon(0% 100%, 100% 100%, 0% 0%)',
-                  }}
-                />
-
-                {/* 3. Main Diagonal Cut Photo Container showcasing the clean night portrait */}
-                <div
-                  className="absolute inset-0 overflow-hidden shadow-2xl transition-all duration-300 rounded-3xl border border-white/10"
-                  style={{
-                    clipPath: 'polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 74%)',
-                  }}
-                >
+                {/* Main Clean Executive Photo Frame - Fully showing her head and pose without harsh clipping */}
+                <div className="relative w-full h-full overflow-hidden shadow-2xl rounded-3xl border border-white/15 bg-[#080D17]">
                   <img
-                    src={ADVISOR_PROFILE.images.heroNight || ADVISOR_PROFILE.images.hero}
+                    src={ADVISOR_PROFILE.images.desktopWide || ADVISOR_PROFILE.images.hero}
                     alt="Sarmila Reddy - Canadian Financial Advisor"
-                    className="w-full h-full object-cover object-[center_15%]"
+                    className="w-full h-full object-cover object-[center_top]"
                     loading="eager"
                   />
 
-                  {/* Gentle Gradient Tint */}
+                  {/* Subtle Vignette for Depth */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating Advisor Identity Ribbon on Image */}
-                  <div className="absolute bottom-6 right-6 px-4 py-2 rounded-2xl bg-[#0A111E]/90 backdrop-blur-md border border-white/15 shadow-xl text-left pointer-events-none">
+                  <div className="absolute bottom-5 right-5 px-4 py-2 rounded-2xl bg-[#0A111E]/90 backdrop-blur-md border border-white/15 shadow-xl text-left pointer-events-none">
                     <p className="font-jakarta text-xs font-bold text-white">
                       Sarmila Reddy
                     </p>
