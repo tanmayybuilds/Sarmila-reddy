@@ -43,9 +43,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         {/* Full-bleed Background Portrait */}
         <div className="relative w-full min-h-[860px] sm:min-h-[940px] flex flex-col justify-end overflow-hidden">
           <img
-            src={ADVISOR_PROFILE.images.heroNight || ADVISOR_PROFILE.images.hero}
+            src={ADVISOR_PROFILE.images.heroMobile || ADVISOR_PROFILE.images.hero}
             alt="Sarmila Reddy - Licensed Financial Advisor Canada"
-            className="absolute inset-0 w-full h-full object-cover object-[center_6%]"
+            className="absolute inset-0 w-full h-full object-cover object-[center_top]"
             loading="eager"
           />
 
@@ -362,7 +362,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 {/* Main Clean Executive Photo Frame - Fully showing her head and pose without harsh clipping */}
                 <div className="relative w-full h-full overflow-hidden shadow-2xl rounded-3xl border border-white/15 bg-[#080D17]">
                   <img
-                    src={ADVISOR_PROFILE.images.desktopWide || ADVISOR_PROFILE.images.hero}
+                    src={ADVISOR_PROFILE.images.heroDesktop || ADVISOR_PROFILE.images.hero}
                     alt="Sarmila Reddy - Canadian Financial Advisor"
                     className="w-full h-full object-cover object-[center_top]"
                     loading="eager"
