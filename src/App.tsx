@@ -49,14 +49,14 @@ export function AppContent() {
         {/* 3. About Sarmila Reddy - Professional Story, Client-First Ethics & Mission */}
         <AboutSarmila onOpenBooking={handleOpenBooking} />
 
-        {/* 4. Core Purpose & Why - Her Core Values */}
+        {/* 4. Interactive Canadian Wealth & Tax Shelter Calculator */}
+        <CanadianWealthCalculator onOpenBooking={handleOpenBooking} />
+
+        {/* 5. Core Purpose & Why - Beyond the Numbers, Her Core Purpose */}
         <WhySection />
 
-        {/* 5. Target Canadian Audiences (Immigrants, Professionals, Families, Business) */}
+        {/* 6. Target Canadian Audiences (Immigrants, Professionals, Families, Business) */}
         <AudienceSolutions onOpenBooking={handleOpenBooking} />
-
-        {/* 6. Interactive Canadian Wealth & Tax Shelter Calculator */}
-        <CanadianWealthCalculator onOpenBooking={handleOpenBooking} />
 
         {/* 7. CRA Registered Accounts Explainer (TFSA, RRSP, FHSA, RESP) */}
         <AccountExplainer onOpenBooking={handleOpenBooking} />

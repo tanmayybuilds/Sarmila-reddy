@@ -15,10 +15,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const navLinks = [
     { label: 'Services', href: '#services' },
     { label: 'About Sarmila', href: '#about' },
+    { label: 'Calculator', href: '#calculator' },
     { label: 'My Why', href: '#my-why' },
     { label: 'Who I Help', href: '#who-i-help' },
     { label: 'Tax Accounts', href: '#accounts' },
-    { label: 'Calculator', href: '#calculator' },
     { label: 'Process', href: '#process' },
     { label: 'FAQ', href: '#faq' },
   ];
