@@ -71,9 +71,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       <div className="block lg:hidden bg-[#0A111E]/95 backdrop-blur-md border-b border-white/10 px-4 py-3 text-white transition-colors">
         <div className="flex items-center justify-between">
           {/* Brand Signature */}
-          <a href="#" className="flex items-center gap-2.5 shrink-0 group">
+          <a href="#" className="flex items-center gap-2.5 sm:gap-3 shrink-0 group">
             <div
-              className="w-10 h-10 rounded-xl p-1 bg-black/50 border flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-105"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl p-1 bg-black/60 border flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-105"
               style={{ borderColor: activeTheme.accent || '#D4A359' }}
             >
               <img
@@ -83,11 +83,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               />
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-cormorant text-xl font-bold tracking-tight text-white leading-tight">
+              <span className="font-cormorant text-2xl sm:text-[1.7rem] font-bold tracking-tight text-white leading-tight">
                 Sarmila Reddy
               </span>
               <span
-                className="text-[9px] uppercase tracking-[0.18em] font-semibold leading-none mt-0.5"
+                className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] font-semibold leading-none mt-0.5"
                 style={{ color: activeTheme.accent || '#D4A359' }}
               >
                 Financial Advisor • Canada
@@ -183,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           {/* Brand Signature Mark */}
           <a href="#" className="flex items-center gap-3.5 group shrink-0 min-w-0">
             <div
-              className="w-12 h-12 rounded-xl p-1 bg-black/40 border-2 shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0 flex items-center justify-center ring-1 ring-white/10"
+              className="w-13 h-13 xl:w-14 xl:h-14 rounded-2xl p-1 bg-black/40 border-2 shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0 flex items-center justify-center ring-1 ring-white/10"
               style={{ borderColor: activeTheme.accent || '#D4A359' }}
             >
               <img
@@ -193,11 +193,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               />
             </div>
             <div className="flex flex-col text-left min-w-0">
-              <span className="font-cormorant text-2xl font-bold tracking-tight leading-tight truncate text-white">
+              <span className="font-cormorant text-3xl xl:text-[2rem] font-bold tracking-tight leading-tight truncate text-white">
                 Sarmila Reddy
               </span>
               <span
-                className="text-xs font-semibold tracking-[0.16em] uppercase mt-0.5 truncate"
+                className="text-xs xl:text-sm font-semibold tracking-[0.16em] uppercase mt-0.5 truncate"
                 style={{ color: activeTheme.accent || '#D4A359' }}
               >
                 Financial Advisor • Canada

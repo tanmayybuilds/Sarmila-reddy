@@ -68,11 +68,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <span>LLQP Licensed • Serving Canada Coast-to-Coast</span>
             </motion.div>
 
+            {/* Advisor Name & Title Eyebrow */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="flex items-center gap-2.5 mb-2.5"
+            >
+              <span className="font-cormorant text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                Sarmila Reddy
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              <span
+                className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase"
+                style={{ color: activeTheme.accent || '#D4A359' }}
+              >
+                Financial Advisor
+              </span>
+            </motion.div>
+
             {/* Gold Horizontal Accent Line */}
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: 44 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="h-[3px] rounded-full mb-3.5 shadow-sm"
               style={{ backgroundColor: activeTheme.accent || '#D4A359' }}
             />
@@ -81,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
               className="font-cormorant text-[2.5rem] sm:text-5xl font-bold tracking-[-0.01em] leading-[1.14] text-white"
             >
               Guiding you today{' '}
@@ -372,11 +391,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating Advisor Identity Ribbon on Image */}
-                  <div className="absolute bottom-5 right-5 px-4 py-2 rounded-2xl bg-[#0A111E]/90 backdrop-blur-md border border-white/15 shadow-xl text-left pointer-events-none">
-                    <p className="font-jakarta text-xs font-bold text-white">
+                  <div className="absolute bottom-5 right-5 px-5 py-2.5 rounded-2xl bg-[#0A111E]/90 backdrop-blur-md border border-white/15 shadow-xl text-left pointer-events-none">
+                    <p className="font-jakarta text-sm xl:text-base font-bold text-white tracking-wide">
                       Sarmila Reddy
                     </p>
-                    <p className="text-[11px] font-medium text-stone-300">
+                    <p className="text-xs font-medium text-stone-300 mt-0.5">
                       Licensed Life & Living Benefits Advisor • Canada
                     </p>
                   </div>

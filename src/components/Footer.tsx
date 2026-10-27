@@ -44,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-serif text-base sm:text-lg font-bold leading-tight" style={{ color: activeTheme.textDark }}>
+                  <h3 className="font-serif text-lg sm:text-2xl font-bold leading-tight" style={{ color: activeTheme.textDark }}>
                     Sarmila Reddy
                   </h3>
                   <p className="text-xs sm:text-sm font-semibold tracking-normal mt-0.5" style={{ color: activeTheme.accent }}>
